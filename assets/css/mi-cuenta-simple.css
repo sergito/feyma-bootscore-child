@@ -576,5 +576,192 @@
     font-size: 1.5rem;
   }
 }
+.edit-account-wrapper {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+  overflow: hidden;
+}
+.edit-account-wrapper .edit-account-header {
+  background: #3D3180;
+  padding: 25px;
+  text-align: center;
+  color: #ffffff;
+}
+.edit-account-wrapper .edit-account-header .account-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.edit-account-wrapper .edit-account-header .account-icon i {
+  font-size: 28px;
+  color: #ffffff;
+}
+.edit-account-wrapper .edit-account-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #ffffff;
+}
+.edit-account-wrapper .edit-account-header .account-subtitle {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin: 0;
+}
+.edit-account-wrapper .edit-account-form {
+  padding: 30px;
+}
+.edit-account-wrapper .edit-account-form .account-form-fields {
+  margin-bottom: 30px;
+}
+.edit-account-wrapper .edit-account-form .account-form-fields .form-section {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 20px;
+}
+.edit-account-wrapper .edit-account-form .account-form-fields .form-section .form-section-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #3D3180;
+  margin: 0 0 20px 0;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e9ecef;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.edit-account-wrapper .edit-account-form .account-form-fields .form-section .form-section-title i {
+  font-size: 1.25rem;
+}
+.edit-account-wrapper .edit-account-form .account-form-fields .form-section .form-row-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.edit-account-wrapper .edit-account-form .account-form-fields .form-section .form-row {
+  margin-bottom: 20px;
+}
+.edit-account-wrapper .edit-account-form .account-form-fields .form-section .form-row:last-child {
+  margin-bottom: 0;
+}
+.edit-account-wrapper .edit-account-form .account-form-fields .form-section .form-row label {
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  display: block;
+  font-size: 0.95rem;
+}
+.edit-account-wrapper .edit-account-form .account-form-fields .form-section .form-row label .required {
+  color: #dc3545;
+}
+.edit-account-wrapper .edit-account-form .account-form-fields .form-section .form-row input[type=text],
+.edit-account-wrapper .edit-account-form .account-form-fields .form-section .form-row input[type=email],
+.edit-account-wrapper .edit-account-form .account-form-fields .form-section .form-row input[type=password] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: #ffffff;
+  transition: all 0.3s ease;
+}
+.edit-account-wrapper .edit-account-form .account-form-fields .form-section .form-row input[type=text]:focus,
+.edit-account-wrapper .edit-account-form .account-form-fields .form-section .form-row input[type=email]:focus,
+.edit-account-wrapper .edit-account-form .account-form-fields .form-section .form-row input[type=password]:focus {
+  outline: none;
+  border-color: #3D3180;
+  box-shadow: 0 0 0 3px rgba(61, 49, 128, 0.1);
+}
+.edit-account-wrapper .edit-account-form .account-form-fields .form-section .form-row .field-description {
+  display: block;
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-top: 5px;
+  font-style: italic;
+}
+.edit-account-wrapper .edit-account-form .account-form-fields .form-section .form-row .password-field {
+  position: relative;
+}
+.edit-account-wrapper .edit-account-form .account-form-fields .form-section .form-row .password-field input {
+  padding-right: 45px;
+}
+.edit-account-wrapper .edit-account-form .account-form-fields .form-section .form-row .password-field .show-password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #6c757d;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 1.125rem;
+  transition: color 0.3s ease;
+}
+.edit-account-wrapper .edit-account-form .account-form-fields .form-section .form-row .password-field .show-password-toggle:hover {
+  color: #3D3180;
+}
+.edit-account-wrapper .edit-account-form .form-actions {
+  display: flex;
+  gap: 15px;
+  padding-top: 20px;
+  border-top: 2px solid #e9ecef;
+}
+.edit-account-wrapper .edit-account-form .form-actions .btn-primary-feyma {
+  background: #3D3180;
+  color: #ffffff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.edit-account-wrapper .edit-account-form .form-actions .btn-primary-feyma:hover {
+  background: rgb(43.4237288136, 34.8813559322, 91.1186440678);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(61, 49, 128, 0.3);
+}
+@media (max-width: 768px) {
+  .edit-account-wrapper .edit-account-header {
+    padding: 20px;
+  }
+  .edit-account-wrapper .edit-account-header .account-icon {
+    width: 50px;
+    height: 50px;
+  }
+  .edit-account-wrapper .edit-account-header .account-icon i {
+    font-size: 24px;
+  }
+  .edit-account-wrapper .edit-account-header h2 {
+    font-size: 1.25rem;
+  }
+  .edit-account-wrapper .edit-account-form {
+    padding: 20px;
+  }
+  .edit-account-wrapper .edit-account-form .account-form-fields .form-section {
+    padding: 20px;
+  }
+  .edit-account-wrapper .edit-account-form .account-form-fields .form-section .form-row-group {
+    grid-template-columns: 1fr;
+  }
+  .edit-account-wrapper .edit-account-form .form-actions {
+    flex-direction: column;
+  }
+  .edit-account-wrapper .edit-account-form .form-actions .btn-primary-feyma {
+    width: 100%;
+    justify-content: center;
+  }
+}
 
 /*# sourceMappingURL=mi-cuenta-simple.css.map */

@@ -33,6 +33,11 @@ do_action('woocommerce_before_account_navigation');
         <?php foreach (wc_get_account_menu_items() as $endpoint => $label) : ?>
 
            <?php
+            // Ocultar descargas
+            if ( $endpoint === 'downloads' ) {
+              continue;
+            }
+
             // Definir clases e iconos según endpoint
             $custom_class = '';
             $icon = '';
@@ -44,10 +49,6 @@ do_action('woocommerce_before_account_navigation');
               case 'orders':
                 $custom_class = 'mi--orders';
                 $icon = '<i class="bi bi-bag-check-fill"></i>';
-                break;
-              case 'downloads':
-                $custom_class = 'mi--downloads';
-                $icon = '<i class="bi bi-download"></i>';
                 break;
               case 'edit-address':
                 $custom_class = 'mi--address';

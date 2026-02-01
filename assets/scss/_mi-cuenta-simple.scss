@@ -726,3 +726,226 @@ $text-muted: #6c757d;
         }
     }
 }
+
+// ============================================
+// EDIT ACCOUNT FORM (form-edit-account.php)
+// ============================================
+.edit-account-wrapper {
+    background: $white;
+    border-radius: 12px;
+    border: 2px solid $gray-border;
+    overflow: hidden;
+
+    .edit-account-header {
+        background: $purple;
+        padding: 25px;
+        text-align: center;
+        color: $white;
+
+        .account-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba($white, 0.2);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+
+            i {
+                font-size: 28px;
+                color: $white;
+            }
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+            color: $white;
+        }
+
+        .account-subtitle {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+    }
+
+    .edit-account-form {
+        padding: 30px;
+
+        .account-form-fields {
+            margin-bottom: 30px;
+
+            .form-section {
+                background: $gray-light;
+                border-radius: 12px;
+                padding: 25px;
+                margin-bottom: 20px;
+
+                .form-section-title {
+                    font-size: 1.125rem;
+                    font-weight: 700;
+                    color: $purple;
+                    margin: 0 0 20px 0;
+                    padding-bottom: 15px;
+                    border-bottom: 2px solid $gray-border;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    i {
+                        font-size: 1.25rem;
+                    }
+                }
+
+                .form-row-group {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    gap: 20px;
+                    margin-bottom: 20px;
+                }
+
+                .form-row {
+                    margin-bottom: 20px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    label {
+                        font-weight: 600;
+                        color: $text-dark;
+                        margin-bottom: 8px;
+                        display: block;
+                        font-size: 0.95rem;
+
+                        .required {
+                            color: #dc3545;
+                        }
+                    }
+
+                    input[type="text"],
+                    input[type="email"],
+                    input[type="password"] {
+                        width: 100%;
+                        padding: 12px 15px;
+                        border: 2px solid $gray-border;
+                        border-radius: 8px;
+                        font-size: 0.95rem;
+                        background: $white;
+                        transition: all 0.3s ease;
+
+                        &:focus {
+                            outline: none;
+                            border-color: $purple;
+                            box-shadow: 0 0 0 3px rgba($purple, 0.1);
+                        }
+                    }
+
+                    .field-description {
+                        display: block;
+                        font-size: 0.85rem;
+                        color: $text-muted;
+                        margin-top: 5px;
+                        font-style: italic;
+                    }
+
+                    .password-field {
+                        position: relative;
+
+                        input {
+                            padding-right: 45px;
+                        }
+
+                        .show-password-toggle {
+                            position: absolute;
+                            right: 10px;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            background: transparent;
+                            border: none;
+                            color: $text-muted;
+                            cursor: pointer;
+                            padding: 5px;
+                            font-size: 1.125rem;
+                            transition: color 0.3s ease;
+
+                            &:hover {
+                                color: $purple;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 15px;
+            padding-top: 20px;
+            border-top: 2px solid $gray-border;
+
+            .btn-primary-feyma {
+                background: $purple;
+                color: $white;
+                border: none;
+                padding: 12px 30px;
+                border-radius: 8px;
+                font-weight: 600;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                transition: all 0.3s ease;
+                cursor: pointer;
+
+                &:hover {
+                    background: darken($purple, 10%);
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 12px rgba($purple, 0.3);
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .edit-account-header {
+            padding: 20px;
+
+            .account-icon {
+                width: 50px;
+                height: 50px;
+
+                i {
+                    font-size: 24px;
+                }
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+        }
+
+        .edit-account-form {
+            padding: 20px;
+
+            .account-form-fields .form-section {
+                padding: 20px;
+
+                .form-row-group {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .form-actions {
+                flex-direction: column;
+
+                .btn-primary-feyma {
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
