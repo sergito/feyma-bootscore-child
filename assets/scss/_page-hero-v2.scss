@@ -1,0 +1,434 @@
+// ============================================
+// PAGE HERO V2 - HEADER ÉPICO PARA PÁGINAS INTERNAS
+// ============================================
+// Inspirado en Hero Slider V2 pero más compacto
+// Altura reducida: 400px (vs 670px del slider principal)
+// ============================================
+
+// VARIABLES
+$page-hero-height: 400px;
+$page-hero-height-mobile: 350px;
+$purple-dark: #0a0a0f;
+$purple-medium: #1a1a2e;
+$purple-brand: #3D3180;
+$gold: #F7B32B;
+$gold-light: #f7c96b;
+
+// ============================================
+// HERO CONTAINER
+// ============================================
+.page-hero-v2 {
+    position: relative;
+    min-height: $page-hero-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    // Gradiente de fondo épico
+    background: linear-gradient(135deg, $purple-dark 0%, $purple-medium 50%, $purple-brand 100%);
+
+    // Grid pattern de fondo
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image:
+            repeating-linear-gradient(0deg, transparent, transparent 49px, rgba($gold, 0.03) 49px, rgba($gold, 0.03) 50px),
+            repeating-linear-gradient(90deg, transparent, transparent 49px, rgba($gold, 0.03) 49px, rgba($gold, 0.03) 50px);
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    // Overlay oscuro sutil
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(ellipse at center, transparent 0%, rgba($purple-dark, 0.3) 100%);
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    // Container
+    .container {
+        position: relative;
+        z-index: 10;
+    }
+}
+
+// ============================================
+// CIRCUIT PATTERN ANIMADO
+// ============================================
+.hero-circuit-pattern-v2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    z-index: 3;
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba($gold, 0.15) 1px, transparent 1px),
+        radial-gradient(circle at 80% 70%, rgba($gold, 0.15) 1px, transparent 1px),
+        radial-gradient(circle at 40% 80%, rgba($gold, 0.1) 1px, transparent 1px),
+        radial-gradient(circle at 60% 20%, rgba($gold, 0.1) 1px, transparent 1px);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    animation: circuitPulse 8s ease-in-out infinite;
+}
+
+// ============================================
+// PARTICLES FLOATING
+// ============================================
+.hero-particles-v2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    pointer-events: none;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: $gold;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba($gold, 0.8);
+        animation: particleFloat 15s ease-in-out infinite;
+    }
+
+    &::before {
+        top: 20%;
+        left: 10%;
+        animation-delay: 0s;
+    }
+
+    &::after {
+        top: 60%;
+        right: 15%;
+        animation-delay: 7s;
+    }
+}
+
+// ============================================
+// SCAN LINE EFFECT
+// ============================================
+.scan-line-v2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba($gold, 0.6), transparent);
+    z-index: 5;
+    pointer-events: none;
+    animation: scanDown 4s linear infinite;
+}
+
+// ============================================
+// HERO CONTENT
+// ============================================
+.page-hero-content-v2 {
+    text-align: center;
+    padding: 60px 0;
+
+    // Ícono superior (opcional)
+    .hero-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 30px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba($gold, 0.3);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        animation: slideInDown 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
+
+        i {
+            font-size: 36px;
+            color: $gold;
+            filter: drop-shadow(0 0 10px rgba($gold, 0.6));
+        }
+
+        &:hover {
+            transform: scale(1.1) rotate(5deg);
+            border-color: $gold;
+            background: rgba($gold, 0.15);
+        }
+    }
+
+    // Badge (opcional)
+    .hero-badge {
+        display: inline-block;
+        background: rgba($gold, 0.15);
+        border: 1px solid rgba($gold, 0.3);
+        border-radius: 30px;
+        padding: 10px 24px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        color: $gold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        animation: slideInDown 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
+
+        i {
+            margin-right: 8px;
+        }
+    }
+
+    // Título principal
+    .page-hero-title-v2 {
+        font-size: clamp(32px, 5vw, 48px);
+        font-weight: 800;
+        color: #ffffff;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        animation: slideInLeft 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s both;
+
+        // Efecto de gradiente en el texto (opcional)
+        &.gradient-text {
+            background: linear-gradient(135deg, $gold 0%, $gold-light 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 2px 10px rgba($gold, 0.3));
+        }
+    }
+
+    // Subtítulo
+    .page-hero-subtitle-v2 {
+        font-size: clamp(16px, 2.5vw, 20px);
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 30px;
+        line-height: 1.6;
+        animation: fadeIn 0.8s ease 0.4s both;
+    }
+
+    // Breadcrumb
+    .breadcrumb {
+        background: transparent;
+        padding: 0;
+        margin-bottom: 0;
+        justify-content: center;
+        animation: fadeIn 0.8s ease 0.6s both;
+
+        .breadcrumb-item {
+            font-size: 14px;
+
+            a {
+                color: rgba(255, 255, 255, 0.7);
+                text-decoration: none;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: $gold;
+                }
+            }
+
+            &.active {
+                color: $gold;
+            }
+
+            + .breadcrumb-item::before {
+                color: rgba(255, 255, 255, 0.5);
+                content: "›";
+                padding: 0 8px;
+            }
+        }
+    }
+}
+
+// ============================================
+// DECORATIVE LINES (OPCIONAL)
+// ============================================
+.hero-decorative-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 6;
+    pointer-events: none;
+
+    .line {
+        position: absolute;
+        background: linear-gradient(90deg, transparent, rgba($gold, 0.3), transparent);
+
+        &.line-1 {
+            top: 20%;
+            left: 0;
+            width: 200px;
+            height: 1px;
+            animation: lineExpand 3s ease-in-out infinite;
+        }
+
+        &.line-2 {
+            bottom: 30%;
+            right: 0;
+            width: 150px;
+            height: 1px;
+            animation: lineExpand 3s ease-in-out 1.5s infinite;
+        }
+    }
+}
+
+// ============================================
+// ANIMACIONES
+// ============================================
+
+@keyframes circuitPulse {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes particleFloat {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-100px) translateX(50px);
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 1;
+    }
+}
+
+@keyframes scanDown {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes lineExpand {
+    0%, 100% {
+        width: 50px;
+        opacity: 0.3;
+    }
+    50% {
+        width: 200px;
+        opacity: 0.6;
+    }
+}
+
+// ============================================
+// RESPONSIVE
+// ============================================
+
+@media (max-width: 992px) {
+    .page-hero-v2 {
+        min-height: $page-hero-height-mobile;
+    }
+
+    .page-hero-content-v2 {
+        padding: 40px 0;
+
+        .hero-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+
+            i {
+                font-size: 28px;
+            }
+        }
+
+        .page-hero-title-v2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .page-hero-subtitle-v2 {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .page-hero-v2 {
+        min-height: 300px;
+    }
+
+    .page-hero-content-v2 {
+        padding: 30px 0;
+
+        .hero-icon {
+            width: 50px;
+            height: 50px;
+
+            i {
+                font-size: 24px;
+            }
+        }
+    }
+}

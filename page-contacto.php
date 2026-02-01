@@ -10,23 +10,31 @@ get_header();
 ?>
 
 <!-- ============================================
-         HERO SECTION
+         HERO SECTION V2
          ============================================ -->
-    <section class="page-hero">
-        <div class="hero-circuit-bg"></div>
+    <section class="page-hero-v2">
+        <div class="hero-circuit-pattern-v2"></div>
+        <div class="hero-particles-v2"></div>
+        <div class="scan-line-v2"></div>
+
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-12 text-center">
-                    <h1 class="hero-title" data-aos="fade-up">Contacto</h1>
-                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
-                        Estamos para ayudarte
-                    </p>
-                    <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">
-                        <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a href="/">Inicio</a></li>
-                            <li class="breadcrumb-item active">Contacto</li>
-                        </ol>
-                    </nav>
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-hero-content-v2">
+                        <div class="hero-icon" data-aos="zoom-in">
+                            <i class="bi bi-envelope-at"></i>
+                        </div>
+                        <h1 class="page-hero-title-v2" data-aos="fade-up" data-aos-delay="100">Contacto</h1>
+                        <p class="page-hero-subtitle-v2" data-aos="fade-up" data-aos-delay="200">
+                            Estamos para ayudarte. Comunicate con nuestro equipo.
+                        </p>
+                        <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="300">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                                <li class="breadcrumb-item active">Contacto</li>
+                            </ol>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>

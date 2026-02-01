@@ -207,6 +207,10 @@ function bootscore_child_enqueue_styles() {
 	  $modified_bootscoreChildCss = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/main.css'));
 	  wp_enqueue_style('main', get_stylesheet_directory_uri() . '/assets/css/main.css', array('parent-style','bi','aos-css'), $modified_bootscoreChildCss);
 
+	  // Page Hero V2 - Hero header épico para páginas internas
+	  $modified_pageHeroV2 = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/page-hero-v2.css'));
+	  wp_enqueue_style('page-hero-v2', get_stylesheet_directory_uri() . '/assets/css/page-hero-v2.css', array('main'), $modified_pageHeroV2);
+
 	  // style.css
 	  wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
 	  wp_enqueue_style( 'bi', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css', false, '1.11');
@@ -1009,7 +1013,7 @@ function custom_single_variable_price_html_clean( $price, $product ) {
 */
 
 
-// add_action('woocommerce_after_add_to_cart_form', 'feyma_share_info', 25);
+// add_action('woocommerce_after_add_to_cart_form', 'feyma_share_info', 25); // DESACTIVADO - Usuario no quiere badges verdes
 //add_action('woocommerce_single_product_summary', 'feyma_share_info', 31);
 
 function feyma_share_info() {

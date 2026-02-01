@@ -10,41 +10,28 @@ get_header();
 ?>
 
 <!-- ============================================
-         HERO SECTION ÉPICO
+         HERO SECTION V2
          ============================================ -->
-    <section class="page-hero-epic">
-        <!-- Circuit pattern animado -->
-        <div class="hero-circuit-pattern"></div>
-        <div class="hero-particles"></div>
-        <div class="scan-line"></div>
-
-        <!-- Nodos de conexión pulsantes -->
-        <div class="circuit-nodes">
-            <div class="circuit-node"></div>
-            <div class="circuit-node"></div>
-            <div class="circuit-node"></div>
-            <div class="circuit-node"></div>
-        </div>
-
-        <!-- Data flow (líneas que viajan) -->
-        <div class="data-flow data-flow-1"></div>
-        <div class="data-flow data-flow-2"></div>
+    <section class="page-hero-v2">
+        <div class="hero-circuit-pattern-v2"></div>
+        <div class="hero-particles-v2"></div>
+        <div class="scan-line-v2"></div>
 
         <div class="container">
-            <div class="row align-items-center min-vh-50">
-                <div class="col-lg-12 text-center">
-                    <div class="page-hero-content" data-aos="fade-up">
-                        <div class="hero-icon mb-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-hero-content-v2">
+                        <div class="hero-icon" data-aos="zoom-in">
                             <i class="bi bi-building"></i>
                         </div>
-                        <h1 class="page-hero-title" data-aos="fade-up" data-aos-delay="200">
+                        <h1 class="page-hero-title-v2" data-aos="fade-up" data-aos-delay="100">
                             Quiénes Somos
                         </h1>
-                        <p class="page-hero-subtitle" data-aos="fade-up" data-aos-delay="300">
+                        <p class="page-hero-subtitle-v2" data-aos="fade-up" data-aos-delay="200">
                             Más de 15 años de experiencia en tecnología
                         </p>
-                        <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="400">
-                            <ol class="breadcrumb justify-content-center">
+                        <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="300">
+                            <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/">Inicio</a></li>
                                 <li class="breadcrumb-item active">Empresa</li>
                             </ol>
