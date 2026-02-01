@@ -187,6 +187,29 @@ get_header();
                                     </div>
                                 </div>
 
+                                <!-- Google reCAPTCHA v3 (COMENTADO - Para activar, descomentá este bloque) -->
+                                <?php
+                                /*
+                                // ========================================
+                                // GOOGLE reCAPTCHA v3 - INSTRUCCIONES
+                                // ========================================
+                                // 1. Registrá tu sitio en: https://www.google.com/recaptcha/admin/create
+                                // 2. Seleccioná reCAPTCHA v3
+                                // 3. Agregá tu dominio (ej: feyma.ar)
+                                // 4. Copiá la SITE KEY y SECRET KEY
+                                // 5. En functions.php, agregá:
+                                //    define('RECAPTCHA_SITE_KEY', 'tu_site_key_aqui');
+                                //    define('RECAPTCHA_SECRET_KEY', 'tu_secret_key_aqui');
+                                // 6. Descomentá el código de abajo
+                                // ========================================
+                                ?>
+                                <!-- reCAPTCHA v3 Script -->
+                                <script src="https://www.google.com/recaptcha/api.js?render=<?php echo RECAPTCHA_SITE_KEY; ?>"></script>
+                                <input type="hidden" id="recaptcha_token" name="recaptcha_token">
+                                <?php
+                                */
+                                ?>
+
                                 <!-- Submit Button -->
                                 <div class="col-12 text-center">
                                     <button type="submit" class="btn btn-gold btn-lg px-5">
@@ -198,6 +221,33 @@ get_header();
                                 </div>
                             </div>
                         </form>
+
+                        <!-- ========================================
+                             reCAPTCHA v3 JavaScript (COMENTADO)
+                             Descomentá este bloque cuando actives reCAPTCHA
+                             ======================================== -->
+                        <?php
+                        /*
+                        ?>
+                        <script>
+                        document.getElementById('contactForm').addEventListener('submit', function(e) {
+                            e.preventDefault();
+                            const form = this;
+
+                            grecaptcha.ready(function() {
+                                grecaptcha.execute('<?php echo RECAPTCHA_SITE_KEY; ?>', {action: 'contact_form'}).then(function(token) {
+                                    document.getElementById('recaptcha_token').value = token;
+
+                                    // El formulario se enviará normalmente vía AJAX (contact-newsletter.js)
+                                    // El token se validará en functions.php en feyma_handle_contact_form()
+                                    jQuery(form).trigger('submit');
+                                });
+                            });
+                        });
+                        </script>
+                        <?php
+                        */
+                        ?>
                     </div>
                 </div>
             </div>

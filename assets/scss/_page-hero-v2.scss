@@ -6,8 +6,8 @@
 // ============================================
 
 // VARIABLES
-$page-hero-height: 400px;
-$page-hero-height-mobile: 350px;
+$page-hero-height: 350px;
+$page-hero-height-mobile: 300px;
 $purple-dark: #0a0a0f;
 $purple-medium: #1a1a2e;
 $purple-brand: #3D3180;
@@ -144,7 +144,7 @@ $gold-light: #f7c96b;
 // ============================================
 .page-hero-content-v2 {
     text-align: center;
-    padding: 80px 0 40px;
+    padding: 60px 0 30px;
 
     // Ícono superior (opcional)
     .hero-icon {

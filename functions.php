@@ -1257,7 +1257,37 @@ add_action('after_setup_theme', 'feyma_create_database_tables');
 function feyma_handle_contact_form() {
     // Verificar nonce
     check_ajax_referer('feyma_contact_nonce', 'nonce');
-    
+
+    // ========================================
+    // VALIDAR reCAPTCHA v3 (COMENTADO)
+    // Descomentá este bloque cuando actives reCAPTCHA
+    // ========================================
+    /*
+    if (isset($_POST['recaptcha_token'])) {
+        $recaptcha_token = sanitize_text_field($_POST['recaptcha_token']);
+        $recaptcha_secret = RECAPTCHA_SECRET_KEY;
+
+        $response = wp_remote_post('https://www.google.com/recaptcha/api/siteverify', array(
+            'body' => array(
+                'secret' => $recaptcha_secret,
+                'response' => $recaptcha_token
+            )
+        ));
+
+        if (is_wp_error($response)) {
+            wp_send_json_error(array('message' => 'Error al validar reCAPTCHA.'));
+        }
+
+        $response_body = json_decode(wp_remote_retrieve_body($response));
+
+        if (!$response_body->success || $response_body->score < 0.5) {
+            wp_send_json_error(array('message' => 'Verificación de seguridad fallida. Por favor intenta nuevamente.'));
+        }
+    } else {
+        wp_send_json_error(array('message' => 'Token de seguridad no encontrado.'));
+    }
+    */
+
     global $wpdb;
     $table_name = $wpdb->prefix . 'feyma_contacts';
     
