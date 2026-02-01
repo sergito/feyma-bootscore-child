@@ -249,7 +249,9 @@ $blue-light: #60A5FA;
         margin-bottom: 1.5rem;
         padding-bottom: 1rem;
         border-bottom: 3px solid;
-        border-image: linear-gradient(90deg, $purple 0%, $gold 100%)
+        border-image: linear-gradient(90deg, $purple 0%, $gold 100%) 1;
+    }
+}
 
 // ============================================
 // MY ACCOUNT PAGE WRAPPER
