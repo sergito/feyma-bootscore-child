@@ -1009,7 +1009,7 @@ function custom_single_variable_price_html_clean( $price, $product ) {
 */
 
 
-add_action('woocommerce_after_add_to_cart_form', 'feyma_share_info', 25);
+// add_action('woocommerce_after_add_to_cart_form', 'feyma_share_info', 25);
 //add_action('woocommerce_single_product_summary', 'feyma_share_info', 31);
 
 function feyma_share_info() {
