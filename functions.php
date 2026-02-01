@@ -211,6 +211,14 @@ function bootscore_child_enqueue_styles() {
 	  $modified_pageHeroV2 = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/page-hero-v2.css'));
 	  wp_enqueue_style('page-hero-v2', get_stylesheet_directory_uri() . '/assets/css/page-hero-v2.css', array('main'), $modified_pageHeroV2);
 
+	  // Page Contacto - Estilos mejorados para página de contacto
+	  $modified_pageContacto = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/page-contacto.css'));
+	  wp_enqueue_style('page-contacto', get_stylesheet_directory_uri() . '/assets/css/page-contacto.css', array('main'), $modified_pageContacto);
+
+	  // Page Mi Cuenta - Estilos mejorados para WooCommerce Mi Cuenta
+	  $modified_pageMiCuenta = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/page-mi-cuenta.css'));
+	  wp_enqueue_style('page-mi-cuenta', get_stylesheet_directory_uri() . '/assets/css/page-mi-cuenta.css', array('main'), $modified_pageMiCuenta);
+
 	  // style.css
 	  wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
 	  wp_enqueue_style( 'bi', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css', false, '1.11');

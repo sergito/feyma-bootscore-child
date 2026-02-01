@@ -1,0 +1,467 @@
+// ============================================
+// MI CUENTA - WOOCOMMERCE MEJORADO
+// ============================================
+
+// Variables
+$purple: #3D3180;
+$purple-light: #5F4B8B;
+$purple-dark: #2D2460;
+$gold: #F7B32B;
+$gold-light: #f7c96b;
+
+// ============================================
+// MY ACCOUNT PAGE WRAPPER
+// ============================================
+.woocommerce-account {
+    .woocommerce {
+        padding: 40px 0;
+    }
+}
+
+// ============================================
+// MY ACCOUNT NAVIGATION
+// ============================================
+.woocommerce-MyAccount-navigation {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(61, 49, 128, 0.1);
+    margin-bottom: 2rem;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            margin-bottom: 0.5rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            a {
+                display: flex;
+                align-items: center;
+                padding: 1rem 1.25rem;
+                border-radius: 12px;
+                text-decoration: none;
+                color: #4b5563;
+                font-weight: 600;
+                font-size: 0.95rem;
+                transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                position: relative;
+
+                // Ícono antes del texto (si existe)
+                &::before {
+                    content: '';
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 50%;
+                    background: $purple;
+                    margin-right: 12px;
+                    transition: all 0.3s ease;
+                }
+
+                &:hover {
+                    background: rgba($purple, 0.05);
+                    color: $purple;
+                    transform: translateX(8px);
+
+                    &::before {
+                        background: $gold;
+                        transform: scale(1.5);
+                    }
+                }
+            }
+
+            // Item activo
+            &.is-active a,
+            &.woocommerce-MyAccount-navigation-link--dashboard.is-active a {
+                background: linear-gradient(135deg, $purple 0%, $purple-light 100%);
+                color: white;
+                box-shadow: 0 5px 15px rgba($purple, 0.3);
+
+                &::before {
+                    background: $gold;
+                }
+
+                &:hover {
+                    transform: translateX(8px) scale(1.02);
+                }
+            }
+        }
+    }
+}
+
+// ============================================
+// MY ACCOUNT CONTENT
+// ============================================
+.woocommerce-MyAccount-content {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(61, 49, 128, 0.1);
+    min-height: 400px;
+
+    // Título de sección
+    h2, h3 {
+        font-weight: 700;
+        color: $purple;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 3px solid;
+        border-image: linear-gradient(90deg, $purple 0%, $gold 100%) 1;
+    }
+
+    // Párrafos
+    p {
+        color: #6b7280;
+        line-height: 1.7;
+    }
+
+    // Links
+    a {
+        color: $purple;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        &:hover {
+            color: $gold;
+        }
+    }
+}
+
+// ============================================
+// MY ACCOUNT DASHBOARD
+// ============================================
+.woocommerce-MyAccount-content {
+    .woocommerce-Message {
+        background: linear-gradient(135deg, rgba($purple, 0.1) 0%, rgba($gold, 0.1) 100%);
+        border-left: 4px solid $gold;
+        border-radius: 12px;
+        padding: 1.25rem 1.5rem;
+        margin-bottom: 2rem;
+        color: $purple;
+
+        a {
+            color: $purple;
+            text-decoration: underline;
+
+            &:hover {
+                color: $gold;
+            }
+        }
+    }
+}
+
+// ============================================
+// ORDERS TABLE
+// ============================================
+.woocommerce-orders-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 1.5rem;
+
+    thead {
+        background: linear-gradient(135deg, $purple 0%, $purple-light 100%);
+
+        th {
+            color: white;
+            font-weight: 700;
+            padding: 1.25rem 1rem;
+            text-align: left;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+
+            &:first-child {
+                border-top-left-radius: 12px;
+            }
+
+            &:last-child {
+                border-top-right-radius: 12px;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            background: white;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background: rgba($purple, 0.03);
+                transform: scale(1.01);
+            }
+
+            td {
+                padding: 1.25rem 1rem;
+                border-bottom: 1px solid #e5e7eb;
+                color: #4b5563;
+
+                a {
+                    color: $purple;
+                    font-weight: 600;
+
+                    &:hover {
+                        color: $gold;
+                    }
+                }
+
+                .woocommerce-button {
+                    background: linear-gradient(135deg, $purple 0%, $purple-light 100%);
+                    color: white;
+                    border: none;
+                    padding: 0.5rem 1.25rem;
+                    border-radius: 8px;
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    transition: all 0.3s ease;
+                    display: inline-block;
+                    text-decoration: none;
+
+                    &:hover {
+                        background: linear-gradient(135deg, $gold 0%, $gold-light 100%);
+                        transform: translateY(-2px);
+                        box-shadow: 0 5px 15px rgba($gold, 0.3);
+                        color: $purple;
+                    }
+                }
+            }
+
+            &:last-child td {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+// ============================================
+// ACCOUNT DETAILS FORM
+// ============================================
+.woocommerce-EditAccountForm {
+    .form-row {
+        margin-bottom: 1.5rem;
+
+        label {
+            font-weight: 600;
+            color: $purple;
+            margin-bottom: 0.5rem;
+            display: block;
+
+            .required {
+                color: #ef4444;
+            }
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.875rem 1.25rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+
+            &:focus {
+                outline: none;
+                border-color: $gold;
+                box-shadow: 0 0 0 3px rgba($gold, 0.1);
+            }
+        }
+    }
+
+    button[type="submit"],
+    .button {
+        background: linear-gradient(135deg, $gold 0%, $gold-light 100%);
+        color: $purple;
+        border: none;
+        padding: 1rem 2.5rem;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        box-shadow: 0 5px 15px rgba($gold, 0.3);
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba($gold, 0.5);
+        }
+
+        &:active {
+            transform: translateY(-1px);
+        }
+    }
+}
+
+// ============================================
+// ADDRESSES
+// ============================================
+.woocommerce-Address {
+    background: rgba($purple, 0.03);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 2px solid rgba($purple, 0.1);
+    margin-bottom: 2rem;
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        h3 {
+            font-size: 1.25rem;
+            color: $purple;
+            margin: 0;
+            border: none;
+            padding: 0;
+        }
+
+        .edit {
+            color: $gold;
+            font-weight: 600;
+            font-size: 0.9rem;
+
+            &:hover {
+                color: $purple;
+            }
+        }
+    }
+
+    address {
+        font-style: normal;
+        line-height: 1.8;
+        color: #4b5563;
+    }
+}
+
+// ============================================
+// LOGIN & REGISTER FORMS
+// ============================================
+.woocommerce-form-login,
+.woocommerce-form-register {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba($purple, 0.1);
+
+    h2 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: $purple;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .form-row {
+        margin-bottom: 1.5rem;
+
+        label {
+            font-weight: 600;
+            color: $purple;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 0.875rem 1.25rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+
+            &:focus {
+                outline: none;
+                border-color: $gold;
+                box-shadow: 0 0 0 3px rgba($gold, 0.1);
+            }
+        }
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        background: linear-gradient(135deg, $purple 0%, $purple-light 100%);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba($purple, 0.3);
+
+        &:hover {
+            background: linear-gradient(135deg, $gold 0%, $gold-light 100%);
+            color: $purple;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba($gold, 0.4);
+        }
+    }
+
+    .lost_password {
+        margin-top: 1rem;
+        text-align: center;
+
+        a {
+            color: $purple;
+            font-size: 0.9rem;
+
+            &:hover {
+                color: $gold;
+            }
+        }
+    }
+}
+
+// ============================================
+// RESPONSIVE
+// ============================================
+@media (max-width: 768px) {
+    .woocommerce-MyAccount-navigation {
+        margin-bottom: 2rem;
+
+        ul li a {
+            padding: 0.875rem 1rem;
+            font-size: 0.9rem;
+        }
+    }
+
+    .woocommerce-MyAccount-content {
+        padding: 1.5rem;
+    }
+
+    .woocommerce-orders-table {
+        font-size: 0.85rem;
+
+        thead th,
+        tbody td {
+            padding: 0.75rem 0.5rem;
+        }
+    }
+
+    .woocommerce-form-login,
+    .woocommerce-form-register {
+        padding: 1.5rem;
+    }
+}
