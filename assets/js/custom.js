@@ -484,6 +484,67 @@
 
         //console.log('Swiper related inicializado');
     });
-    
+
+    // ============================================
+    // COPIAR ENLACE - SINGLE PRODUCT
+    // ============================================
+    $(document).on('click', '.copy-link-btn', function(e) {
+        e.preventDefault();
+
+        const button = $(this);
+        const url = button.data('url');
+        const icon = button.find('i');
+
+        // Copiar al portapapeles
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(url).then(function() {
+                // Cambiar icono a check
+                icon.removeClass('bi-link-45deg').addClass('bi-check-lg');
+                button.css('background', '#10B981');
+                button.css('border-color', '#10B981');
+                button.css('color', 'white');
+
+                // Volver al icono original después de 2 segundos
+                setTimeout(function() {
+                    icon.removeClass('bi-check-lg').addClass('bi-link-45deg');
+                    button.css('background', '');
+                    button.css('border-color', '');
+                    button.css('color', '');
+                }, 2000);
+            }).catch(function(err) {
+                console.error('Error al copiar:', err);
+                alert('No se pudo copiar el enlace');
+            });
+        } else {
+            // Fallback para navegadores antiguos
+            const textarea = document.createElement('textarea');
+            textarea.value = url;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+
+            try {
+                document.execCommand('copy');
+                icon.removeClass('bi-link-45deg').addClass('bi-check-lg');
+                button.css('background', '#10B981');
+                button.css('border-color', '#10B981');
+                button.css('color', 'white');
+
+                setTimeout(function() {
+                    icon.removeClass('bi-check-lg').addClass('bi-link-45deg');
+                    button.css('background', '');
+                    button.css('border-color', '');
+                    button.css('color', '');
+                }, 2000);
+            } catch (err) {
+                console.error('Error al copiar:', err);
+                alert('No se pudo copiar el enlace');
+            }
+
+            document.body.removeChild(textarea);
+        }
+    });
+
 
 })(jQuery);
