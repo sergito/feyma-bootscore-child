@@ -48,30 +48,6 @@ if ( post_password_required() ) {
 
 	<div class="summary entry-summary">
 
-		<!-- TRUST BADGES MODERNO -->
-		<div class="trust-badges-single">
-			<div class="trust-badge-item">
-				<i class="bi bi-shield-check"></i>
-				<span>Garantía oficial</span>
-			</div>
-			<div class="trust-badge-item">
-				<i class="bi bi-credit-card"></i>
-				<span>Pago seguro</span>
-			</div>
-			<div class="trust-badge-item">
-				<i class="bi bi-truck"></i>
-				<span>Envíos gratis a todo el país!</span>
-			</div>
-			<div class="trust-badge-item trust-badge-location">
-				<i class="bi bi-geo-alt"></i>
-				<div class="location-text">
-					<strong>Retiralo en nuestras oficinas,</strong>
-					<span>Av. del Libertador 6299,</span>
-					<span>C1428ARF, CABA. De 10 a 17hs.</span>
-				</div>
-			</div>
-		</div>
-
 		<?php
 		/**
 		 * Hook: woocommerce_single_product_summary.
@@ -87,52 +63,6 @@ if ( post_password_required() ) {
 		 */
 		do_action( 'woocommerce_single_product_summary' );
 		?>
-
-		<!-- SEPARADOR -->
-		<div class="product-divider"></div>
-
-		<!-- COMPARTIR SOCIAL -->
-		<div class="product-share-modern">
-			<span class="share-label">Compartir:</span>
-			<div class="share-buttons">
-				<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>"
-				   target="_blank"
-				   class="share-btn-circle"
-				   aria-label="Compartir en Facebook">
-					<i class="bi bi-facebook"></i>
-				</a>
-				<a href="https://twitter.com/intent/tweet?url=<?php echo urlencode(get_permalink()); ?>&text=<?php echo urlencode(get_the_title()); ?>"
-				   target="_blank"
-				   class="share-btn-circle"
-				   aria-label="Compartir en X (Twitter)">
-					<i class="bi bi-twitter-x"></i>
-				</a>
-				<a href="https://wa.me/?text=<?php echo urlencode(get_the_title() . ' ' . get_permalink()); ?>"
-				   target="_blank"
-				   class="share-btn-circle"
-				   aria-label="Compartir en WhatsApp">
-					<i class="bi bi-whatsapp"></i>
-				</a>
-				<button class="share-btn-circle copy-link-btn"
-						data-url="<?php echo esc_url(get_permalink()); ?>"
-						aria-label="Copiar enlace">
-					<i class="bi bi-link-45deg"></i>
-				</button>
-			</div>
-		</div>
-
-		<!-- CONTACTO RÁPIDO -->
-		<div class="quick-contact">
-			<span class="contact-label">¿Alguna duda?</span>
-			<div class="contact-buttons">
-				<a href="mailto:info@feyma.com.ar" class="contact-btn contact-btn-email">
-					<i class="bi bi-envelope-fill"></i>
-				</a>
-				<a href="https://wa.me/5491112345678" target="_blank" class="contact-btn contact-btn-whatsapp">
-					<i class="bi bi-whatsapp"></i>
-				</a>
-			</div>
-		</div>
 
 		<!-- PAGO SEGURO CARD -->
 		<div class="secure-payment-card">
