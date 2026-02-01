@@ -227,6 +227,12 @@ function bootscore_child_enqueue_styles() {
 	  $modified_textEffects = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/text-effects-epic.css'));
 	  wp_enqueue_style('text-effects-epic', get_stylesheet_directory_uri() . '/assets/css/text-effects-epic.css', array('main'), $modified_textEffects);
 
+	  // Checkout Epic Enhancements - Mejoras épicas para el checkout
+	  if ( is_checkout() ) {
+		  $modified_checkoutEpic = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/checkout-epic-enhancements.css'));
+		  wp_enqueue_style('checkout-epic-enhancements', get_stylesheet_directory_uri() . '/assets/css/checkout-epic-enhancements.css', array('main'), $modified_checkoutEpic);
+	  }
+
 	  // style.css
 	  wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
 	  wp_enqueue_style( 'bi', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css', false, '1.11');
@@ -1616,3 +1622,57 @@ function feyma_admin_page() {
 /**
  * Mover stock debajo de la galeria en single product:
  */
+
+// ============================================
+// CHECKOUT MEJORAS - FEYMA EPIC CHECKOUT
+// ============================================
+
+/**
+ * Quitar campo de cupón del checkout
+ */
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+
+/**
+ * Asegurar que el campo billing_email esté disponible sin registro
+ * Esto soluciona el error "Dirección de correo electrónico es un campo requerido"
+ */
+add_filter( 'woocommerce_checkout_fields', 'feyma_fix_billing_email_field', 999 );
+function feyma_fix_billing_email_field( $fields ) {
+    // Asegurar que billing_email siempre esté presente
+    if ( isset( $fields['billing']['billing_email'] ) ) {
+        // Hacer que sea requerido siempre
+        $fields['billing']['billing_email']['required'] = true;
+        $fields['billing']['billing_email']['priority'] = 1;
+        
+        // Asegurar que no tenga clase de oculto
+        if ( isset( $fields['billing']['billing_email']['class'] ) ) {
+            $fields['billing']['billing_email']['class'] = array_diff(
+                $fields['billing']['billing_email']['class'], 
+                array('form-row-hidden', 'hidden')
+            );
+        }
+    }
+    
+    return $fields;
+}
+
+/**
+ * Prevenir que WooCommerce oculte el campo de email
+ */
+add_filter( 'woocommerce_enable_order_notes_field', '__return_true' );
+
+/**
+ * Asegurar que el email se valide correctamente en checkout sin registro
+ */
+add_action( 'woocommerce_after_checkout_validation', 'feyma_validate_billing_email', 10, 2 );
+function feyma_validate_billing_email( $data, $errors ) {
+    // Si el email está vacío, agregar error
+    if ( empty( $data['billing_email'] ) ) {
+        $errors->add( 'billing_email', 'Por favor ingresá un email válido para continuar.' );
+    }
+    
+    // Validar formato de email
+    if ( ! empty( $data['billing_email'] ) && ! is_email( $data['billing_email'] ) ) {
+        $errors->add( 'billing_email', 'El formato del email no es válido.' );
+    }
+}

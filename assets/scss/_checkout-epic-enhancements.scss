@@ -1,0 +1,542 @@
+// ============================================
+// CHECKOUT EPIC ENHANCEMENTS
+// Mejoras épicas adicionales para el checkout
+// ============================================
+
+$purple: #3D3180;
+$gold: #F7B32B;
+$gold-light: #f7c96b;
+
+// ============================================
+// PROGRESS INDICATOR - ENHANCED
+// ============================================
+.checkout-progress {
+    position: relative;
+    overflow: hidden;
+
+    // Circuit pattern background
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image:
+            repeating-linear-gradient(0deg, transparent, transparent 19px, rgba($gold, 0.03) 19px, rgba($gold, 0.03) 20px),
+            repeating-linear-gradient(90deg, transparent, transparent 19px, rgba($gold, 0.03) 19px, rgba($gold, 0.03) 20px);
+        z-index: 0;
+        opacity: 0.5;
+    }
+
+    .progress-steps {
+        position: relative;
+        z-index: 2;
+    }
+
+    .progress-step {
+        // Efecto de glow en activo
+        &.active .step-circle {
+            box-shadow: 0 0 0 0 rgba($gold, 0.7);
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+
+        // Efecto completado
+        &.completed .step-circle {
+            background: linear-gradient(135deg, $gold 0%, $gold-light 100%);
+            border-color: $gold;
+
+            i {
+                animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+        }
+    }
+
+    .progress-line {
+        &.completed {
+            background: linear-gradient(90deg, $gold 0%, $gold-light 100%);
+            animation: fill-line 0.8s ease forwards;
+        }
+    }
+}
+
+@keyframes pulse-ring {
+    0% {
+        box-shadow: 0 0 0 0 rgba($gold, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 15px rgba($gold, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba($gold, 0);
+    }
+}
+
+@keyframes bounce-in {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fill-line {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+// ============================================
+// STEP HEADERS - ENHANCED
+// ============================================
+.checkout-step .step-header {
+    position: relative;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(90deg, $purple 0%, $gold 100%);
+        border-radius: 3px;
+        animation: slide-width 3s ease-in-out infinite;
+    }
+
+    h2 {
+        position: relative;
+
+        i {
+            transition: all 0.3s ease;
+        }
+    }
+
+    &:hover h2 i {
+        transform: scale(1.2) rotate(10deg);
+    }
+}
+
+@keyframes slide-width {
+    0%, 100% {
+        width: 60px;
+    }
+    50% {
+        width: 120px;
+    }
+}
+
+// ============================================
+// INPUTS - ENHANCED EPIC
+// ============================================
+.form-control-epic {
+    position: relative;
+
+    &:focus {
+        box-shadow:
+            0 0 0 3px rgba($gold, 0.1),
+            0 4px 12px rgba($purple, 0.1) !important;
+        transform: translateY(-2px);
+    }
+}
+
+.input-group-epic {
+    position: relative;
+
+    .input-icon {
+        transition: all 0.3s ease;
+    }
+
+    &:focus-within {
+        .input-icon {
+            color: $gold;
+            transform: scale(1.2);
+        }
+    }
+}
+
+// ============================================
+// BUTTONS - SUPER ENHANCED
+// ============================================
+.btn-epic {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+        z-index: -1;
+    }
+
+    &:hover::before {
+        width: 300px;
+        height: 300px;
+    }
+
+    i {
+        transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    &:hover i {
+        transform: translateX(5px);
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+.btn-primary-epic {
+    background: linear-gradient(135deg, $purple 0%, lighten($purple, 10%) 100%);
+    box-shadow:
+        0 4px 15px rgba($purple, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+    &:hover {
+        background: linear-gradient(135deg, $gold 0%, $gold-light 100%);
+        box-shadow:
+            0 8px 25px rgba($gold, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        transform: translateY(-3px);
+    }
+}
+
+// ============================================
+// TRUST BADGES - ENHANCED
+// ============================================
+.trust-badges-checkout {
+    .trust-badge-item {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba($gold, 0.1) 0%, transparent 100%);
+            border-radius: 12px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        &:hover::before {
+            opacity: 1;
+        }
+
+        i {
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        &:hover i {
+            transform: scale(1.2) rotate(5deg);
+            color: $gold;
+        }
+    }
+}
+
+// ============================================
+// EMAIL LOCKED - ENHANCED
+// ============================================
+.email-locked {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        animation: shine-sweep 3s ease-in-out infinite;
+    }
+
+    .btn-change-email {
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+        &:hover {
+            transform: translateX(-5px);
+            color: $gold;
+
+            i {
+                animation: wiggle 0.5s ease;
+            }
+        }
+    }
+}
+
+@keyframes shine-sweep {
+    0%, 100% {
+        left: -100%;
+    }
+    50% {
+        left: 200%;
+    }
+}
+
+@keyframes wiggle {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-10deg);
+    }
+    75% {
+        transform: rotate(10deg);
+    }
+}
+
+// ============================================
+// ORDER SUMMARY - ENHANCED
+// ============================================
+#order_review {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, $purple 0%, $gold 100%);
+        border-radius: 4px;
+    }
+
+    .cart-subtotal,
+    .order-total {
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: $gold;
+            transition: width 0.3s ease;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
+
+    .order-total {
+        background: linear-gradient(135deg, rgba($purple, 0.05) 0%, rgba($gold, 0.05) 100%);
+        border: 2px solid $gold;
+        border-radius: 12px;
+        padding: 20px !important;
+        margin-top: 20px;
+
+        strong {
+            background: linear-gradient(135deg, $purple 0%, $gold 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+// ============================================
+// SHIPPING METHODS - ENHANCED
+// ============================================
+.woocommerce-shipping-methods {
+    li {
+        position: relative;
+        transition: all 0.3s ease;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: $gold;
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+            border-radius: 4px;
+        }
+
+        &:hover::before {
+            transform: scaleY(1);
+        }
+
+        input[type="radio"]:checked + label {
+            color: $purple;
+            font-weight: 700;
+
+            &::after {
+                content: '✓';
+                margin-left: 10px;
+                color: $gold;
+                font-weight: 900;
+                animation: check-bounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+        }
+    }
+}
+
+@keyframes check-bounce {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+// ============================================
+// PAYMENT METHODS - ENHANCED
+// ============================================
+.wc_payment_methods {
+    li {
+        position: relative;
+        overflow: hidden;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba($gold, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        &:hover::after {
+            left: 100%;
+        }
+
+        &.wc_payment_method {
+            input[type="radio"]:checked + label {
+                border-left: 4px solid $gold;
+                padding-left: 20px;
+            }
+        }
+    }
+}
+
+// ============================================
+// PLACE ORDER BUTTON - SUPER EPIC
+// ============================================
+#place_order {
+    background: linear-gradient(135deg, $gold 0%, $gold-light 100%);
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+        0 10px 30px rgba($gold, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    font-size: 1.25rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+            45deg,
+            transparent 30%,
+            rgba(255, 255, 255, 0.3) 50%,
+            transparent 70%
+        );
+        animation: shimmer 3s infinite;
+    }
+
+    &:hover {
+        background: linear-gradient(135deg, lighten($gold, 5%) 0%, lighten($gold-light, 5%) 100%);
+        transform: translateY(-4px) scale(1.02);
+        box-shadow:
+            0 15px 40px rgba($gold, 0.6),
+            inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    }
+
+    &:active {
+        transform: translateY(-2px) scale(1);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+}
+
+// ============================================
+// RESPONSIVE ENHANCEMENTS
+// ============================================
+@media (max-width: 768px) {
+    .checkout-step {
+        padding: 24px 20px;
+
+        &.step-active {
+            transform: scale(1);
+        }
+    }
+
+    .checkout-progress .progress-step {
+        .step-circle {
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+        }
+
+        .step-label {
+            font-size: 11px;
+        }
+    }
+
+    #place_order {
+        font-size: 1.1rem !important;
+    }
+}
+
+// ============================================
+// ACCESSIBILITY
+// ============================================
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
