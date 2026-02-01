@@ -1,0 +1,580 @@
+.mi-cuenta-hero-simple {
+  background: #ffffff;
+  border-bottom: 3px solid #3D3180;
+  padding: 30px 0;
+  margin-bottom: 30px;
+}
+.mi-cuenta-hero-simple .hero-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.mi-cuenta-hero-simple .hero-content .user-avatar img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid #3D3180;
+}
+.mi-cuenta-hero-simple .hero-content .user-info .hero-greeting {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 5px 0;
+}
+.mi-cuenta-hero-simple .hero-content .user-info .hero-greeting .user-name {
+  color: #3D3180;
+}
+.mi-cuenta-hero-simple .hero-content .user-info .hero-subtitle {
+  font-size: 0.95rem;
+  color: #6c757d;
+  margin: 0;
+}
+@media (max-width: 576px) {
+  .mi-cuenta-hero-simple {
+    padding: 20px 0;
+  }
+  .mi-cuenta-hero-simple .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .mi-cuenta-hero-simple .hero-content .user-avatar img {
+    width: 50px;
+    height: 50px;
+  }
+  .mi-cuenta-hero-simple .hero-content .user-info .hero-greeting {
+    font-size: 1.25rem;
+  }
+}
+
+.mi-cuenta-stats-simple {
+  margin-bottom: 40px;
+}
+.mi-cuenta-stats-simple .stat-card-simple {
+  background: #ffffff;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease;
+}
+.mi-cuenta-stats-simple .stat-card-simple:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.mi-cuenta-stats-simple .stat-card-simple.purple {
+  border-left: 4px solid #3D3180;
+}
+.mi-cuenta-stats-simple .stat-card-simple.purple .stat-icon-simple {
+  background: rgba(61, 49, 128, 0.1);
+  color: #3D3180;
+}
+.mi-cuenta-stats-simple .stat-card-simple.gold {
+  border-left: 4px solid #F7B32B;
+}
+.mi-cuenta-stats-simple .stat-card-simple.gold .stat-icon-simple {
+  background: rgba(247, 179, 43, 0.1);
+  color: #F7B32B;
+}
+.mi-cuenta-stats-simple .stat-card-simple.blue {
+  border-left: 4px solid #3b82f6;
+}
+.mi-cuenta-stats-simple .stat-card-simple.blue .stat-icon-simple {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+.mi-cuenta-stats-simple .stat-card-simple .stat-icon-simple {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.mi-cuenta-stats-simple .stat-card-simple .stat-icon-simple i {
+  font-size: 24px;
+}
+.mi-cuenta-stats-simple .stat-card-simple .stat-content-simple .stat-number-simple {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+.mi-cuenta-stats-simple .stat-card-simple .stat-content-simple .stat-label-simple {
+  font-size: 0.85rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+@media (max-width: 576px) {
+  .mi-cuenta-stats-simple .stat-card-simple {
+    padding: 15px;
+  }
+  .mi-cuenta-stats-simple .stat-card-simple .stat-icon-simple {
+    width: 40px;
+    height: 40px;
+  }
+  .mi-cuenta-stats-simple .stat-card-simple .stat-icon-simple i {
+    font-size: 20px;
+  }
+  .mi-cuenta-stats-simple .stat-card-simple .stat-content-simple .stat-number-simple {
+    font-size: 1.25rem;
+  }
+}
+
+.addresses-wrapper .addresses-header {
+  margin-bottom: 30px;
+}
+.addresses-wrapper .addresses-header .addresses-title h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+.addresses-wrapper .addresses-header .addresses-title h2 i {
+  color: #3D3180;
+  margin-right: 10px;
+}
+.addresses-wrapper .addresses-header .addresses-title p {
+  font-size: 0.95rem;
+  color: #6c757d;
+  margin: 0;
+}
+.addresses-wrapper .address-card {
+  background: #ffffff;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.addresses-wrapper .address-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+.addresses-wrapper .address-card.purple {
+  border-top: 4px solid #3D3180;
+}
+.addresses-wrapper .address-card.purple .address-icon {
+  background: rgba(61, 49, 128, 0.1);
+  color: #3D3180;
+}
+.addresses-wrapper .address-card.purple .btn-edit-address {
+  background: #3D3180;
+}
+.addresses-wrapper .address-card.purple .btn-edit-address:hover {
+  background: rgb(43.4237288136, 34.8813559322, 91.1186440678);
+}
+.addresses-wrapper .address-card.gold {
+  border-top: 4px solid #F7B32B;
+}
+.addresses-wrapper .address-card.gold .address-icon {
+  background: rgba(247, 179, 43, 0.1);
+  color: #F7B32B;
+}
+.addresses-wrapper .address-card.gold .btn-edit-address {
+  background: #F7B32B;
+}
+.addresses-wrapper .address-card.gold .btn-edit-address:hover {
+  background: rgb(230.3090909091, 156.4363636364, 8.6909090909);
+}
+.addresses-wrapper .address-card .address-card-header {
+  background: #f8f9fa;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.addresses-wrapper .address-card .address-card-header .address-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.addresses-wrapper .address-card .address-card-header .address-icon i {
+  font-size: 24px;
+}
+.addresses-wrapper .address-card .address-card-header .address-card-title h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+.addresses-wrapper .address-card .address-card-body {
+  padding: 20px;
+  min-height: 120px;
+}
+.addresses-wrapper .address-card .address-card-body address {
+  font-style: normal;
+  color: #1a1a1a;
+  line-height: 1.8;
+  margin: 0;
+}
+.addresses-wrapper .address-card .address-card-body .address-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+.addresses-wrapper .address-card .address-card-body .address-empty i {
+  font-size: 2rem;
+  color: #6c757d;
+  margin-bottom: 10px;
+}
+.addresses-wrapper .address-card .address-card-body .address-empty p {
+  color: #6c757d;
+  margin: 0;
+}
+.addresses-wrapper .address-card .address-card-footer {
+  padding: 15px 20px;
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+}
+.addresses-wrapper .address-card .address-card-footer .btn-edit-address {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+.addresses-wrapper .address-card .address-card-footer .btn-edit-address i {
+  font-size: 16px;
+}
+.addresses-wrapper .address-card .address-card-footer .btn-edit-address:hover {
+  transform: translateX(3px);
+}
+
+.edit-address-wrapper {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+  overflow: hidden;
+}
+.edit-address-wrapper .edit-address-header {
+  background: linear-gradient(135deg, #3D3180 0%, rgb(43.4237288136, 34.8813559322, 91.1186440678) 100%);
+  padding: 30px;
+  text-align: center;
+  color: #ffffff;
+}
+.edit-address-wrapper .edit-address-header .address-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.edit-address-wrapper .edit-address-header .address-icon i {
+  font-size: 28px;
+  color: #ffffff;
+}
+.edit-address-wrapper .edit-address-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #ffffff;
+}
+.edit-address-wrapper .edit-address-header .address-subtitle {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin: 0;
+}
+.edit-address-wrapper .edit-address-form {
+  padding: 30px;
+}
+.edit-address-wrapper .edit-address-form .woocommerce-address-fields__field-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.edit-address-wrapper .edit-address-form .woocommerce-address-fields__field-wrapper .form-row {
+  margin: 0;
+}
+.edit-address-wrapper .edit-address-form .woocommerce-address-fields__field-wrapper .form-row label {
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  display: block;
+}
+.edit-address-wrapper .edit-address-form .woocommerce-address-fields__field-wrapper .form-row label .required {
+  color: #dc3545;
+}
+.edit-address-wrapper .edit-address-form .woocommerce-address-fields__field-wrapper .form-row input[type=text],
+.edit-address-wrapper .edit-address-form .woocommerce-address-fields__field-wrapper .form-row input[type=email],
+.edit-address-wrapper .edit-address-form .woocommerce-address-fields__field-wrapper .form-row input[type=tel],
+.edit-address-wrapper .edit-address-form .woocommerce-address-fields__field-wrapper .form-row select,
+.edit-address-wrapper .edit-address-form .woocommerce-address-fields__field-wrapper .form-row textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+.edit-address-wrapper .edit-address-form .woocommerce-address-fields__field-wrapper .form-row input[type=text]:focus,
+.edit-address-wrapper .edit-address-form .woocommerce-address-fields__field-wrapper .form-row input[type=email]:focus,
+.edit-address-wrapper .edit-address-form .woocommerce-address-fields__field-wrapper .form-row input[type=tel]:focus,
+.edit-address-wrapper .edit-address-form .woocommerce-address-fields__field-wrapper .form-row select:focus,
+.edit-address-wrapper .edit-address-form .woocommerce-address-fields__field-wrapper .form-row textarea:focus {
+  outline: none;
+  border-color: #3D3180;
+  box-shadow: 0 0 0 3px rgba(61, 49, 128, 0.1);
+}
+.edit-address-wrapper .edit-address-form .form-actions {
+  display: flex;
+  gap: 15px;
+  padding-top: 20px;
+  border-top: 2px solid #e9ecef;
+}
+.edit-address-wrapper .edit-address-form .form-actions .btn-primary-feyma {
+  background: #3D3180;
+  color: #ffffff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+.edit-address-wrapper .edit-address-form .form-actions .btn-primary-feyma:hover {
+  background: rgb(43.4237288136, 34.8813559322, 91.1186440678);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(61, 49, 128, 0.3);
+}
+.edit-address-wrapper .edit-address-form .form-actions .btn-outline-secondary {
+  background: transparent;
+  color: #6c757d;
+  border: 2px solid #e9ecef;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.edit-address-wrapper .edit-address-form .form-actions .btn-outline-secondary:hover {
+  background: #f8f9fa;
+  border-color: #6c757d;
+  color: #1a1a1a;
+}
+@media (max-width: 768px) {
+  .edit-address-wrapper .edit-address-header {
+    padding: 20px;
+  }
+  .edit-address-wrapper .edit-address-header .address-icon {
+    width: 50px;
+    height: 50px;
+  }
+  .edit-address-wrapper .edit-address-header .address-icon i {
+    font-size: 24px;
+  }
+  .edit-address-wrapper .edit-address-header h2 {
+    font-size: 1.25rem;
+  }
+  .edit-address-wrapper .edit-address-form {
+    padding: 20px;
+  }
+  .edit-address-wrapper .edit-address-form .form-actions {
+    flex-direction: column;
+  }
+  .edit-address-wrapper .edit-address-form .form-actions .btn-primary-feyma,
+  .edit-address-wrapper .edit-address-form .form-actions .btn-outline-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.mi-cuenta-actions {
+  margin-bottom: 40px;
+}
+.mi-cuenta-actions .section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+.mi-cuenta-actions .action-card {
+  background: #ffffff;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+.mi-cuenta-actions .action-card i {
+  font-size: 2rem;
+  color: #3D3180;
+}
+.mi-cuenta-actions .action-card span {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+.mi-cuenta-actions .action-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(61, 49, 128, 0.2);
+  border-color: #3D3180;
+}
+.mi-cuenta-actions .action-card:hover i {
+  transform: scale(1.1);
+}
+
+.mi-cuenta-recent-orders .section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+.mi-cuenta-recent-orders .order-card-mini {
+  background: #ffffff;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.mi-cuenta-recent-orders .order-card-mini:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.mi-cuenta-recent-orders .order-card-mini .order-header {
+  background: #f8f9fa;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e9ecef;
+}
+.mi-cuenta-recent-orders .order-card-mini .order-header .order-number {
+  font-weight: 700;
+  color: #1a1a1a;
+}
+.mi-cuenta-recent-orders .order-card-mini .order-header .order-number i {
+  color: #3D3180;
+}
+.mi-cuenta-recent-orders .order-card-mini .order-header .order-status {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.mi-cuenta-recent-orders .order-card-mini .order-header .order-status.status-completed {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+.mi-cuenta-recent-orders .order-card-mini .order-header .order-status.status-processing {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+.mi-cuenta-recent-orders .order-card-mini .order-header .order-status.status-pending {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+.mi-cuenta-recent-orders .order-card-mini .order-info {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mi-cuenta-recent-orders .order-card-mini .order-info .order-date {
+  color: #6c757d;
+}
+.mi-cuenta-recent-orders .order-card-mini .order-info .order-date i {
+  color: #3D3180;
+}
+.mi-cuenta-recent-orders .order-card-mini .order-info .order-total {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #3D3180;
+}
+.mi-cuenta-recent-orders .order-card-mini .order-footer {
+  padding: 15px 20px;
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+}
+.mi-cuenta-recent-orders .order-card-mini .order-footer .view-order-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #3D3180;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.mi-cuenta-recent-orders .order-card-mini .order-footer .view-order-btn:hover {
+  transform: translateX(5px);
+}
+
+.mi-cuenta-empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+.mi-cuenta-empty-state .empty-icon {
+  font-size: 4rem;
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+.mi-cuenta-empty-state h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+.mi-cuenta-empty-state p {
+  color: #6c757d;
+  margin-bottom: 30px;
+}
+.mi-cuenta-empty-state .btn-start-shopping {
+  background: #3D3180;
+  color: #ffffff;
+  padding: 12px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+.mi-cuenta-empty-state .btn-start-shopping:hover {
+  background: rgb(43.4237288136, 34.8813559322, 91.1186440678);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(61, 49, 128, 0.3);
+}
+
+@media (max-width: 768px) {
+  .addresses-wrapper .address-card .address-card-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .mi-cuenta-actions .action-card {
+    padding: 15px;
+  }
+  .mi-cuenta-actions .action-card i {
+    font-size: 1.5rem;
+  }
+}
+
+/*# sourceMappingURL=mi-cuenta-simple.css.map */
