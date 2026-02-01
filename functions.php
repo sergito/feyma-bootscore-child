@@ -207,6 +207,10 @@ function bootscore_child_enqueue_styles() {
 	  $modified_bootscoreChildCss = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/main.css'));
 	  wp_enqueue_style('main', get_stylesheet_directory_uri() . '/assets/css/main.css', array('parent-style','bi','aos-css'), $modified_bootscoreChildCss);
 
+	  // Page Hero V2 - Hero headers épicos para páginas internas
+	  $modified_heroV2 = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/page-hero-v2.css'));
+	  wp_enqueue_style('page-hero-v2', get_stylesheet_directory_uri() . '/assets/css/page-hero-v2.css', array('main'), $modified_heroV2);
+
 	  // Checkout Simple Clean - Versión simplificada sin degradés (solo en checkout)
 	  if ( is_checkout() ) {
 		  $modified_checkoutClean = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/checkout-simple-clean.css'));
