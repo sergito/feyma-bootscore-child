@@ -231,6 +231,10 @@ function bootscore_child_enqueue_styles() {
 	  if ( is_checkout() ) {
 		  $modified_checkoutEpic = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/checkout-epic-enhancements.css'));
 		  wp_enqueue_style('checkout-epic-enhancements', get_stylesheet_directory_uri() . '/assets/css/checkout-epic-enhancements.css', array('main'), $modified_checkoutEpic);
+
+		  // Checkout Simple Clean - Versión simplificada sin degradés
+		  $modified_checkoutClean = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/checkout-simple-clean.css'));
+		  wp_enqueue_style('checkout-simple-clean', get_stylesheet_directory_uri() . '/assets/css/checkout-simple-clean.css', array('checkout-epic-enhancements'), $modified_checkoutClean);
 	  }
 
 	  // style.css

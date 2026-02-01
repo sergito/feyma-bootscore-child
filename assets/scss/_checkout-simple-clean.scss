@@ -1,0 +1,414 @@
+// ============================================
+// CHECKOUT SIMPLE Y LIMPIO - SIN DEGRADÉS
+// Colores suaves y profesionales
+// ============================================
+
+$purple: #3D3180;
+$purple-light: #6B5B95;
+$gold: #F7B32B;
+$green: #10B981;
+$blue: #3B82F6;
+$gray-bg: #F8F9FA;
+$gray-light: #E9ECEF;
+$gray-text: #6C757D;
+$white: #FFFFFF;
+
+// ============================================
+// CHECKOUT HEADER - SIMPLE
+// ============================================
+.checkout-header-simple {
+    background: $white;
+    padding: 30px 0;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-bottom: 3px solid $purple;
+
+    h1 {
+        text-align: center;
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: $purple;
+        margin: 0;
+        letter-spacing: 0.5px;
+    }
+}
+
+// ============================================
+// OVERRIDE GRADIENTES CON COLORES SÓLIDOS
+// ============================================
+
+// Progress Indicator - Sin degradés
+.checkout-progress {
+    background: $white !important;
+
+    .progress-step {
+        &.active .step-circle {
+            background: $purple !important;
+            border-color: $purple !important;
+        }
+
+        &.completed .step-circle {
+            background: $gold !important;
+            border-color: $gold !important;
+        }
+    }
+
+    .progress-line {
+        &.completed {
+            background: $gold !important;
+        }
+    }
+}
+
+// Checkout Step - Colores suaves
+.checkout-step {
+    background: $white !important;
+    border: 2px solid $gray-light !important;
+
+    &.step-active {
+        border-color: $purple !important;
+        box-shadow: 0 4px 12px rgba(61, 49, 128, 0.1) !important;
+    }
+
+    &.step-inactive {
+        background: $gray-bg !important;
+        border-color: $gray-light !important;
+    }
+
+    .step-header {
+        h2 {
+            color: $purple !important;
+
+            i {
+                color: $gold !important;
+            }
+        }
+
+        &::after {
+            background: $gold !important;
+        }
+    }
+}
+
+// Input Focus - Color sólido
+.form-control-epic:focus,
+.form-control:focus {
+    border-color: $purple !important;
+    box-shadow: 0 0 0 0.2rem rgba(61, 49, 128, 0.15) !important;
+}
+
+.input-group-epic:focus-within .input-icon {
+    color: $purple !important;
+}
+
+// Buttons - Colores sólidos suaves
+.btn-primary-epic,
+.btn-epic.btn-primary-epic {
+    background: $purple !important;
+    border-color: $purple !important;
+    color: $white !important;
+
+    &:hover {
+        background: lighten($purple, 8%) !important;
+        border-color: lighten($purple, 8%) !important;
+        box-shadow: 0 4px 12px rgba(61, 49, 128, 0.25) !important;
+    }
+
+    &::before {
+        display: none !important; // Quitar efecto ripple
+    }
+}
+
+.btn-outline-epic {
+    background: $white !important;
+    border: 2px solid $gray-light !important;
+    color: $gray-text !important;
+
+    &:hover {
+        background: $gray-bg !important;
+        border-color: $purple !important;
+        color: $purple !important;
+    }
+}
+
+// Trust Badges - Sin efectos complejos
+.trust-badges-checkout .trust-badge-item {
+    background: $gray-bg !important;
+    border: 1px solid $gray-light !important;
+
+    &::before {
+        display: none !important;
+    }
+
+    i {
+        color: $green !important;
+    }
+
+    &:hover i {
+        transform: none !important;
+        color: $green !important;
+    }
+}
+
+// Email Locked - Simple
+.email-locked {
+    background: $gray-bg !important;
+    border: 1px solid $gray-light !important;
+
+    &::before {
+        display: none !important; // Quitar shine effect
+    }
+
+    i {
+        color: $green !important;
+    }
+
+    .btn-change-email {
+        color: $purple !important;
+
+        &:hover {
+            color: $gold !important;
+            transform: none !important;
+
+            i {
+                animation: none !important;
+            }
+        }
+    }
+}
+
+// Order Summary - Sin degradés
+#order_review {
+    background: $white !important;
+    border: 2px solid $gray-light !important;
+    border-radius: 12px !important;
+    padding: 24px !important;
+
+    &::before {
+        display: none !important;
+    }
+
+    .cart-subtotal,
+    .order-total {
+        &::after {
+            display: none !important;
+        }
+    }
+
+    .order-total {
+        background: $gray-bg !important;
+        border: 2px solid $purple !important;
+
+        strong {
+            background: none !important;
+            -webkit-background-clip: initial !important;
+            -webkit-text-fill-color: initial !important;
+            color: $purple !important;
+        }
+    }
+}
+
+// Shipping Methods - Simple
+.woocommerce-shipping-methods li {
+    &::before {
+        background: $purple !important;
+    }
+
+    input[type="radio"]:checked + label {
+        color: $purple !important;
+
+        &::after {
+            color: $green !important;
+        }
+    }
+}
+
+// Payment Methods - Simple
+.wc_payment_methods li {
+    &::after {
+        display: none !important; // Quitar shine effect
+    }
+
+    &.wc_payment_method input[type="radio"]:checked + label {
+        border-left-color: $purple !important;
+        background: rgba(61, 49, 128, 0.03) !important;
+    }
+}
+
+// Place Order Button - Simple y claro
+#place_order,
+button[name="woocommerce_checkout_place_order"] {
+    background: $green !important;
+    border: none !important;
+    color: $white !important;
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+    padding: 18px 40px !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3) !important;
+
+    &::before {
+        display: none !important; // Quitar shimmer
+    }
+
+    &:hover {
+        background: lighten($green, 5%) !important;
+        box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4) !important;
+        transform: translateY(-2px) !important;
+    }
+
+    &:active {
+        transform: translateY(0) !important;
+    }
+}
+
+// Stats Cards (Mi Cuenta) - Colores sólidos
+.stat-card {
+    &.purple .stat-icon {
+        background: $purple !important;
+    }
+
+    &.gold .stat-icon {
+        background: $gold !important;
+    }
+
+    &.blue .stat-icon {
+        background: $blue !important;
+    }
+
+    &::before {
+        background: $purple !important;
+    }
+}
+
+// Hero Headers - Sin degradés
+.page-hero-v2,
+.mi-cuenta-hero {
+    background: $purple !important;
+}
+
+.hero-greeting .gradient-text {
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    -webkit-text-fill-color: initial !important;
+    color: $gold !important;
+}
+
+// Action Cards - Simple
+.action-card {
+    &:hover {
+        border-color: $purple !important;
+    }
+}
+
+// Order Cards - Simple
+.order-card-mini {
+    .order-status {
+        &.status-completed,
+        &.status-processing {
+            background: $green !important;
+        }
+
+        &.status-pending {
+            background: #F59E0B !important;
+        }
+
+        &.status-cancelled,
+        &.status-refunded,
+        &.status-failed {
+            background: #EF4444 !important;
+        }
+    }
+
+    .view-order-btn {
+        background: $purple !important;
+
+        &:hover {
+            background: lighten($purple, 8%) !important;
+        }
+    }
+}
+
+// Contact Info Icons - Colores sólidos
+.info-icon {
+    &.purple {
+        background: $purple !important;
+    }
+
+    &.gold {
+        background: $gold !important;
+    }
+
+    &::before {
+        display: none !important;
+    }
+}
+
+// Buttons generales - Sin degradés
+.btn-epic,
+.btn-view-all,
+.btn-start-shopping,
+.btn-submit {
+    &:hover::before {
+        display: none !important;
+    }
+}
+
+// Desactivar todas las animaciones de shimmer/pulse
+@keyframes shimmer {
+    to {
+        transform: none !important;
+    }
+}
+
+@keyframes pulse-ring {
+    to {
+        box-shadow: none !important;
+    }
+}
+
+@keyframes shine-sweep {
+    to {
+        left: -100% !important;
+    }
+}
+
+// ============================================
+// WRAPPER GENERAL - FONDO SUAVE
+// ============================================
+.feyma-checkout-wrapper {
+    background: $gray-bg !important;
+}
+
+.woocommerce-checkout {
+    background: $gray-bg !important;
+}
+
+// ============================================
+// TIPOGRAFÍA SUAVE
+// ============================================
+h1, h2, h3, h4, h5, h6 {
+    color: $purple !important;
+}
+
+.step-description {
+    color: $gray-text !important;
+}
+
+// ============================================
+// RESPONSIVE
+// ============================================
+@media (max-width: 768px) {
+    .checkout-header-simple {
+        padding: 20px 0;
+
+        h1 {
+            font-size: 1.5rem;
+        }
+    }
+
+    #place_order {
+        font-size: 1.1rem !important;
+        padding: 16px 32px !important;
+    }
+}

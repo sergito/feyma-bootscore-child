@@ -21,6 +21,13 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
 
 <div class="feyma-checkout-wrapper">
 
+  <!-- Checkout Header Simple -->
+  <div class="checkout-header-simple">
+    <div class="container">
+      <h1>Finalizar Compra</h1>
+    </div>
+  </div>
+
   <!-- Progress Indicator -->
   <div class="checkout-progress">
     <div class="container">
