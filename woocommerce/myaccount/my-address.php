@@ -1,16 +1,7 @@
 <?php
 /**
- * My Addresses
+ * My Addresses - FEYMA ENHANCED
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/myaccount/my-address.php.
- *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
- *
- * @see     https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
  * @version 9.3.0
  */
@@ -23,8 +14,8 @@ if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) {
 	$get_addresses = apply_filters(
 		'woocommerce_my_account_get_addresses',
 		array(
-			'billing'  => __( 'Billing address', 'woocommerce' ),
-			'shipping' => __( 'Shipping address', 'woocommerce' ),
+			'billing'  => __( 'Dirección de Facturación', 'woocommerce' ),
+			'shipping' => __( 'Dirección de Envío', 'woocommerce' ),
 		),
 		$customer_id
 	);
@@ -32,62 +23,64 @@ if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) {
 	$get_addresses = apply_filters(
 		'woocommerce_my_account_get_addresses',
 		array(
-			'billing' => __( 'Billing address', 'woocommerce' ),
+			'billing' => __( 'Dirección de Facturación', 'woocommerce' ),
 		),
 		$customer_id
 	);
 }
-
-$oldcol = 1;
-$col    = 1;
 ?>
 
-<p>
-	<?php echo apply_filters( 'woocommerce_my_account_my_address_description', esc_html__( 'The following addresses will be used on the checkout page by default.', 'woocommerce' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-</p>
+<div class="addresses-wrapper">
+	<!-- Header -->
+	<div class="addresses-header">
+		<div class="addresses-title">
+			<h2><i class="bi bi-geo-alt"></i> Mis Direcciones</h2>
+			<p>Estas direcciones se utilizarán por defecto en el checkout</p>
+		</div>
+	</div>
 
-<?php if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) : ?>
-	<div class="u-columns woocommerce-Addresses col2-set addresses">
-<?php endif; ?>
-
-<?php foreach ( $get_addresses as $name => $address_title ) : ?>
-	<?php
-		$address = wc_get_account_formatted_address( $name );
-		$col     = $col * -1;
-		$oldcol  = $oldcol * -1;
-	?>
-
-	<div class="u-column<?php echo $col < 0 ? 1 : 2; ?> col-<?php echo $oldcol < 0 ? 1 : 2; ?> woocommerce-Address">
-		<header class="woocommerce-Address-title title">
-			<h2><?php echo esc_html( $address_title ); ?></h2>
-			<a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', $name ) ); ?>" class="edit">
-				<?php
-					printf(
-						/* translators: %s: Address title */
-						$address ? esc_html__( 'Edit %s', 'woocommerce' ) : esc_html__( 'Add %s', 'woocommerce' ),
-						esc_html( $address_title )
-					);
-				?>
-			</a>
-		</header>
-		<address>
+	<!-- Address Cards -->
+	<div class="row g-4">
+		<?php foreach ( $get_addresses as $name => $address_title ) : ?>
 			<?php
-				echo $address ? wp_kses_post( $address ) : esc_html_e( 'You have not set up this type of address yet.', 'woocommerce' );
-
-				/**
-				 * Used to output content after core address fields.
-				 *
-				 * @param string $name Address type.
-				 * @since 8.7.0
-				 */
-				do_action( 'woocommerce_my_account_after_my_address', $name );
+				$address = wc_get_account_formatted_address( $name );
+				$icon = ( 'billing' === $name ) ? 'bi-receipt-cutoff' : 'bi-truck';
+				$color_class = ( 'billing' === $name ) ? 'purple' : 'gold';
 			?>
-		</address>
-	</div>
 
-<?php endforeach; ?>
+			<div class="col-lg-6">
+				<div class="address-card <?php echo esc_attr( $color_class ); ?>">
+					<div class="address-card-header">
+						<div class="address-icon">
+							<i class="bi <?php echo esc_attr( $icon ); ?>"></i>
+						</div>
+						<div class="address-card-title">
+							<h3><?php echo esc_html( $address_title ); ?></h3>
+						</div>
+					</div>
 
-<?php if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) : ?>
+					<div class="address-card-body">
+						<?php if ( $address ) : ?>
+							<address><?php echo wp_kses_post( $address ); ?></address>
+						<?php else : ?>
+							<div class="address-empty">
+								<i class="bi bi-plus-circle"></i>
+								<p>No has configurado esta dirección aún</p>
+							</div>
+						<?php endif; ?>
+					</div>
+
+					<div class="address-card-footer">
+						<a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', $name ) ); ?>" class="btn-edit-address">
+							<i class="bi bi-pencil-square"></i>
+							<?php echo $address ? 'Editar Dirección' : 'Agregar Dirección'; ?>
+						</a>
+					</div>
+
+					<?php do_action( 'woocommerce_my_account_after_my_address', $name ); ?>
+				</div>
+			</div>
+
+		<?php endforeach; ?>
 	</div>
-	<?php
-endif;
+</div>

@@ -211,6 +211,12 @@ function bootscore_child_enqueue_styles() {
 	  $modified_heroV2 = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/page-hero-v2.css'));
 	  wp_enqueue_style('page-hero-v2', get_stylesheet_directory_uri() . '/assets/css/page-hero-v2.css', array('main'), $modified_heroV2);
 
+	  // Mi Cuenta Simple - Diseño bonito y simple para My Account
+	  if ( is_account_page() ) {
+		  $modified_miCuentaSimple = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/mi-cuenta-simple.css'));
+		  wp_enqueue_style('mi-cuenta-simple', get_stylesheet_directory_uri() . '/assets/css/mi-cuenta-simple.css', array('main'), $modified_miCuentaSimple);
+	  }
+
 	  // Checkout Simple Clean - Versión simplificada sin degradés (solo en checkout)
 	  if ( is_checkout() ) {
 		  $modified_checkoutClean = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/checkout-simple-clean.css'));

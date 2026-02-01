@@ -21,68 +21,64 @@ $total_spent = wc_get_customer_total_spent( get_current_user_id() );
 ?>
 
 <!-- ============================================
-     HERO HEADER MI CUENTA
+     HERO HEADER MI CUENTA - SIMPLE
      ============================================ -->
-<div class="mi-cuenta-hero">
-    <div class="hero-circuit-pattern-v2"></div>
-    <div class="hero-particles-v2"></div>
-
+<div class="mi-cuenta-hero-simple">
     <div class="hero-content">
         <div class="user-avatar">
-            <?php echo get_avatar( get_current_user_id(), 80 ); ?>
+            <?php echo get_avatar( get_current_user_id(), 60 ); ?>
         </div>
-        <h1 class="hero-greeting">
-            Hola, <span class="gradient-text"><?php echo esc_html( $customer->display_name ); ?></span>
-        </h1>
-        <p class="hero-subtitle">
-            Bienvenido a tu panel de control
-        </p>
-        <a href="<?php echo esc_url( wc_logout_url() ); ?>" class="logout-link">
-            <i class="bi bi-box-arrow-right"></i> Cerrar Sesión
-        </a>
+        <div class="user-info">
+            <h1 class="hero-greeting">
+                Hola, <span class="user-name"><?php echo esc_html( $customer->display_name ); ?></span>
+            </h1>
+            <p class="hero-subtitle">
+                Bienvenido a tu panel de control
+            </p>
+        </div>
     </div>
 </div>
 
 <!-- ============================================
-     STATS CARDS
+     STATS CARDS - SIMPLE
      ============================================ -->
-<div class="mi-cuenta-stats">
-    <div class="row g-4 mb-5">
+<div class="mi-cuenta-stats-simple">
+    <div class="row g-3 mb-4">
         <!-- Pedidos Totales -->
-        <div class="col-lg-4 col-md-6">
-            <div class="stat-card purple">
-                <div class="stat-icon">
+        <div class="col-lg-4 col-sm-6">
+            <div class="stat-card-simple purple">
+                <div class="stat-icon-simple">
                     <i class="bi bi-bag-check-fill"></i>
                 </div>
-                <div class="stat-content">
-                    <div class="stat-number"><?php echo esc_html( $total_orders ); ?></div>
-                    <div class="stat-label">Pedidos Totales</div>
+                <div class="stat-content-simple">
+                    <div class="stat-number-simple"><?php echo esc_html( $total_orders ); ?></div>
+                    <div class="stat-label-simple">Pedidos</div>
                 </div>
             </div>
         </div>
 
         <!-- Total Gastado -->
-        <div class="col-lg-4 col-md-6">
-            <div class="stat-card gold">
-                <div class="stat-icon">
+        <div class="col-lg-4 col-sm-6">
+            <div class="stat-card-simple gold">
+                <div class="stat-icon-simple">
                     <i class="bi bi-currency-dollar"></i>
                 </div>
-                <div class="stat-content">
-                    <div class="stat-number"><?php echo wc_price( $total_spent ); ?></div>
-                    <div class="stat-label">Total Invertido</div>
+                <div class="stat-content-simple">
+                    <div class="stat-number-simple"><?php echo wc_price( $total_spent ); ?></div>
+                    <div class="stat-label-simple">Total Gastado</div>
                 </div>
             </div>
         </div>
 
         <!-- Miembro Desde -->
-        <div class="col-lg-4 col-md-6">
-            <div class="stat-card blue">
-                <div class="stat-icon">
+        <div class="col-lg-4 col-sm-6">
+            <div class="stat-card-simple blue">
+                <div class="stat-icon-simple">
                     <i class="bi bi-calendar-check-fill"></i>
                 </div>
-                <div class="stat-content">
-                    <div class="stat-number"><?php echo esc_html( date_i18n( 'Y', strtotime( $customer->user_registered ) ) ); ?></div>
-                    <div class="stat-label">Miembro Desde</div>
+                <div class="stat-content-simple">
+                    <div class="stat-number-simple"><?php echo esc_html( date_i18n( 'Y', strtotime( $customer->user_registered ) ) ); ?></div>
+                    <div class="stat-label-simple">Miembro Desde</div>
                 </div>
             </div>
         </div>
