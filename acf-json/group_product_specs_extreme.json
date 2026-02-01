@@ -1,0 +1,1570 @@
+{
+    "key": "group_product_specs_extreme",
+    "title": "Especificaciones Técnicas del Producto",
+    "fields": [
+        {
+            "key": "field_tab_basic",
+            "label": "Información Básica",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_marca",
+            "label": "Marca",
+            "name": "marca",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Selecciona la marca del producto",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "ASUS": "ASUS",
+                "MSI": "MSI",
+                "Lenovo": "Lenovo",
+                "HP": "HP",
+                "Dell": "Dell",
+                "Acer": "Acer",
+                "Apple": "Apple",
+                "Samsung": "Samsung",
+                "LG": "LG",
+                "Razer": "Razer",
+                "Alienware": "Alienware",
+                "Gigabyte": "Gigabyte",
+                "Otra": "Otra"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": "Selecciona una marca"
+        },
+        {
+            "key": "field_modelo",
+            "label": "Modelo",
+            "name": "modelo",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Modelo específico del producto",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Ej: TUF Gaming F15 FX507VV",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_uso_recomendado",
+            "label": "Uso Recomendado",
+            "name": "uso_recomendado",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Principal uso del producto",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Gaming": "Gaming",
+                "Diseño Gráfico": "Diseño Gráfico",
+                "Edición de Video": "Edición de Video",
+                "Programación": "Programación",
+                "Oficina": "Oficina",
+                "Estudiantes": "Estudiantes",
+                "Hogar": "Hogar",
+                "Profesional": "Profesional"
+            },
+            "default_value": false,
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": "Selecciona uso"
+        },
+        {
+            "key": "field_tab_processor",
+            "label": "Procesador & Gráficos",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_cpu_marca",
+            "label": "Marca del Procesador",
+            "name": "cpu_marca",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Intel": "Intel",
+                "AMD": "AMD",
+                "Apple": "Apple Silicon"
+            },
+            "default_value": "Intel",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_cpu_modelo",
+            "label": "Modelo del Procesador",
+            "name": "cpu_modelo",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Ej: Core i7-13620H, Ryzen 9 7945HX, M3 Max",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Core i7-13620H",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_cpu_nucleos",
+            "label": "Núcleos",
+            "name": "cpu_nucleos",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "15",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": 10,
+            "prepend": "",
+            "append": "cores",
+            "min": 2,
+            "max": 128,
+            "step": 1
+        },
+        {
+            "key": "field_cpu_threads",
+            "label": "Threads",
+            "name": "cpu_threads",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "15",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": 16,
+            "prepend": "",
+            "append": "threads",
+            "min": 2,
+            "max": 256,
+            "step": 1
+        },
+        {
+            "key": "field_cpu_freq_base",
+            "label": "Frecuencia Base",
+            "name": "cpu_freq_base",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "2.4",
+            "prepend": "",
+            "append": "GHz",
+            "maxlength": ""
+        },
+        {
+            "key": "field_cpu_freq_turbo",
+            "label": "Frecuencia Turbo",
+            "name": "cpu_freq_turbo",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "4.9",
+            "prepend": "Hasta",
+            "append": "GHz",
+            "maxlength": ""
+        },
+        {
+            "key": "field_cpu_cache",
+            "label": "Caché",
+            "name": "cpu_cache",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": 24,
+            "prepend": "",
+            "append": "MB",
+            "maxlength": ""
+        },
+        {
+            "key": "field_cpu_tdp",
+            "label": "TDP",
+            "name": "cpu_tdp",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": 45,
+            "prepend": "",
+            "append": "W",
+            "maxlength": ""
+        },
+        {
+            "key": "field_gpu_tipo",
+            "label": "Tipo de GPU",
+            "name": "gpu_tipo",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Dedicada": "Dedicada",
+                "Integrada": "Integrada",
+                "Híbrida": "Híbrida (Dedicada + Integrada)"
+            },
+            "default_value": "Dedicada",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_gpu_marca",
+            "label": "Marca GPU",
+            "name": "gpu_marca",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "NVIDIA": "NVIDIA",
+                "AMD": "AMD",
+                "Intel": "Intel",
+                "Apple": "Apple"
+            },
+            "default_value": "NVIDIA",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_gpu_modelo",
+            "label": "Modelo GPU",
+            "name": "gpu_modelo",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Ej: GeForce RTX 4060, Radeon RX 7600M XT",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "GeForce RTX 4060",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_gpu_vram",
+            "label": "VRAM",
+            "name": "gpu_vram",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Memoria de video dedicada",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "2GB": "2GB",
+                "4GB": "4GB",
+                "6GB": "6GB",
+                "8GB": "8GB",
+                "12GB": "12GB",
+                "16GB": "16GB",
+                "24GB": "24GB"
+            },
+            "default_value": "8GB",
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_gpu_vram_tipo",
+            "label": "Tipo VRAM",
+            "name": "gpu_vram_tipo",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "GDDR6": "GDDR6",
+                "GDDR6X": "GDDR6X",
+                "GDDR5": "GDDR5",
+                "HBM2": "HBM2",
+                "HBM3": "HBM3"
+            },
+            "default_value": "GDDR6",
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_gpu_tgp",
+            "label": "TGP (Total Graphics Power)",
+            "name": "gpu_tgp",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": 140,
+            "prepend": "",
+            "append": "W",
+            "maxlength": ""
+        },
+        {
+            "key": "field_gpu_features",
+            "label": "Características GPU",
+            "name": "gpu_features",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "Selecciona las tecnologías disponibles",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Ray Tracing": "Ray Tracing",
+                "DLSS": "DLSS",
+                "DLSS 3": "DLSS 3",
+                "FSR": "FSR (AMD)",
+                "Reflex": "NVIDIA Reflex",
+                "OptiX": "OptiX (Rendering)"
+            },
+            "default_value": [],
+            "return_format": "value",
+            "allow_custom": 0,
+            "layout": "vertical",
+            "toggle": 0,
+            "save_custom": 0,
+            "custom_choice_button_text": "Añadir nueva opción"
+        },
+        {
+            "key": "field_tab_memory",
+            "label": "Memoria & Almacenamiento",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_ram_capacidad",
+            "label": "Capacidad RAM",
+            "name": "ram_capacidad",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "4GB": "4GB",
+                "8GB": "8GB",
+                "16GB": "16GB",
+                "32GB": "32GB",
+                "64GB": "64GB",
+                "128GB": "128GB"
+            },
+            "default_value": "16GB",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_ram_tipo",
+            "label": "Tipo RAM",
+            "name": "ram_tipo",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "DDR5": "DDR5",
+                "DDR4": "DDR4",
+                "DDR3": "DDR3",
+                "LPDDR5": "LPDDR5",
+                "LPDDR4X": "LPDDR4X"
+            },
+            "default_value": "DDR5",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_ram_frecuencia",
+            "label": "Frecuencia RAM",
+            "name": "ram_frecuencia",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": 4800,
+            "prepend": "",
+            "append": "MHz",
+            "maxlength": ""
+        },
+        {
+            "key": "field_ram_slots",
+            "label": "Slots RAM",
+            "name": "ram_slots",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Ej: 2x SO-DIMM, 4x DIMM",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "2x SO-DIMM",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_ram_max",
+            "label": "Máximo Expandible",
+            "name": "ram_max",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "8GB": "8GB",
+                "16GB": "16GB",
+                "32GB": "32GB",
+                "64GB": "64GB",
+                "128GB": "128GB",
+                "256GB": "256GB"
+            },
+            "default_value": "32GB",
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_storage_capacidad",
+            "label": "Capacidad SSD",
+            "name": "storage_capacidad",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "128GB": "128GB",
+                "256GB": "256GB",
+                "512GB": "512GB",
+                "1TB": "1TB",
+                "2TB": "2TB",
+                "4TB": "4TB"
+            },
+            "default_value": "512GB",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_storage_tipo",
+            "label": "Tipo SSD",
+            "name": "storage_tipo",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "NVMe PCIe 4.0": "NVMe PCIe 4.0",
+                "NVMe PCIe 3.0": "NVMe PCIe 3.0",
+                "SATA SSD": "SATA SSD",
+                "M.2 NVMe": "M.2 NVMe"
+            },
+            "default_value": "NVMe PCIe 4.0",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_storage_velocidad_lectura",
+            "label": "Velocidad Lectura",
+            "name": "storage_velocidad_lectura",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": 7000,
+            "prepend": "Hasta",
+            "append": "MB\/s",
+            "maxlength": ""
+        },
+        {
+            "key": "field_storage_velocidad_escritura",
+            "label": "Velocidad Escritura",
+            "name": "storage_velocidad_escritura",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": 5000,
+            "prepend": "Hasta",
+            "append": "MB\/s",
+            "maxlength": ""
+        },
+        {
+            "key": "field_storage_slots",
+            "label": "Slots M.2 Disponibles",
+            "name": "storage_slots",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Total de slots M.2",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 2,
+            "placeholder": "",
+            "prepend": "",
+            "append": "slots",
+            "min": 1,
+            "max": 4,
+            "step": 1
+        },
+        {
+            "key": "field_tab_display",
+            "label": "Pantalla",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_display_tamanio",
+            "label": "Tamaño",
+            "name": "display_tamanio",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "13.3": "13.3\"",
+                "14": "14\"",
+                "15.6": "15.6\"",
+                "16": "16\"",
+                "17.3": "17.3\"",
+                "18": "18\"",
+                "21": "21\"",
+                "24": "24\"",
+                "27": "27\""
+            },
+            "default_value": "15.6",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_display_resolucion",
+            "label": "Resolución",
+            "name": "display_resolucion",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1920x1080": "1920 x 1080 (Full HD)",
+                "2560x1440": "2560 x 1440 (QHD)",
+                "3840x2160": "3840 x 2160 (4K UHD)",
+                "2560x1600": "2560 x 1600 (WQXGA)",
+                "3456x2234": "3456 x 2234 (3.5K)",
+                "3840x2400": "3840 x 2400 (4K)"
+            },
+            "default_value": "1920x1080",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_display_panel",
+            "label": "Tipo de Panel",
+            "name": "display_panel",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "IPS": "IPS",
+                "OLED": "OLED",
+                "Mini-LED": "Mini-LED",
+                "VA": "VA",
+                "TN": "TN",
+                "Liquid Retina": "Liquid Retina (Apple)"
+            },
+            "default_value": "IPS",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_display_refresh_rate",
+            "label": "Tasa de Refresco",
+            "name": "display_refresh_rate",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "60": "60 Hz",
+                "90": "90 Hz",
+                "120": "120 Hz",
+                "144": "144 Hz",
+                "165": "165 Hz",
+                "240": "240 Hz",
+                "360": "360 Hz"
+            },
+            "default_value": 144,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_display_response_time",
+            "label": "Tiempo de Respuesta",
+            "name": "display_response_time",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": 3,
+            "prepend": "",
+            "append": "ms",
+            "maxlength": ""
+        },
+        {
+            "key": "field_display_brillo",
+            "label": "Brillo",
+            "name": "display_brillo",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": 300,
+            "prepend": "",
+            "append": "nits",
+            "maxlength": ""
+        },
+        {
+            "key": "field_display_color_gamut",
+            "label": "Cobertura de Color",
+            "name": "display_color_gamut",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Ej: 100% sRGB, 72% NTSC",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "100% sRGB",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_display_features",
+            "label": "Características",
+            "name": "display_features",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Anti-Glare": "Anti-Glare (Anti-reflejo)",
+                "Touchscreen": "Touchscreen (Táctil)",
+                "G-SYNC": "G-SYNC",
+                "FreeSync": "FreeSync",
+                "HDR": "HDR",
+                "Dolby Vision": "Dolby Vision"
+            },
+            "default_value": [],
+            "return_format": "value",
+            "allow_custom": 0,
+            "layout": "vertical",
+            "toggle": 0,
+            "save_custom": 0,
+            "custom_choice_button_text": "Añadir nueva opción"
+        },
+        {
+            "key": "field_tab_connectivity",
+            "label": "Conectividad",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_wifi",
+            "label": "Wi-Fi",
+            "name": "wifi",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Wi-Fi 6E": "Wi-Fi 6E (802.11ax)",
+                "Wi-Fi 6": "Wi-Fi 6 (802.11ax)",
+                "Wi-Fi 5": "Wi-Fi 5 (802.11ac)",
+                "Wi-Fi 4": "Wi-Fi 4 (802.11n)"
+            },
+            "default_value": "Wi-Fi 6E",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_bluetooth",
+            "label": "Bluetooth",
+            "name": "bluetooth",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "5.3": "Bluetooth 5.3",
+                "5.2": "Bluetooth 5.2",
+                "5.1": "Bluetooth 5.1",
+                "5.0": "Bluetooth 5.0",
+                "4.2": "Bluetooth 4.2"
+            },
+            "default_value": "5.3",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_ethernet",
+            "label": "Ethernet",
+            "name": "ethernet",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Si": "Sí (RJ-45 Gigabit)",
+                "No": "No"
+            },
+            "default_value": "Si",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "horizontal",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_ports",
+            "label": "Puertos",
+            "name": "ports",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Agrega cada puerto disponible",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Agregar Puerto",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_port_tipo",
+                    "label": "Tipo",
+                    "name": "tipo",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Thunderbolt 4": "Thunderbolt 4",
+                        "USB-C 3.2 Gen 2": "USB-C 3.2 Gen 2",
+                        "USB-A 3.2 Gen 2": "USB-A 3.2 Gen 2",
+                        "USB-A 3.2 Gen 1": "USB-A 3.2 Gen 1",
+                        "USB-A 2.0": "USB-A 2.0",
+                        "HDMI 2.1": "HDMI 2.1",
+                        "HDMI 2.0": "HDMI 2.0",
+                        "DisplayPort": "DisplayPort",
+                        "Audio Jack 3.5mm": "Audio Jack 3.5mm",
+                        "SD Card Reader": "SD Card Reader",
+                        "microSD Card": "microSD Card Reader"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": "",
+                    "parent_repeater": "field_ports"
+                },
+                {
+                    "key": "field_port_cantidad",
+                    "label": "Cantidad",
+                    "name": "cantidad",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 1,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": 1,
+                    "max": 10,
+                    "step": 1,
+                    "parent_repeater": "field_ports"
+                }
+            ]
+        },
+        {
+            "key": "field_tab_battery",
+            "label": "Batería & Dimensiones",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_battery_capacidad",
+            "label": "Capacidad Batería",
+            "name": "battery_capacidad",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": 90,
+            "prepend": "",
+            "append": "Wh",
+            "maxlength": ""
+        },
+        {
+            "key": "field_battery_duracion",
+            "label": "Duración Batería",
+            "name": "battery_duracion",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": 6,
+            "prepend": "Hasta",
+            "append": "horas",
+            "maxlength": ""
+        },
+        {
+            "key": "field_charger_power",
+            "label": "Potencia Cargador",
+            "name": "charger_power",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": 280,
+            "prepend": "",
+            "append": "W",
+            "maxlength": ""
+        },
+        {
+            "key": "field_dim_ancho",
+            "label": "Ancho",
+            "name": "dim_ancho",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "354.9",
+            "prepend": "",
+            "append": "mm",
+            "maxlength": ""
+        },
+        {
+            "key": "field_dim_profundidad",
+            "label": "Profundidad",
+            "name": "dim_profundidad",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "251.9",
+            "prepend": "",
+            "append": "mm",
+            "maxlength": ""
+        },
+        {
+            "key": "field_dim_altura",
+            "label": "Altura",
+            "name": "dim_altura",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "22.4 ~ 25.4",
+            "prepend": "",
+            "append": "mm",
+            "maxlength": ""
+        },
+        {
+            "key": "field_dim_peso",
+            "label": "Peso",
+            "name": "dim_peso",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "2.2",
+            "prepend": "",
+            "append": "kg",
+            "maxlength": ""
+        },
+        {
+            "key": "field_tab_extras",
+            "label": "Audio, Teclado & Extras",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_audio_speakers",
+            "label": "Altavoces",
+            "name": "audio_speakers",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "2x 2W Stereo",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_audio_tech",
+            "label": "Tecnología Audio",
+            "name": "audio_tech",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "DTS:X Ultra",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_keyboard_type",
+            "label": "Tipo de Teclado",
+            "name": "keyboard_type",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Chiclet RGB",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_keyboard_backlight",
+            "label": "Retroiluminación",
+            "name": "keyboard_backlight",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "RGB por tecla": "RGB por tecla (individual)",
+                "RGB por zona": "RGB por zona (4 zonas)",
+                "Blanco": "Blanco",
+                "Sin retroiluminación": "Sin retroiluminación"
+            },
+            "default_value": "RGB por zona",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_keyboard_numpad",
+            "label": "Teclado Numérico",
+            "name": "keyboard_numpad",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "message": "Incluye teclado numérico",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "Sí",
+            "ui_off_text": "No"
+        },
+        {
+            "key": "field_webcam",
+            "label": "Webcam",
+            "name": "webcam",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "720p HD",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_sistema_operativo",
+            "label": "Sistema Operativo",
+            "name": "sistema_operativo",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Windows 11 Home": "Windows 11 Home",
+                "Windows 11 Pro": "Windows 11 Pro",
+                "Windows 10": "Windows 10",
+                "macOS": "macOS",
+                "Linux": "Linux",
+                "FreeDOS": "FreeDOS (Sin SO)"
+            },
+            "default_value": "Windows 11 Home",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_certificaciones",
+            "label": "Certificaciones",
+            "name": "certificaciones",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "MIL-STD-810H": "MIL-STD-810H (Durabilidad Militar)",
+                "Energy Star": "Energy Star",
+                "EPEAT": "EPEAT",
+                "TCO": "TCO Certified"
+            },
+            "default_value": [],
+            "return_format": "value",
+            "allow_custom": 0,
+            "layout": "vertical",
+            "toggle": 0,
+            "save_custom": 0,
+            "custom_choice_button_text": "Añadir nueva opción"
+        },
+        {
+            "key": "field_contenido_caja",
+            "label": "Contenido de la Caja",
+            "name": "contenido_caja",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Un ítem por línea",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "1x Laptop\n1x Adaptador AC\n1x Cable de alimentación\n1x Manual de usuario\n1x Tarjeta de garantía",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 5,
+            "new_lines": "br"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "product"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Especificaciones técnicas completas del producto con campos optimizados para fácil completado",
+    "show_in_rest": 0,
+    "modified": 1768628412
+}

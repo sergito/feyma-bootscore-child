@@ -1,0 +1,21 @@
+/**
+ * ACF Admin Styles - Colores suaves solo en títulos principales
+ *
+ * @package Bootscore Child
+ * @version 1.0.0
+ */
+
+/* SEO EXTREMO - Verde suave */
+#acf-group_seo_settings .postbox-header h2 {
+    color: #059669;
+}
+
+/* HOME ACF - Púrpura suave */
+#acf-group_home_settings .postbox-header h2 {
+    color: #7c3aed;
+}
+
+/* ESPECIFICACIONES TÉCNICAS - Azul suave */
+#acf-group_product_specs_extreme .postbox-header h2 {
+    color: #2563eb;
+}

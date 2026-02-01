@@ -1,0 +1,912 @@
+{
+    "key": "group_home_settings",
+    "title": "Configuración de Home - FEYMA",
+    "fields": [
+        {
+            "key": "field_hero_carousel",
+            "label": "Hero Carousel - Slides",
+            "name": "hero_carousel",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Configura los slides del carousel principal del hero. Recomendado: 3-4 slides máximo.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 1,
+            "max": 5,
+            "collapsed": "field_slide_title",
+            "button_label": "Agregar Slide",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_slide_badge_text",
+                    "label": "Texto del Badge",
+                    "name": "badge_text",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Ej: 'Nuevos Arrivals 2025', 'Gaming Zone', 'Apple Premium'",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "Nuevos Arrivals 2025",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_hero_carousel"
+                },
+                {
+                    "key": "field_slide_badge_icon",
+                    "label": "Icono del Badge (Bootstrap Icons)",
+                    "name": "badge_icon",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Nombre del icono de Bootstrap Icons (sin 'bi-'). Ej: 'lightning-charge-fill', 'controller', 'apple'",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "lightning-charge-fill",
+                    "maxlength": "",
+                    "placeholder": "lightning-charge-fill",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_hero_carousel"
+                },
+                {
+                    "key": "field_slide_title",
+                    "label": "Título Principal",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Primera línea del título (Ej: 'Potencia', 'Domina el', 'Piensa')",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "Potencia",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_hero_carousel"
+                },
+                {
+                    "key": "field_slide_title_gradient",
+                    "label": "Título con Gradiente",
+                    "name": "title_gradient",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Segunda línea del título con efecto gradiente (Ej: 'ilimitada.', 'juego.', 'diferente.')",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "ilimitada.",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_hero_carousel"
+                },
+                {
+                    "key": "field_slide_description",
+                    "label": "Descripción",
+                    "name": "description",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Descripción del slide. Usa <br> para saltos de línea.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 3,
+                    "placeholder": "Notebooks de última generación. Intel Core i9 Gen 14,<br>RTX 4090, 144Hz. El futuro en tus manos.",
+                    "new_lines": "",
+                    "parent_repeater": "field_hero_carousel"
+                },
+                {
+                    "key": "field_slide_button_text",
+                    "label": "Texto del Botón Principal",
+                    "name": "button_text",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Ver Productos",
+                    "maxlength": "",
+                    "placeholder": "Ver Notebooks",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_hero_carousel"
+                },
+                {
+                    "key": "field_slide_button_link",
+                    "label": "Link del Botón Principal",
+                    "name": "button_link",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "https:\/\/ejemplo.com\/categoria\/notebooks",
+                    "parent_repeater": "field_hero_carousel"
+                },
+                {
+                    "key": "field_slide_image",
+                    "label": "Imagen del Producto",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Imagen principal del slide. Tamaño recomendado: 600x400px (PNG con fondo transparente ideal)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "preview_size": "medium",
+                    "parent_repeater": "field_hero_carousel"
+                },
+                {
+                    "key": "field_slide_specs",
+                    "label": "Especificaciones Destacadas",
+                    "name": "specs",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "Especificaciones técnicas que aparecen debajo del botón (máximo 3 recomendado)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "table",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 3,
+                    "collapsed": "",
+                    "button_label": "Agregar Spec",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_spec_icon",
+                            "label": "Icono",
+                            "name": "icon",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Icono Bootstrap (sin 'bi-'). Ej: 'cpu', 'gpu-card', 'lightning-charge'",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "cpu",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_slide_specs"
+                        },
+                        {
+                            "key": "field_spec_text",
+                            "label": "Texto",
+                            "name": "text",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Ej: 'Intel i9', 'RTX 4090', '144Hz'",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "Intel i9",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_slide_specs"
+                        }
+                    ],
+                    "parent_repeater": "field_hero_carousel"
+                },
+                {
+                    "key": "field_slide_theme",
+                    "label": "Tema del Slide",
+                    "name": "theme",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "Afecta los colores del badge, botón y glow de la imagen",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "default": "Default (Púrpura\/Oro)",
+                        "gaming": "Gaming (Rojo)",
+                        "apple": "Apple (Gris oscuro)"
+                    },
+                    "default_value": "default",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_hero_carousel"
+                }
+            ]
+        },
+        {
+            "key": "field_categories",
+            "label": "Categorías Destacadas",
+            "name": "categories",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Categorías que aparecen en la sección 'Explora por Categoría'. Recomendado: 4 categorías.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 1,
+            "max": 6,
+            "collapsed": "field_category_name",
+            "button_label": "Agregar Categoría",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_category_name",
+                    "label": "Nombre",
+                    "name": "name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "Gaming",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_categories"
+                },
+                {
+                    "key": "field_category_slug",
+                    "label": "Slug de la Categoría\/Tag",
+                    "name": "slug",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Slug de la categoría o tag de WooCommerce",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "gaming",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_categories"
+                },
+                {
+                    "key": "field_category_icon",
+                    "label": "Icono (Bootstrap Icons)",
+                    "name": "icon",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Sin 'bi-'. Ej: 'controller', 'palette', 'briefcase', 'apple'",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "controller",
+                    "maxlength": "",
+                    "placeholder": "controller",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_categories"
+                },
+                {
+                    "key": "field_category_color",
+                    "label": "Color",
+                    "name": "color",
+                    "aria-label": "",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#3D3180",
+                    "enable_opacity": 0,
+                    "return_format": "string",
+                    "parent_repeater": "field_categories"
+                },
+                {
+                    "key": "field_category_count",
+                    "label": "Contador (ej: '120+ productos')",
+                    "name": "count",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "34",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "120+ productos",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_categories"
+                },
+                {
+                    "key": "field_category_description",
+                    "label": "Descripción",
+                    "name": "description",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "Alto rendimiento extremo",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_categories"
+                }
+            ]
+        },
+        {
+            "key": "field_selected_products",
+            "label": "Productos Seleccionados (Grid 8 productos)",
+            "name": "selected_products",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "Selecciona hasta 8 productos para mostrar en el grid de 'Productos Seleccionados'. Si no seleccionas ninguno, se mostrarán productos featured aleatorios.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "product"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "return_format": "object",
+            "multiple": 1,
+            "allow_null": 1,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_featured_carousel_products",
+            "label": "Productos Destacados (Carousel)",
+            "name": "featured_carousel_products",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "Selecciona productos para mostrar en el carousel de 'Productos Destacados'. Si no seleccionas ninguno, se usará el shortcode con productos featured.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "product"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "return_format": "object",
+            "multiple": 1,
+            "allow_null": 1,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_why_choose_us",
+            "label": "Por Qué Elegirnos - Features",
+            "name": "why_choose_us",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Características que aparecen en la sección '¿Por qué elegir FEYMA?'. Recomendado: 6 features.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 1,
+            "max": 8,
+            "collapsed": "field_feature_title",
+            "button_label": "Agregar Feature",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_feature_icon",
+                    "label": "Icono (Bootstrap Icons)",
+                    "name": "icon",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Sin 'bi-'. Ej: 'shield-check', 'truck', 'credit-card'",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "shield-check",
+                    "maxlength": "",
+                    "placeholder": "shield-check",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_why_choose_us"
+                },
+                {
+                    "key": "field_feature_title",
+                    "label": "Título",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "67",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "Garantía Extendida",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_why_choose_us"
+                },
+                {
+                    "key": "field_feature_description",
+                    "label": "Descripción",
+                    "name": "description",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "67",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 2,
+                    "placeholder": "2 años de garantía en todos los productos. Soporte técnico incluido.",
+                    "new_lines": "",
+                    "parent_repeater": "field_why_choose_us"
+                },
+                {
+                    "key": "field_feature_color",
+                    "label": "Color del Icono",
+                    "name": "color",
+                    "aria-label": "",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#3D3180",
+                    "enable_opacity": 0,
+                    "return_format": "string",
+                    "parent_repeater": "field_why_choose_us"
+                }
+            ]
+        },
+        {
+            "key": "field_brands",
+            "label": "Marcas Destacadas",
+            "name": "brands",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Logos de marcas que aparecen en el carousel de marcas. Recomendado: 10-15 marcas.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 1,
+            "max": 20,
+            "collapsed": "field_brand_name",
+            "button_label": "Agregar Marca",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_brand_name",
+                    "label": "Nombre",
+                    "name": "name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "Apple",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_brands"
+                },
+                {
+                    "key": "field_brand_logo",
+                    "label": "Logo",
+                    "name": "logo",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Logo de la marca (preferentemente SVG o PNG con fondo transparente)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "svg,png,jpg",
+                    "preview_size": "thumbnail",
+                    "parent_repeater": "field_brands"
+                }
+            ]
+        },
+        {
+            "key": "field_testimonials",
+            "label": "Testimonios de Clientes",
+            "name": "testimonials",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Reseñas de clientes que aparecen en la sección de testimonios. Recomendado: 3-6 testimonios.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 1,
+            "max": 10,
+            "collapsed": "field_testimonial_name",
+            "button_label": "Agregar Testimonio",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_testimonial_name",
+                    "label": "Nombre del Cliente",
+                    "name": "name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "Martín González",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_testimonials"
+                },
+                {
+                    "key": "field_testimonial_location",
+                    "label": "Ubicación",
+                    "name": "location",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "Buenos Aires",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_testimonials"
+                },
+                {
+                    "key": "field_testimonial_rating",
+                    "label": "Calificación (1-5 estrellas)",
+                    "name": "rating",
+                    "aria-label": "",
+                    "type": "range",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 5,
+                    "min": 1,
+                    "max": 5,
+                    "step": 1,
+                    "prepend": "",
+                    "append": "estrellas",
+                    "parent_repeater": "field_testimonials"
+                },
+                {
+                    "key": "field_testimonial_avatar",
+                    "label": "Avatar (Iniciales)",
+                    "name": "avatar",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "2 letras que aparecerán como avatar. Ej: 'MG' para Martín González",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "34",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": 2,
+                    "placeholder": "MG",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_testimonials"
+                },
+                {
+                    "key": "field_testimonial_product",
+                    "label": "Producto Comprado",
+                    "name": "product",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "Notebook MSI Katana",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_testimonials"
+                },
+                {
+                    "key": "field_testimonial_text",
+                    "label": "Testimonio",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 3,
+                    "placeholder": "Excelente atención y productos de primera calidad. Compré mi notebook gamer y llegó al día siguiente. Totalmente recomendado!",
+                    "new_lines": "",
+                    "parent_repeater": "field_testimonials"
+                }
+            ]
+        },
+        {
+            "key": "field_stats",
+            "label": "Estadísticas (debajo de testimonios)",
+            "name": "stats",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Números destacados que aparecen debajo de los testimonios. Recomendado: 4 stats.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 1,
+            "max": 5,
+            "collapsed": "",
+            "button_label": "Agregar Stat",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_stat_number",
+                    "label": "Número",
+                    "name": "number",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Ej: '15K+', '4.9', '500+', '98%'",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "15K+",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_stats"
+                },
+                {
+                    "key": "field_stat_label",
+                    "label": "Etiqueta",
+                    "name": "label",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Ej: 'Clientes Felices', 'Rating Promedio'",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "Clientes Felices",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_stats"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "home-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Configuración completa de todas las secciones dinámicas de la página de inicio (Home)",
+    "show_in_rest": 0,
+    "modified": 1768623552
+}

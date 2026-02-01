@@ -1,0 +1,426 @@
+{
+    "key": "group_seo_settings",
+    "title": "SEO EXTREMO - Configuración de Producto",
+    "fields": [
+        {
+            "key": "field_seo_tab",
+            "label": "SEO",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_seo_title",
+            "label": "Meta Title (Título SEO)",
+            "name": "seo_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Título optimizado para buscadores (50-60 caracteres). Si está vacío, se generará automáticamente.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 60,
+            "placeholder": "Ej: Notebook Gamer MSI Katana 15 RTX 4060 i7 | FEYMA",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_seo_description",
+            "label": "Meta Description (Descripción SEO)",
+            "name": "seo_description",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Descripción para buscadores (150-160 caracteres). Incluye palabras clave y call to action. Si está vacía, se generará automáticamente.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 160,
+            "rows": 3,
+            "placeholder": "Ej: Comprá Notebook Gamer MSI Katana 15 con RTX 4060, Intel i7 Gen 14, 16GB RAM. Envío gratis. 12 cuotas sin interés. Garantía oficial.",
+            "new_lines": ""
+        },
+        {
+            "key": "field_seo_keywords",
+            "label": "Focus Keywords (Palabras Clave)",
+            "name": "seo_keywords",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "3-5 palabras clave principales separadas por comas. Ej: notebook gamer, msi katana, rtx 4060",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "notebook gamer, msi katana, rtx 4060",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_seo_canonical",
+            "label": "Canonical URL (Opcional)",
+            "name": "seo_canonical",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "Solo si quieres especificar una URL canónica diferente (para evitar contenido duplicado). Normalmente déjalo vacío.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "https:\/\/feyma.com.ar\/producto\/notebook-msi-katana"
+        },
+        {
+            "key": "field_seo_robots",
+            "label": "Robots Meta Tag",
+            "name": "seo_robots",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Controla cómo los motores de búsqueda indexan esta página.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "index_follow": "Index, Follow (Por defecto - Indexar y seguir enlaces)",
+                "noindex_follow": "No Index, Follow (No indexar, pero seguir enlaces)",
+                "index_nofollow": "Index, No Follow (Indexar, pero no seguir enlaces)",
+                "noindex_nofollow": "No Index, No Follow (No indexar ni seguir enlaces)"
+            },
+            "default_value": "index_follow",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_og_tab",
+            "label": "Redes Sociales (Open Graph \/ Twitter)",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_og_title",
+            "label": "Título para Redes Sociales (Open Graph)",
+            "name": "og_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Título cuando se comparte en Facebook\/LinkedIn (55-65 caracteres). Si está vacío, usa el Meta Title.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 65,
+            "placeholder": "Notebook Gamer MSI Katana 15 RTX 4060 - OFERTA",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_og_description",
+            "label": "Descripción para Redes Sociales",
+            "name": "og_description",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Descripción cuando se comparte en redes (110-130 caracteres). Si está vacía, usa la Meta Description.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 130,
+            "rows": 2,
+            "placeholder": "La notebook gamer que estabas buscando. RTX 4060, i7, 16GB RAM. Envío gratis y 12 cuotas sin interés.",
+            "new_lines": ""
+        },
+        {
+            "key": "field_og_image",
+            "label": "Imagen para Redes Sociales",
+            "name": "og_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Imagen personalizada para compartir en redes (1200x630px recomendado). Si está vacía, usa la imagen destacada del producto.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": 1200,
+            "min_height": 630,
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,jpeg,png",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_schema_tab",
+            "label": "Schema.org \/ Rich Snippets",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_schema_brand",
+            "label": "Marca del Producto (Schema)",
+            "name": "schema_brand",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Marca del producto para Rich Snippets. Ej: MSI, ASUS, HP, Apple. Si está vacío, se intentará obtener automáticamente.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "MSI",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_schema_sku",
+            "label": "SKU Personalizado",
+            "name": "schema_sku",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "SKU personalizado para Schema.org. Si está vacío, usa el SKU de WooCommerce.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "MSI-KATANA-15-B13V",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_schema_gtin",
+            "label": "GTIN \/ EAN \/ UPC",
+            "name": "schema_gtin",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Código de barras internacional (GTIN, EAN, UPC). Mejora mucho el SEO si lo tienes.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": 7798142341234,
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_schema_condition",
+            "label": "Condición del Producto",
+            "name": "schema_condition",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Condición del producto para Schema.org",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "NewCondition": "Nuevo",
+                "RefurbishedCondition": "Reacondicionado",
+                "UsedCondition": "Usado"
+            },
+            "default_value": "NewCondition",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_advanced_tab",
+            "label": "Avanzado",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_breadcrumb_title",
+            "label": "Título en Breadcrumbs (Opcional)",
+            "name": "breadcrumb_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Título corto para breadcrumbs. Si está vacío, usa el título del producto.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 40,
+            "placeholder": "MSI Katana 15",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_priority",
+            "label": "Prioridad en Sitemap",
+            "name": "sitemap_priority",
+            "aria-label": "",
+            "type": "range",
+            "instructions": "Prioridad de esta página en el sitemap (0.1 - 1.0). Productos importantes: 0.8-1.0",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 0.80000000000000004,
+            "min": "0.1",
+            "max": 1,
+            "step": "0.1",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_changefreq",
+            "label": "Frecuencia de Cambio",
+            "name": "sitemap_changefreq",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Con qué frecuencia cambia este producto (para sitemap XML)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "always": "Siempre",
+                "hourly": "Cada hora",
+                "daily": "Diariamente",
+                "weekly": "Semanalmente",
+                "monthly": "Mensualmente",
+                "yearly": "Anualmente",
+                "never": "Nunca"
+            },
+            "default_value": "weekly",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "product"
+            }
+        ]
+    ],
+    "menu_order": 5,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Campos SEO extremos para cada producto. Mejora el posicionamiento en Google con meta tags, Open Graph, Twitter Cards y Schema.org",
+    "show_in_rest": 0,
+    "modified": 1768627125
+}

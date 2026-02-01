@@ -1,0 +1,436 @@
+/**
+ * FEYMA ORDER RECEIVED / THANK YOU PAGE STYLES
+ */
+
+// Variables (same as checkout)
+$feyma-purple: #3D3180;
+$feyma-gold: #F7B32B;
+$feyma-purple-dark: #2A2259;
+$success: #10B981;
+$error: #EF4444;
+$warning: #F59E0B;
+$info: #3B82F6;
+$gray-lighter: #F3F4F6;
+$gray-light: #E5E7EB;
+$gray: #6B7280;
+$gray-dark: #374151;
+$dark: #1F2937;
+
+// ============================================
+// ORDER RECEIVED PAGE
+// ============================================
+.feyma-order-received-page {
+    padding: 60px 0 80px;
+    background: $gray-lighter;
+}
+
+// ============================================
+// SUCCESS HEADER
+// ============================================
+.success-header {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: fadeInDown 0.6s ease;
+
+    .success-icon {
+        width: 100px;
+        height: 100px;
+        background: $success;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 24px;
+        animation: scaleIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+        i {
+            font-size: 50px;
+            color: white;
+        }
+    }
+
+    h1 {
+        font-size: 36px;
+        font-weight: 800;
+        color: $dark;
+        margin-bottom: 12px;
+    }
+
+    p {
+        font-size: 18px;
+        color: $gray;
+
+        strong {
+            color: $feyma-purple;
+        }
+    }
+
+    .order-number {
+        display: inline-block;
+        padding: 8px 20px;
+        background: rgba(61, 49, 128, 0.1);
+        color: $feyma-purple;
+        border-radius: 20px;
+        font-weight: 700;
+        margin-top: 12px;
+        font-size: 16px;
+    }
+}
+
+// ============================================
+// FAILED HEADER
+// ============================================
+.failed-header {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: fadeInDown 0.6s ease;
+
+    .failed-icon {
+        width: 100px;
+        height: 100px;
+        background: $error;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 24px;
+        animation: scaleIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+        i {
+            font-size: 50px;
+            color: white;
+        }
+    }
+
+    h1 {
+        font-size: 36px;
+        font-weight: 800;
+        color: $dark;
+        margin-bottom: 12px;
+    }
+
+    p {
+        font-size: 18px;
+        color: $gray;
+    }
+}
+
+// ============================================
+// ORDER DETAILS BOX
+// ============================================
+.order-details-box {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    margin-bottom: 24px;
+
+    .box-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: $dark;
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+        border-bottom: 2px solid $gray-lighter;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        i {
+            font-size: 24px;
+            color: $feyma-purple;
+        }
+    }
+
+    .detail-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 0;
+        border-bottom: 1px solid $gray-lighter;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            color: $gray-dark;
+            font-weight: 500;
+        }
+
+        .detail-value {
+            font-weight: 600;
+            color: $dark;
+            text-align: right;
+        }
+    }
+}
+
+// ============================================
+// ORDER PRODUCTS
+// ============================================
+.order-product {
+    display: flex;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid $gray-lighter;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    .product-image {
+        width: 80px;
+        height: 80px;
+        background: $gray-lighter;
+        border-radius: 12px;
+        overflow: hidden;
+        flex-shrink: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .product-info {
+        flex: 1;
+
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        p {
+            font-size: 13px;
+            color: $gray;
+            margin: 0;
+
+            &.variation-info {
+                margin: 4px 0;
+                font-size: 12px;
+            }
+        }
+    }
+
+    .product-price {
+        font-size: 18px;
+        font-weight: 700;
+        color: $feyma-purple;
+        margin-left: auto;
+        flex-shrink: 0;
+    }
+}
+
+// ============================================
+// ORDER TOTAL
+// ============================================
+.order-total {
+    background: $gray-lighter;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+
+    .total-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        font-size: 16px;
+
+        &.final {
+            padding-top: 16px;
+            margin-top: 16px;
+            border-top: 2px solid $feyma-purple;
+
+            .total-label {
+                font-size: 20px;
+                font-weight: 700;
+            }
+
+            .total-value {
+                font-size: 24px;
+                font-weight: 900;
+                color: $feyma-purple;
+            }
+        }
+    }
+}
+
+// ============================================
+// INFO BOX
+// ============================================
+.info-box {
+    background: rgba(59, 130, 246, 0.1);
+    border-left: 4px solid $info;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 24px;
+
+    h4 {
+        font-size: 16px;
+        font-weight: 700;
+        color: $dark;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    p {
+        font-size: 14px;
+        color: $gray-dark;
+        margin: 0;
+    }
+}
+
+// ============================================
+// TIMELINE
+// ============================================
+.timeline {
+    margin-top: 20px;
+
+    .timeline-item {
+        display: flex;
+        gap: 16px;
+        padding: 16px 0;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 50px;
+            width: 2px;
+            height: calc(100% - 40px);
+            background: $gray-light;
+        }
+
+        &:last-child::before {
+            display: none;
+        }
+
+        .timeline-icon {
+            width: 40px;
+            height: 40px;
+            background: $feyma-purple;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+
+        &.pending {
+            .timeline-icon {
+                background: $gray-light;
+                color: $gray;
+            }
+
+            .timeline-content {
+                h5 {
+                    color: $gray;
+                }
+
+                p {
+                    color: $gray;
+                }
+            }
+        }
+
+        .timeline-content {
+            flex: 1;
+
+            h5 {
+                font-size: 16px;
+                font-weight: 700;
+                margin-bottom: 4px;
+                color: $dark;
+            }
+
+            p {
+                font-size: 14px;
+                color: $gray-dark;
+                margin: 0;
+            }
+        }
+    }
+}
+
+// ============================================
+// ACTION BUTTONS
+// ============================================
+.action-buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 20px;
+
+    .btn-epic {
+        width: 100%;
+        text-decoration: none;
+        text-align: center;
+    }
+}
+
+// ============================================
+// ANIMATIONS
+// ============================================
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+// ============================================
+// RESPONSIVE
+// ============================================
+@media (max-width: 767px) {
+    .success-header,
+    .failed-header {
+        h1 {
+            font-size: 28px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    }
+
+    .order-product {
+        flex-wrap: wrap;
+
+        .product-info {
+            flex-basis: 100%;
+        }
+
+        .product-price {
+            margin-left: 0;
+            margin-top: 8px;
+        }
+    }
+
+    .order-details-box {
+        padding: 20px;
+
+        .box-title {
+            font-size: 18px;
+        }
+    }
+}

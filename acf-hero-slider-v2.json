@@ -1,0 +1,239 @@
+{
+    "key": "group_hero_slider_v2",
+    "title": "Hero Slider V2 - Configuración",
+    "fields": [
+        {
+            "key": "field_hero_carousel",
+            "label": "Slides del Hero Carousel",
+            "name": "hero_carousel",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Agrega los slides para el carrusel principal. Cada slide tiene imagen (izquierda) y contenido (derecha). Altura: 670px.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 1,
+            "max": 5,
+            "collapsed": "field_slide_title",
+            "button_label": "Agregar Slide",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_slide_theme",
+                    "label": "Tema de color",
+                    "name": "theme",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "Selecciona el tema de color para este slide (afecta badge, gradientes y botón)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "default": "Dorado (Default)",
+                        "blue": "Azul",
+                        "green": "Verde",
+                        "red": "Rojo",
+                        "purple": "Púrpura"
+                    },
+                    "default_value": "default",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_slide_image",
+                    "label": "Imagen del Producto (Izquierda)",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Imagen del producto que aparecerá a la IZQUIERDA. Tamaño recomendado: 500x400px o 600x500px (PNG con fondo transparente preferible)",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "jpg,jpeg,png,webp",
+                    "preview_size": "medium"
+                },
+                {
+                    "key": "field_slide_badge_text",
+                    "label": "Texto del Badge",
+                    "name": "badge_text",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Texto pequeño que aparece arriba del título (ej: \"NUEVO\", \"OFERTA\", \"HOT SALE\")",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": 30,
+                    "placeholder": "NUEVA TEMPORADA",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_slide_badge_icon",
+                    "label": "Icono del Badge (Bootstrap Icons)",
+                    "name": "badge_icon",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Nombre del icono de Bootstrap Icons (sin el prefijo 'bi-'). Ej: \"lightning-charge\", \"fire\", \"star-fill\"",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "lightning-charge",
+                    "maxlength": 50,
+                    "placeholder": "lightning-charge",
+                    "prepend": "bi-",
+                    "append": ""
+                },
+                {
+                    "key": "field_slide_title",
+                    "label": "Título Principal",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Primera parte del título (en blanco). Máximo 30 caracteres para mejor legibilidad.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": 50,
+                    "placeholder": "Las Mejores",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_slide_title_gradient",
+                    "label": "Título con Gradiente",
+                    "name": "title_gradient",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Segunda parte del título (con efecto gradiente dorado). Máximo 30 caracteres.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": 50,
+                    "placeholder": "Notebooks Gaming",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_slide_description",
+                    "label": "Descripción",
+                    "name": "description",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Descripción corta del producto o promoción. Máximo 2 líneas recomendado (120 caracteres).",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": 150,
+                    "rows": 3,
+                    "placeholder": "Procesadores de última generación y tarjetas gráficas RTX para llevar tu experiencia gaming al siguiente nivel.",
+                    "new_lines": "br"
+                },
+                {
+                    "key": "field_slide_button_text",
+                    "label": "Texto del Botón",
+                    "name": "button_text",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Texto que aparece en el botón de acción",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Ver Productos",
+                    "maxlength": 30,
+                    "placeholder": "Ver Productos",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_slide_button_link",
+                    "label": "Link del Botón",
+                    "name": "button_link",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "URL a donde lleva el botón (ej: página de categoría, producto específico, etc.)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "https://tudominio.com/categoria/notebooks"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-home"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Configuración del Hero Slider V2 - Imagen izquierda (40%), texto derecha (60%), altura 670px con animaciones.",
+    "show_in_rest": 0
+}
