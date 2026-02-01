@@ -1,18 +1,7 @@
 <?php
 /**
- * My Account Dashboard
+ * My Account Dashboard - EPIC VERSION
  *
- * Shows the first intro screen on the account dashboard.
- *
- * This template can be overridden by copying it to yourtheme/woocommerce/myaccount/dashboard.php.
- *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
- *
- * @see     https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
  * @version 4.4.0
  */
@@ -21,61 +10,195 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-$allowed_html = array(
-	'a' => array(
-		'href' => array(),
-	),
-);
+// Get customer data
+$customer = wp_get_current_user();
+$customer_orders = wc_get_orders( array(
+    'customer' => get_current_user_id(),
+    'limit' => 5,
+) );
+$total_orders = wc_get_customer_order_count( get_current_user_id() );
+$total_spent = wc_get_customer_total_spent( get_current_user_id() );
 ?>
 
-<p>
-	<?php
-	printf(
-		/* translators: 1: user display name 2: logout url */
-		wp_kses( __( 'Hello %1$s (not %1$s? <a href="%2$s">Log out</a>)', 'woocommerce' ), $allowed_html ),
-		'<strong>' . esc_html( $current_user->display_name ) . '</strong>',
-		esc_url( wc_logout_url() )
-	);
-	?>
-</p>
+<!-- ============================================
+     HERO HEADER MI CUENTA
+     ============================================ -->
+<div class="mi-cuenta-hero">
+    <div class="hero-circuit-pattern-v2"></div>
+    <div class="hero-particles-v2"></div>
 
-<p>
-	<?php
-	/* translators: 1: Orders URL 2: Address URL 3: Account URL. */
-	$dashboard_desc = __( 'From your account dashboard you can view your <a href="%1$s">recent orders</a>, manage your <a href="%2$s">billing address</a>, and <a href="%3$s">edit your password and account details</a>.', 'woocommerce' );
-	if ( wc_shipping_enabled() ) {
-		/* translators: 1: Orders URL 2: Addresses URL 3: Account URL. */
-		$dashboard_desc = __( 'From your account dashboard you can view your <a href="%1$s">recent orders</a>, manage your <a href="%2$s">shipping and billing addresses</a>, and <a href="%3$s">edit your password and account details</a>.', 'woocommerce' );
-	}
-	printf(
-		wp_kses( $dashboard_desc, $allowed_html ),
-		esc_url( wc_get_endpoint_url( 'orders' ) ),
-		esc_url( wc_get_endpoint_url( 'edit-address' ) ),
-		esc_url( wc_get_endpoint_url( 'edit-account' ) )
-	);
-	?>
-</p>
+    <div class="hero-content">
+        <div class="user-avatar">
+            <?php echo get_avatar( get_current_user_id(), 80 ); ?>
+        </div>
+        <h1 class="hero-greeting">
+            Hola, <span class="gradient-text"><?php echo esc_html( $customer->display_name ); ?></span>
+        </h1>
+        <p class="hero-subtitle">
+            Bienvenido a tu panel de control
+        </p>
+        <a href="<?php echo esc_url( wc_logout_url() ); ?>" class="logout-link">
+            <i class="bi bi-box-arrow-right"></i> Cerrar Sesión
+        </a>
+    </div>
+</div>
+
+<!-- ============================================
+     STATS CARDS
+     ============================================ -->
+<div class="mi-cuenta-stats">
+    <div class="row g-4 mb-5">
+        <!-- Pedidos Totales -->
+        <div class="col-lg-4 col-md-6">
+            <div class="stat-card purple">
+                <div class="stat-icon">
+                    <i class="bi bi-bag-check-fill"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-number"><?php echo esc_html( $total_orders ); ?></div>
+                    <div class="stat-label">Pedidos Totales</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Gastado -->
+        <div class="col-lg-4 col-md-6">
+            <div class="stat-card gold">
+                <div class="stat-icon">
+                    <i class="bi bi-currency-dollar"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-number"><?php echo wc_price( $total_spent ); ?></div>
+                    <div class="stat-label">Total Invertido</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Miembro Desde -->
+        <div class="col-lg-4 col-md-6">
+            <div class="stat-card blue">
+                <div class="stat-icon">
+                    <i class="bi bi-calendar-check-fill"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-number"><?php echo esc_html( date_i18n( 'Y', strtotime( $customer->user_registered ) ) ); ?></div>
+                    <div class="stat-label">Miembro Desde</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================
+     QUICK ACTIONS
+     ============================================ -->
+<div class="mi-cuenta-actions mb-5">
+    <h2 class="section-title">Acciones Rápidas</h2>
+    <div class="row g-3">
+        <div class="col-lg-3 col-md-6">
+            <a href="<?php echo esc_url( wc_get_endpoint_url( 'orders' ) ); ?>" class="action-card">
+                <i class="bi bi-receipt"></i>
+                <span>Mis Pedidos</span>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address' ) ); ?>" class="action-card">
+                <i class="bi bi-geo-alt"></i>
+                <span>Direcciones</span>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-account' ) ); ?>" class="action-card">
+                <i class="bi bi-person-circle"></i>
+                <span>Mi Cuenta</span>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <a href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" class="action-card">
+                <i class="bi bi-shop"></i>
+                <span>Seguir Comprando</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================
+     ÚLTIMOS PEDIDOS
+     ============================================ -->
+<?php if ( $customer_orders ) : ?>
+<div class="mi-cuenta-recent-orders">
+    <h2 class="section-title">Últimas Compras</h2>
+    <div class="row g-4">
+        <?php foreach ( $customer_orders as $order ) : ?>
+            <div class="col-lg-6">
+                <div class="order-card-mini">
+                    <div class="order-header">
+                        <div class="order-number">
+                            <i class="bi bi-hash"></i>
+                            <?php echo esc_html( $order->get_order_number() ); ?>
+                        </div>
+                        <span class="order-status status-<?php echo esc_attr( $order->get_status() ); ?>">
+                            <?php echo esc_html( wc_get_order_status_name( $order->get_status() ) ); ?>
+                        </span>
+                    </div>
+                    <div class="order-info">
+                        <div class="order-date">
+                            <i class="bi bi-calendar3"></i>
+                            <?php echo esc_html( wc_format_datetime( $order->get_date_created() ) ); ?>
+                        </div>
+                        <div class="order-total">
+                            <strong><?php echo $order->get_formatted_order_total(); ?></strong>
+                        </div>
+                    </div>
+                    <div class="order-footer">
+                        <a href="<?php echo esc_url( $order->get_view_order_url() ); ?>" class="view-order-btn">
+                            Ver Detalles <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+
+    <?php if ( $total_orders > 5 ) : ?>
+    <div class="text-center mt-4">
+        <a href="<?php echo esc_url( wc_get_endpoint_url( 'orders' ) ); ?>" class="btn-view-all">
+            Ver Todos los Pedidos <i class="bi bi-arrow-right"></i>
+        </a>
+    </div>
+    <?php endif; ?>
+</div>
+<?php else : ?>
+<div class="mi-cuenta-empty-state">
+    <div class="empty-icon">
+        <i class="bi bi-cart-x"></i>
+    </div>
+    <h3>No has realizado ningún pedido aún</h3>
+    <p>Explora nuestra tienda y encuentra los mejores productos en tecnología</p>
+    <a href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" class="btn-start-shopping">
+        <i class="bi bi-shop"></i> Comenzar a Comprar
+    </a>
+</div>
+<?php endif; ?>
 
 <?php
-	/**
-	 * My Account dashboard.
-	 *
-	 * @since 2.6.0
-	 */
-	do_action( 'woocommerce_account_dashboard' );
+/**
+ * My Account dashboard.
+ *
+ * @since 2.6.0
+ */
+do_action( 'woocommerce_account_dashboard' );
 
-	/**
-	 * Deprecated woocommerce_before_my_account action.
-	 *
-	 * @deprecated 2.6.0
-	 */
-	do_action( 'woocommerce_before_my_account' );
+/**
+ * Deprecated woocommerce_before_my_account action.
+ *
+ * @deprecated 2.6.0
+ */
+do_action( 'woocommerce_before_my_account' );
 
-	/**
-	 * Deprecated woocommerce_after_my_account action.
-	 *
-	 * @deprecated 2.6.0
-	 */
-	do_action( 'woocommerce_after_my_account' );
-
-/* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */
+/**
+ * Deprecated woocommerce_after_my_account action.
+ *
+ * @deprecated 2.6.0
+ */
+do_action( 'woocommerce_after_my_account' );

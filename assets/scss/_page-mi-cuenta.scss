@@ -1,5 +1,5 @@
 // ============================================
-// MI CUENTA - WOOCOMMERCE MEJORADO
+// MI CUENTA - DASHBOARD ÉPICO
 // ============================================
 
 // Variables
@@ -8,6 +8,248 @@ $purple-light: #5F4B8B;
 $purple-dark: #2D2460;
 $gold: #F7B32B;
 $gold-light: #f7c96b;
+$blue: #3B82F6;
+$blue-light: #60A5FA;
+
+// ============================================
+// MI CUENTA HERO HEADER
+// ============================================
+.mi-cuenta-hero {
+    position: relative;
+    background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, $purple 100%);
+    padding: 60px 0;
+    margin: -40px -40px 40px -40px;
+    border-radius: 0 0 30px 30px;
+    overflow: hidden;
+
+    // Circuit pattern
+    .hero-circuit-pattern-v2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background-image:
+            repeating-linear-gradient(0deg, transparent, transparent 49px, rgba($gold, 0.1) 49px, rgba($gold, 0.1) 50px),
+            repeating-linear-gradient(90deg, transparent, transparent 49px, rgba($gold, 0.1) 49px, rgba($gold, 0.1) 50px);
+        z-index: 1;
+    }
+
+    // Particles
+    .hero-particles-v2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        pointer-events: none;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: $gold;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba($gold, 0.8);
+            animation: particleFloat 15s ease-in-out infinite;
+        }
+
+        &::before {
+            top: 20%;
+            left: 10%;
+        }
+
+        &::after {
+            top: 60%;
+            right: 15%;
+            animation-delay: 7s;
+        }
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 10;
+        text-align: center;
+    }
+
+    .user-avatar {
+        margin-bottom: 20px;
+
+        img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            border: 4px solid $gold;
+            box-shadow: 0 10px 30px rgba($gold, 0.4);
+            transition: all 0.3s ease;
+
+            &:hover {
+                transform: scale(1.1) rotate(5deg);
+            }
+        }
+    }
+
+    .hero-greeting {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: white;
+        margin-bottom: 10px;
+
+        .gradient-text {
+            background: linear-gradient(135deg, $gold 0%, $gold-light 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 20px;
+    }
+
+    .logout-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        &:hover {
+            color: $gold;
+        }
+    }
+}
+
+// ============================================
+// STATS CARDS
+// ============================================
+.mi-cuenta-stats {
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(61, 49, 128, 0.1);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(61, 49, 128, 0.2);
+
+        &::before {
+            transform: scaleX(1);
+        }
+
+        .stat-icon {
+            transform: scale(1.1) rotate(10deg);
+        }
+    }
+
+    .stat-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: white;
+        flex-shrink: 0;
+        transition: all 0.3s ease;
+    }
+
+    .stat-content {
+        flex: 1;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #2D2D2D;
+        line-height: 1.2;
+        margin-bottom: 5px;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+        color: #6b7280;
+        font-weight: 600;
+    }
+
+    // Variantes de color
+    &.purple {
+        .stat-icon {
+            background: linear-gradient(135deg, $purple 0%, $purple-light 100%);
+            box-shadow: 0 10px 20px rgba($purple, 0.3);
+        }
+
+        &::before {
+            background: linear-gradient(90deg, $purple 0%, $gold 100%);
+        }
+    }
+
+    &.gold {
+        .stat-icon {
+            background: linear-gradient(135deg, $gold 0%, $gold-light 100%);
+            box-shadow: 0 10px 20px rgba($gold, 0.3);
+        }
+
+        &::before {
+            background: linear-gradient(90deg, $gold 0%, $purple 100%);
+        }
+    }
+
+    &.blue {
+        .stat-icon {
+            background: linear-gradient(135deg, $blue 0%, $blue-light 100%);
+            box-shadow: 0 10px 20px rgba($blue, 0.3);
+        }
+
+        &::before {
+            background: linear-gradient(90deg, $blue 0%, $gold 100%);
+        }
+    }
+}
+
+// ============================================
+// QUICK ACTIONS
+// ============================================
+.mi-cuenta-actions {
+    .section-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: $purple;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 3px solid;
+        border-image: linear-gradient(90deg, $purple 0%, $gold 100%)
 
 // ============================================
 // MY ACCOUNT PAGE WRAPPER

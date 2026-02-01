@@ -1,0 +1,403 @@
+// ============================================
+// DASHBOARD ÉPICO - ESTILOS ADICIONALES
+// ============================================
+
+// Variables
+$purple: #3D3180;
+$purple-light: #5F4B8B;
+$gold: #F7B32B;
+$gold-light: #f7c96b;
+
+// ============================================
+// ACTION CARDS
+// ============================================
+.action-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: white;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-decoration: none;
+    color: $purple;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba($purple, 0.1);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    i {
+        font-size: 2.5rem;
+        transition: all 0.3s ease;
+    }
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba($purple, 0.2);
+        border-color: $gold;
+        color: $gold;
+
+        i {
+            transform: scale(1.2) rotate(10deg);
+        }
+    }
+}
+
+// ============================================
+// ORDER CARDS MINI
+// ============================================
+.order-card-mini {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba($purple, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba($purple, 0.15);
+        border-color: $purple;
+    }
+
+    .order-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px dashed rgba($purple, 0.1);
+
+        .order-number {
+            font-weight: 700;
+            color: $purple;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .order-status {
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+
+            &.status-completed,
+            &.status-processing {
+                background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+                color: white;
+            }
+
+            &.status-pending {
+                background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
+                color: white;
+            }
+
+            &.status-on-hold {
+                background: linear-gradient(135deg, #6B7280 0%, #9CA3AF 100%);
+                color: white;
+            }
+
+            &.status-cancelled,
+            &.status-refunded,
+            &.status-failed {
+                background: linear-gradient(135deg, #EF4444 0%, #F87171 100%);
+                color: white;
+            }
+        }
+    }
+
+    .order-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        .order-date {
+            font-size: 0.9rem;
+            color: #6b7280;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            i {
+                color: $gold;
+            }
+        }
+
+        .order-total {
+            font-size: 1.25rem;
+            color: $purple;
+        }
+    }
+
+    .order-footer {
+        .view-order-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, $purple 0%, $purple-light 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            width: 100%;
+            justify-content: center;
+
+            i {
+                transition: transform 0.3s ease;
+            }
+
+            &:hover {
+                background: linear-gradient(135deg, $gold 0%, $gold-light 100%);
+                color: $purple;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba($gold, 0.3);
+
+                i {
+                    transform: translateX(5px);
+                }
+            }
+        }
+    }
+}
+
+// ============================================
+// SECTION TITLES
+// ============================================
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: $purple;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(90deg, $purple 0%, $gold 100%) 1;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: $gold;
+        animation: slideWidth 2s ease-in-out infinite;
+    }
+}
+
+@keyframes slideWidth {
+    0%, 100% {
+        width: 60px;
+    }
+    50% {
+        width: 120px;
+    }
+}
+
+// ============================================
+// BTN VIEW ALL
+// ============================================
+.btn-view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, $purple 0%, $purple-light 100%);
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 5px 15px rgba($purple, 0.3);
+
+    i {
+        transition: transform 0.3s ease;
+    }
+
+    &:hover {
+        background: linear-gradient(135deg, $gold 0%, $gold-light 100%);
+        color: $purple;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba($gold, 0.4);
+
+        i {
+            transform: translateX(5px);
+        }
+    }
+}
+
+// ============================================
+// EMPTY STATE
+// ============================================
+.mi-cuenta-empty-state {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    .empty-icon {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 2rem;
+        background: linear-gradient(135deg, rgba($purple, 0.1) 0%, rgba($gold, 0.1) 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i {
+            font-size: 4rem;
+            color: $purple;
+        }
+    }
+
+    h3 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: $purple;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+        color: #6b7280;
+        margin-bottom: 2rem;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .btn-start-shopping {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: linear-gradient(135deg, $gold 0%, $gold-light 100%);
+        color: $purple;
+        padding: 1.25rem 3rem;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.1rem;
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        box-shadow: 0 5px 15px rgba($gold, 0.3);
+
+        &:hover {
+            background: linear-gradient(135deg, $purple 0%, $purple-light 100%);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba($purple, 0.4);
+        }
+    }
+}
+
+// ============================================
+// RESPONSIVE
+// ============================================
+@media (max-width: 992px) {
+    .mi-cuenta-hero {
+        margin: -20px -20px 30px -20px;
+        padding: 40px 20px;
+
+        .hero-greeting {
+            font-size: 2rem;
+        }
+    }
+
+    .stat-card {
+        padding: 1.5rem;
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            font-size: 1.75rem;
+        }
+
+        .stat-number {
+            font-size: 1.75rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .mi-cuenta-hero {
+        .hero-greeting {
+            font-size: 1.75rem;
+        }
+    }
+
+    .stat-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .action-card {
+        padding: 1.5rem 1rem;
+
+        i {
+            font-size: 2rem;
+        }
+    }
+
+    .order-card-mini {
+        .order-header {
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .order-info {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+    }
+
+    .mi-cuenta-empty-state {
+        padding: 3rem 1.5rem;
+
+        .empty-icon {
+            width: 100px;
+            height: 100px;
+
+            i {
+                font-size: 3rem;
+            }
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+// ============================================
+// PARTICLE FLOAT ANIMATION
+// ============================================
+@keyframes particleFloat {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-100px) translateX(50px);
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 1;
+    }
+}

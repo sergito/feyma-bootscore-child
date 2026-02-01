@@ -219,6 +219,14 @@ function bootscore_child_enqueue_styles() {
 	  $modified_pageMiCuenta = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/page-mi-cuenta.css'));
 	  wp_enqueue_style('page-mi-cuenta', get_stylesheet_directory_uri() . '/assets/css/page-mi-cuenta.css', array('main'), $modified_pageMiCuenta);
 
+	  // Page Mi Cuenta Dashboard - Dashboard épico con estadísticas
+	  $modified_dashboardEpic = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/page-mi-cuenta-dashboard.css'));
+	  wp_enqueue_style('page-mi-cuenta-dashboard', get_stylesheet_directory_uri() . '/assets/css/page-mi-cuenta-dashboard.css', array('page-mi-cuenta'), $modified_dashboardEpic);
+
+	  // Text Effects Epic - Efectos sutiles para textos de páginas internas
+	  $modified_textEffects = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/text-effects-epic.css'));
+	  wp_enqueue_style('text-effects-epic', get_stylesheet_directory_uri() . '/assets/css/text-effects-epic.css', array('main'), $modified_textEffects);
+
 	  // style.css
 	  wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
 	  wp_enqueue_style( 'bi', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css', false, '1.11');
