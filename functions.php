@@ -207,30 +207,10 @@ function bootscore_child_enqueue_styles() {
 	  $modified_bootscoreChildCss = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/main.css'));
 	  wp_enqueue_style('main', get_stylesheet_directory_uri() . '/assets/css/main.css', array('parent-style','bi','aos-css'), $modified_bootscoreChildCss);
 
-	  // Page Hero V2 - Hero header épico para páginas internas
-	  $modified_pageHeroV2 = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/page-hero-v2.css'));
-	  wp_enqueue_style('page-hero-v2', get_stylesheet_directory_uri() . '/assets/css/page-hero-v2.css', array('main'), $modified_pageHeroV2);
-
-	  // Page Contacto - Estilos mejorados para página de contacto
-	  $modified_pageContacto = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/page-contacto.css'));
-	  wp_enqueue_style('page-contacto', get_stylesheet_directory_uri() . '/assets/css/page-contacto.css', array('main'), $modified_pageContacto);
-
-	  // Page Mi Cuenta - Estilos mejorados para WooCommerce Mi Cuenta
-	  $modified_pageMiCuenta = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/page-mi-cuenta.css'));
-	  wp_enqueue_style('page-mi-cuenta', get_stylesheet_directory_uri() . '/assets/css/page-mi-cuenta.css', array('main'), $modified_pageMiCuenta);
-
-	  // Page Mi Cuenta Dashboard - Dashboard épico con estadísticas
-	  $modified_dashboardEpic = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/page-mi-cuenta-dashboard.css'));
-	  wp_enqueue_style('page-mi-cuenta-dashboard', get_stylesheet_directory_uri() . '/assets/css/page-mi-cuenta-dashboard.css', array('page-mi-cuenta'), $modified_dashboardEpic);
-
-	  // Text Effects Epic - Efectos sutiles para textos de páginas internas
-	  $modified_textEffects = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/text-effects-epic.css'));
-	  wp_enqueue_style('text-effects-epic', get_stylesheet_directory_uri() . '/assets/css/text-effects-epic.css', array('main'), $modified_textEffects);
-
-	  // Checkout Epic Enhancements - Mejoras épicas para el checkout
+	  // Checkout Simple Clean - Versión simplificada sin degradés (solo en checkout)
 	  if ( is_checkout() ) {
-		  $modified_checkoutEpic = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/checkout-epic-enhancements.css'));
-		  wp_enqueue_style('checkout-epic-enhancements', get_stylesheet_directory_uri() . '/assets/css/checkout-epic-enhancements.css', array('main'), $modified_checkoutEpic);
+		  $modified_checkoutClean = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/checkout-simple-clean.css'));
+		  wp_enqueue_style('checkout-simple-clean', get_stylesheet_directory_uri() . '/assets/css/checkout-simple-clean.css', array('main'), $modified_checkoutClean);
 	  }
 
 	  // style.css
@@ -1035,7 +1015,7 @@ function custom_single_variable_price_html_clean( $price, $product ) {
 */
 
 
-// add_action('woocommerce_after_add_to_cart_form', 'feyma_share_info', 25); // DESACTIVADO - Usuario no quiere badges verdes
+add_action('woocommerce_after_add_to_cart_form', 'feyma_share_info', 25);
 //add_action('woocommerce_single_product_summary', 'feyma_share_info', 31);
 
 function feyma_share_info() {
@@ -1622,57 +1602,3 @@ function feyma_admin_page() {
 /**
  * Mover stock debajo de la galeria en single product:
  */
-
-// ============================================
-// CHECKOUT MEJORAS - FEYMA EPIC CHECKOUT
-// ============================================
-
-/**
- * Quitar campo de cupón del checkout
- */
-remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
-
-/**
- * Asegurar que el campo billing_email esté disponible sin registro
- * Esto soluciona el error "Dirección de correo electrónico es un campo requerido"
- */
-add_filter( 'woocommerce_checkout_fields', 'feyma_fix_billing_email_field', 999 );
-function feyma_fix_billing_email_field( $fields ) {
-    // Asegurar que billing_email siempre esté presente
-    if ( isset( $fields['billing']['billing_email'] ) ) {
-        // Hacer que sea requerido siempre
-        $fields['billing']['billing_email']['required'] = true;
-        $fields['billing']['billing_email']['priority'] = 1;
-        
-        // Asegurar que no tenga clase de oculto
-        if ( isset( $fields['billing']['billing_email']['class'] ) ) {
-            $fields['billing']['billing_email']['class'] = array_diff(
-                $fields['billing']['billing_email']['class'], 
-                array('form-row-hidden', 'hidden')
-            );
-        }
-    }
-    
-    return $fields;
-}
-
-/**
- * Prevenir que WooCommerce oculte el campo de email
- */
-add_filter( 'woocommerce_enable_order_notes_field', '__return_true' );
-
-/**
- * Asegurar que el email se valide correctamente en checkout sin registro
- */
-add_action( 'woocommerce_after_checkout_validation', 'feyma_validate_billing_email', 10, 2 );
-function feyma_validate_billing_email( $data, $errors ) {
-    // Si el email está vacío, agregar error
-    if ( empty( $data['billing_email'] ) ) {
-        $errors->add( 'billing_email', 'Por favor ingresá un email válido para continuar.' );
-    }
-    
-    // Validar formato de email
-    if ( ! empty( $data['billing_email'] ) && ! is_email( $data['billing_email'] ) ) {
-        $errors->add( 'billing_email', 'El formato del email no es válido.' );
-    }
-}

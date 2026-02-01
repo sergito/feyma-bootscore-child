@@ -224,6 +224,16 @@
         const email = $emailField.val();
 
         if (email && !emailLocked) {
+            // CRÍTICO FIX: Copiar el email al campo oculto de WooCommerce
+            const $wooEmailField = $('.billing-fields-wrapper #billing_email_field input[name="billing_email"]');
+            if ($wooEmailField.length && $wooEmailField.attr('id') !== 'billing_email') {
+                $wooEmailField.val(email);
+                console.log('✅ Email copiado al campo WooCommerce oculto:', email);
+            }
+
+            // También asegurar que el campo principal tenga el valor
+            $emailField.val(email);
+
             // Show email in step 2
             if ($emailDisplay.length) {
                 $emailDisplay.text(email);
@@ -258,6 +268,19 @@
             $billingEmailField.hide();
             console.log('👁️ Campo de email oculto de fields de WooCommerce');
         }
+
+        // CRÍTICO FIX: Sync email before form submission
+        $('form.checkout').on('checkout_place_order', function() {
+            const email = $('#billing_email').val();
+            const $wooEmailField = $('.billing-fields-wrapper input[name="billing_email"]');
+
+            if ($wooEmailField.length) {
+                $wooEmailField.val(email);
+                console.log('✅ Email sincronizado antes de enviar:', email);
+            }
+
+            return true; // Allow form submission
+        });
     }
 
     // ============================================
