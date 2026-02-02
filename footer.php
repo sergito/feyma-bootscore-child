@@ -116,9 +116,7 @@ defined('ABSPATH') || exit;
     <!-- Footer Bottom -->
     <div class="footer-bottom">
         <div class="container">
-            <p>
-                <span class="cr-symbol">&copy;</span> <?php echo date('Y'); ?> <strong>FEYMA tech</strong>. Todos los derechos reservados. 
-                | Diseñado con <i class="bi bi-heart-fill" style="color: #EF4444;"></i> en Argentina
+            <p>Copyright © <?php echo date('Y'); ?> Haciendo Nacimos! Agencia para <?php bloginfo('name'); ?> | Buenos Aires Argentina
             </p>
         </div>
     </div>
