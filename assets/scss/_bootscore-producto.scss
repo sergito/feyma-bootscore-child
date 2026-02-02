@@ -1057,33 +1057,34 @@ section.related.products .swiper-slide .card {gap:0 !important}
    PAGO SEGURO CARD - VERDE
    ============================================ */
 .secure-payment-card {
-    background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%);
-    border: 1px solid #86EFAC;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    border: 1px solid #059669;
     border-radius: 16px;
     padding: 28px 24px;
     text-align: center;
     margin-bottom: 1.5rem;
+    color: white;
 
     .card-icon {
         margin-bottom: 16px;
 
         i {
             font-size: 48px;
-            color: #16A34A;
+            color: white;
         }
     }
 
     h3 {
         font-size: 22px;
         font-weight: 800;
-        color: #16A34A;
+        color: white;
         margin-bottom: 8px;
     }
 
     p {
         font-size: 15px;
         font-weight: 500;
-        color: #059669;
+        color: white;
         margin: 0;
     }
 }

@@ -24,7 +24,6 @@
 
             // Crear contenedor principal
             const $container = $('<div class="product-variations"></div>');
-            $container.append('<h3>Elegí tu configuración</h3>');
 
             const self = this;
 

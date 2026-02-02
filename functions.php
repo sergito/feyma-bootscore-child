@@ -1036,27 +1036,6 @@ function feyma_share_info() {
 
     <!-- Sección 4: Información de Envío -->
     <div class="cba-price-section p-0" style="border-bottom:0">
-        <div class="trust-badges">
-            <div class="trust-item">
-                <i class="bi bi-shield-check"></i>
-                <span>Garantía oficial</span>
-            </div>
-            <div class="trust-item">
-                <i class="bi bi-credit-card"></i>
-                <span>Pago seguro</span>
-            </div>
-
-            <div class="trust-item">
-                <i class="bi bi-truck"></i>
-                <span>Envíos gratis a todo el país!</span>
-            </div>
-                
-            <div class="trust-item">
-                <i class="bi bi-geo-alt"></i>
-                <span>Retiralo en nuestras oficinas, Av. del Libertador 6299, C1428ARF, CABA. De 10 a 17hs.</span>
-            </div>
-        </div>
-
         <div class="product-share">
             <span>Compartir:</span>
             <!--
