@@ -223,6 +223,12 @@ function bootscore_child_enqueue_styles() {
 		  wp_enqueue_style('checkout-simple-clean', get_stylesheet_directory_uri() . '/assets/css/checkout-simple-clean.css', array('main'), $modified_checkoutClean);
 	  }
 
+	  // Hero Slider V2 - Solo en página de inicio con template ACF
+	  if ( is_page_template('page-inicio-acf.php') || is_front_page() ) {
+		  $modified_heroSlider = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/hero-slider-v2.css'));
+		  wp_enqueue_style('hero-slider-v2', get_stylesheet_directory_uri() . '/assets/css/hero-slider-v2.css', array('main'), $modified_heroSlider);
+	  }
+
 	  // style.css
 	  wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
 	  wp_enqueue_style( 'bi', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css', false, '1.11');
