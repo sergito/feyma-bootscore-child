@@ -7,7 +7,7 @@
 // ============================================
 // VARIABLES
 // ============================================
-$hero-height: 670px;
+$hero-height: 650px;
 $hero-bg: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #2d2460 100%);
 $purple: #3D3180;
 $gold: #F7B32B;
@@ -58,7 +58,7 @@ $gold: #F7B32B;
 }
 
 // ============================================
-// IMAGEN IZQUIERDA (40%)
+// IMAGEN DERECHA (40%)
 // ============================================
 .hero-image-container {
     position: relative;
@@ -67,7 +67,7 @@ $gold: #F7B32B;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: linear-gradient(90deg, transparent 0%, rgba(61, 49, 128, 0.1) 100%);
+    background: linear-gradient(270deg, transparent 0%, rgba(61, 49, 128, 0.1) 100%);
 }
 
 .hero-product-image {
@@ -81,10 +81,10 @@ $gold: #F7B32B;
 }
 
 // ============================================
-// TEXTO DERECHA (60%)
+// TEXTO IZQUIERDA (60%)
 // ============================================
 .hero-content-v2 {
-    padding: 40px 60px;
+    padding: 40px 80px 40px 60px;
     position: relative;
     z-index: 10;
 }
@@ -113,11 +113,11 @@ $gold: #F7B32B;
 
 // Título animado
 .hero-title-v2 {
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 1.2;
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.15;
     color: white;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     animation: slideInLeft 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s both;
 
     .gradient-accent {
@@ -127,17 +127,18 @@ $gold: #F7B32B;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         font-weight: 800;
-        margin-top: 4px;
+        margin-top: 6px;
     }
 }
 
 // Descripción animada
 .hero-description-v2 {
-    font-size: 16px;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 28px;
-    max-width: 500px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+    max-width: 550px;
     animation: fadeIn 0.8s ease 0.4s both;
 }
 
@@ -150,26 +151,27 @@ $gold: #F7B32B;
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 14px 32px;
-    background: $gold;
-    color: #1a1a1a;
+    padding: 16px 40px;
+    background: white;
+    color: $purple;
     border-radius: 8px;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    box-shadow: 0 4px 15px rgba(247, 179, 43, 0.3);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
 
     &:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(247, 179, 43, 0.5);
-        background: darken($gold, 5%);
-        color: #000;
+        box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.95);
+        color: $purple;
     }
 
     i {
         font-size: 18px;
         transition: transform 0.3s ease;
+        display: none;
     }
 
     &:hover i {

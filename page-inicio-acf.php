@@ -51,27 +51,8 @@ get_header();
                 <div class="container-fluid px-0">
                     <div class="row g-0 align-items-center">
 
-                        <!-- IMAGEN IZQUIERDA (40%) -->
-                        <div class="col-lg-5 order-lg-1 order-2">
-                            <div class="hero-image-container">
-                                <?php
-                                if ( isset($slide['image']) && !empty($slide['image']) ) :
-                                    $image_url = $slide['image']['url'];
-                                    $image_alt = $slide['image']['alt'] ? $slide['image']['alt'] : $slide['title'];
-                                ?>
-                                    <img src="<?php echo esc_url($image_url); ?>"
-                                         alt="<?php echo esc_attr($image_alt); ?>"
-                                         class="hero-product-image">
-                                <?php else : ?>
-                                    <img src="https://via.placeholder.com/500x400/3D3180/F7B32B?text=<?php echo urlencode($slide['title']); ?>"
-                                         alt="<?php echo esc_attr($slide['title']); ?>"
-                                         class="hero-product-image">
-                                <?php endif; ?>
-                            </div>
-                        </div>
-
-                        <!-- TEXTO DERECHA (60%) -->
-                        <div class="col-lg-7 order-lg-2 order-1">
+                        <!-- TEXTO IZQUIERDA (60%) -->
+                        <div class="col-lg-7 order-lg-1 order-2">
                             <div class="hero-content-v2">
 
                                 <?php if ( !empty($slide['badge_text']) ) : ?>
@@ -100,11 +81,29 @@ get_header();
                                     <?php if ( !empty($slide['button_link']) ) : ?>
                                     <a href="<?php echo esc_url($slide['button_link']); ?>" class="btn-hero-v2 <?php echo $theme_class; ?>">
                                         <span><?php echo esc_html($slide['button_text']); ?></span>
-                                        <i class="bi bi-arrow-right"></i>
                                     </a>
                                     <?php endif; ?>
                                 </div>
 
+                            </div>
+                        </div>
+
+                        <!-- IMAGEN DERECHA (40%) -->
+                        <div class="col-lg-5 order-lg-2 order-1">
+                            <div class="hero-image-container">
+                                <?php
+                                if ( isset($slide['image']) && !empty($slide['image']) ) :
+                                    $image_url = $slide['image']['url'];
+                                    $image_alt = $slide['image']['alt'] ? $slide['image']['alt'] : $slide['title'];
+                                ?>
+                                    <img src="<?php echo esc_url($image_url); ?>"
+                                         alt="<?php echo esc_attr($image_alt); ?>"
+                                         class="hero-product-image">
+                                <?php else : ?>
+                                    <img src="https://via.placeholder.com/500x400/3D3180/F7B32B?text=<?php echo urlencode($slide['title']); ?>"
+                                         alt="<?php echo esc_attr($slide['title']); ?>"
+                                         class="hero-product-image">
+                                <?php endif; ?>
                             </div>
                         </div>
 
