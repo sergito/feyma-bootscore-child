@@ -18,13 +18,49 @@
 defined( 'ABSPATH' ) || exit;
 
 ?>
-<div class="cart_totals <?php echo ( WC()->customer->has_calculated_shipping() ) ? 'calculated_shipping' : ''; ?>">
+<div class="cart-totals-wrapper">
 
-	<?php do_action( 'woocommerce_before_cart_totals' ); ?>
+	<!-- COLUMNA IZQUIERDA: BENEFICIOS Y GARANTÍAS -->
+	<div class="cart-trust-badges">
+		<h3>Beneficios de tu compra</h3>
+		<div class="trust-badge-item">
+			<i class="bi bi-shield-check"></i>
+			<div class="badge-info">
+				<strong>Compra protegida</strong>
+				<span>100% seguro</span>
+			</div>
+		</div>
+		<div class="trust-badge-item">
+			<i class="bi bi-truck"></i>
+			<div class="badge-info">
+				<strong>Envío gratis</strong>
+				<span>A todo el país</span>
+			</div>
+		</div>
+		<div class="trust-badge-item">
+			<i class="bi bi-arrow-clockwise"></i>
+			<div class="badge-info">
+				<strong>30 días</strong>
+				<span>Para devoluciones</span>
+			</div>
+		</div>
+		<div class="trust-badge-item">
+			<i class="bi bi-headset"></i>
+			<div class="badge-info">
+				<strong>Soporte 24/7</strong>
+				<span>Siempre disponibles</span>
+			</div>
+		</div>
+	</div>
 
-	<h2><?php esc_html_e( 'Cart totals', 'woocommerce' ); ?></h2>
+	<!-- COLUMNA DERECHA: TOTALES DEL CARRITO -->
+	<div class="cart_totals <?php echo ( WC()->customer->has_calculated_shipping() ) ? 'calculated_shipping' : ''; ?>">
 
-	<table cellspacing="0" class="shop_table shop_table_responsive">
+		<?php do_action( 'woocommerce_before_cart_totals' ); ?>
+
+		<h2><?php esc_html_e( 'Cart totals', 'woocommerce' ); ?></h2>
+
+		<table cellspacing="0" class="shop_table shop_table_responsive">
 
 		<tr class="cart-subtotal">
 			<th><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th>
@@ -103,41 +139,14 @@ defined( 'ABSPATH' ) || exit;
 
 	</table>
 
-	<div class="wc-proceed-to-checkout">
-		<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
+		<div class="wc-proceed-to-checkout">
+			<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
+		</div>
+
+		<?php do_action( 'woocommerce_after_cart_totals' ); ?>
+
 	</div>
-
-	<?php do_action( 'woocommerce_after_cart_totals' ); ?>
-
-	<div class="cart-trust-badges">
-                        <div class="trust-badge-item">
-                            <i class="bi bi-shield-check"></i>
-                            <div class="badge-info">
-                                <strong>Compra protegida</strong>
-                                <span>100% seguro</span>
-                            </div>
-                        </div>
-                        <div class="trust-badge-item">
-                            <i class="bi bi-truck"></i>
-                            <div class="badge-info">
-                                <strong>Envío gratis</strong>
-                                <span>A todo el país</span>
-                            </div>
-                        </div>
-                        <div class="trust-badge-item">
-                            <i class="bi bi-arrow-clockwise"></i>
-                            <div class="badge-info">
-                                <strong>30 días</strong>
-                                <span>Para devoluciones</span>
-                            </div>
-                        </div>
-                        <div class="trust-badge-item">
-                            <i class="bi bi-headset"></i>
-                            <div class="badge-info">
-                                <strong>Soporte 24/7</strong>
-                                <span>Siempre disponibles</span>
-                            </div>
-                        </div>
-                    </div>
+	<!-- Fin columna derecha: cart_totals -->
 
 </div>
+<!-- Fin cart-totals-wrapper -->

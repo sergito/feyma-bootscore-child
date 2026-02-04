@@ -223,6 +223,12 @@ function bootscore_child_enqueue_styles() {
 		  wp_enqueue_style('checkout-simple-clean', get_stylesheet_directory_uri() . '/assets/css/checkout-simple-clean.css', array('main'), $modified_checkoutClean);
 	  }
 
+	  // Cart Layout Improved - Diseño mejorado de dos columnas para el carrito
+	  if ( is_cart() ) {
+		  $modified_cartLayout = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/cart-layout-improved.css'));
+		  wp_enqueue_style('cart-layout-improved', get_stylesheet_directory_uri() . '/assets/css/cart-layout-improved.css', array('main'), $modified_cartLayout);
+	  }
+
 	  // Hero Slider V2 - Solo en página de inicio con template ACF
 	  if ( is_page_template('page-inicio-acf.php') || is_front_page() ) {
 		  $modified_heroSlider = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/hero-slider-v2.css'));
