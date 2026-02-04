@@ -19,209 +19,177 @@ defined('ABSPATH') || exit;
 get_header();
 ?>
 
-<!-- HERO SECTION - CIRCUIT PATTERNS ÉPICOS -->
-<section class="hero-section">
-    <!-- Tu imagen como base -->
-    <div class="hero-circuit-pattern"></div>
-    <div class="hero-particles"></div>
-    <div class="scan-line"></div>
-    
-    <!-- Nodos de conexión pulsantes -->
-    <div class="circuit-nodes">
-        <div class="circuit-node"></div>
-        <div class="circuit-node"></div>
-        <div class="circuit-node"></div>
-        <div class="circuit-node"></div>
-        <div class="circuit-node"></div>
-    </div>
-    
-    <!-- Data flow (líneas que viajan) -->
-    <div class="data-flow data-flow-1"></div>
-    <div class="data-flow data-flow-2"></div>
-    <div class="data-flow data-flow-3"></div>
-    
-    <!-- Hexágonos geométricos -->
-    <div class="hex-pattern"></div>
-    
-    <!-- Energy pulse -->
-    <div class="energy-pulse"></div>
-    
+<!-- HERO SECTION V2 - SLIDER COMPACTO 650PX -->
+<section class="hero-section-v2">
+    <div class="hero-bg-pattern"></div>
+
     <!-- CAROUSEL DE HERO -->
-    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
-        
-        <div class="carousel-indicators">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <div class="carousel-indicators carousel-indicators-v2">
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4"></button>
         </div>
 
         <div class="carousel-inner">
-            
-            <!-- SLIDE 1: NOTEBOOKS -->
+
+            <!-- SLIDE 1: ENVÍOS GRATIS -->
             <div class="carousel-item active">
-                <div class="container">
-                    <div class="row align-items-center min-vh-90">
-                        <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
-                            <div class="hero-content">
-                                <span class="hero-badge" data-aos="zoom-in" data-aos-delay="200">
-                                    <i class="bi bi-lightning-charge-fill me-2"></i>
-                                    Nuevos Arrivals 2025
-                                </span>
-                                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="400">
-                                    Potencia<br>
-                                    <span class="gradient-text">ilimitada.</span>
+                <div class="container h-100">
+                    <div class="row align-items-center h-100">
+                        <div class="col-lg-6">
+                            <div class="hero-content-v2">
+                                <h1 class="hero-title-v2">
+                                    Envíos gratis
+                                    <span class="gradient-accent">a todo el país</span>
                                 </h1>
-                                <p class="hero-description" data-aos="fade-up" data-aos-delay="600">
-                                    Notebooks de última generación. Intel Core i9 Gen 14,<br>
-                                    RTX 4090, 144Hz. El futuro en tus manos.
+                                <p class="hero-description-v2">
+                                    Comprá desde la comodidad de tu casa y recibí tu producto en cualquier punto del país sin costo adicional.
                                 </p>
-                                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="800">
-                                    <a href="<?php echo get_term_link( 'notebooks', 'product_cat' ); ?>" class="btn-hero">
-                                        <span>Ver Notebooks</span>
-                                        <i class="bi bi-arrow-right ms-2"></i>
+                                <div class="hero-actions-v2">
+                                    <a href="<?php echo wc_get_page_permalink( 'shop' ); ?>" class="btn-hero-v2">
+                                        Ver productos
                                     </a>
-                                    <a href="<?php echo wc_get_page_permalink( 'shop' ); ?>" class="btn-hero-outline">
-                                        Catálogo Completo
-                                    </a>
-                                </div>
-                                
-                                <!-- Specs destacadas -->
-                                <div class="hero-specs" data-aos="fade-up" data-aos-delay="1000">
-                                    <div class="spec-item">
-                                        <i class="bi bi-cpu"></i>
-                                        <span>Intel i9</span>
-                                    </div>
-                                    <div class="spec-item">
-                                        <i class="bi bi-gpu-card"></i>
-                                        <span>RTX 4090</span>
-                                    </div>
-                                    <div class="spec-item">
-                                        <i class="bi bi-lightning-charge"></i>
-                                        <span>144Hz</span>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
-                            <div class="hero-image-wrapper">
-                                <div class="hero-product-glow"></div>
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/notebook-hero.png" 
-                                     alt="Notebook Gaming" 
-                                     class="img-fluid hero-product-img"
-                                     onerror="this.src=https://via.placeholder.com/600x400/5F4B8B/F7B32B?text=Notebook+Gaming'">
+                        <div class="col-lg-6">
+                            <div class="hero-image-container">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/camion-feyma.png"
+                                     alt="Envíos gratis"
+                                     class="hero-product-image"
+                                     onerror="this.src='https://via.placeholder.com/600x400/3D3180/F7B32B?text=Envios+Gratis'">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- SLIDE 2: GAMING -->
+            <!-- SLIDE 2: NOTEBOOKS DE OFICINA -->
             <div class="carousel-item">
-                <div class="container">
-                    <div class="row align-items-center min-vh-90">
-                        <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
-                            <div class="hero-content">
-                                <span class="hero-badge gaming" data-aos="zoom-in" data-aos-delay="200">
-                                    <i class="bi bi-controller me-2"></i>
-                                    Gaming Zone
-                                </span>
-                                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="400">
-                                    Domina el<br>
-                                    <span class="gradient-text-gaming">juego.</span>
+                <div class="container h-100">
+                    <div class="row align-items-center h-100">
+                        <div class="col-lg-6">
+                            <div class="hero-content-v2">
+                                <h1 class="hero-title-v2">
+                                    Notebooks de
+                                    <span class="gradient-accent">Oficina.</span>
                                 </h1>
-                                <p class="hero-description" data-aos="fade-up" data-aos-delay="600">
-                                    Equipos gaming de alto rendimiento. RTX 4090,<br>
-                                    refrigeración líquida, RGB. Máxima performance.
+                                <p class="hero-description-v2">
+                                    Eficiencia y estilo para tu día laboral. Equipos profesionales para trabajar desde cualquier lugar.
                                 </p>
-                                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="800">
-                                    <a href="<?php echo get_term_link( 'gaming', 'product_tag' ); ?>" class="btn-hero gaming">
-                                        <span>Ver Gaming</span>
-                                        <i class="bi bi-controller ms-2"></i>
+                                <div class="hero-actions-v2">
+                                    <a href="<?php echo get_term_link( 'notebooks', 'product_cat' ); ?>" class="btn-hero-v2">
+                                        Ver Notebooks
                                     </a>
-                                </div>
-                                
-                                <!-- Gaming specs -->
-                                <div class="hero-specs" data-aos="fade-up" data-aos-delay="1000">
-                                    <div class="spec-item">
-                                        <i class="bi bi-fire"></i>
-                                        <span>Ultra FPS</span>
-                                    </div>
-                                    <div class="spec-item">
-                                        <i class="bi bi-thermometer-sun"></i>
-                                        <span>Cooling</span>
-                                    </div>
-                                    <div class="spec-item">
-                                        <i class="bi bi-brightness-high"></i>
-                                        <span>RGB</span>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
-                            <div class="hero-image-wrapper">
-                                <div class="hero-product-glow gaming"></div>
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/gaming-hero.png" 
-                                     alt="Gaming Setup" 
-                                     class="img-fluid hero-product-img"
-                                     onerror="this.src='https://via.placeholder.com/600x400/EF4444/FFFFFF?text=Gaming+Setup'">
+                        <div class="col-lg-6">
+                            <div class="hero-image-container">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/notebook-oficina.png"
+                                     alt="Notebooks de Oficina"
+                                     class="hero-product-image"
+                                     onerror="this.src='https://via.placeholder.com/600x400/3D3180/F7B32B?text=Notebook+Oficina'">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- SLIDE 3: APPLE -->
+            <!-- SLIDE 3: VERSATILIDAD -->
             <div class="carousel-item">
-                <div class="container">
-                    <div class="row align-items-center min-vh-90">
-                        <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
-                            <div class="hero-content">
-                                <span class="hero-badge apple" data-aos="zoom-in" data-aos-delay="200">
-                                    <i class="bi bi-apple me-2"></i>
-                                    Apple Premium
-                                </span>
-                                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="400">
-                                    Piensa<br>
-                                    <span class="gradient-text-apple">diferente.</span>
+                <div class="container h-100">
+                    <div class="row align-items-center h-100">
+                        <div class="col-lg-6">
+                            <div class="hero-content-v2">
+                                <h1 class="hero-title-v2">
+                                    Versatilidad en
+                                    <span class="gradient-accent">tu hogar.</span>
                                 </h1>
-                                <p class="hero-description" data-aos="fade-up" data-aos-delay="600">
-                                    MacBook Pro M3 Max. iMac 24". iPad Pro.<br>
-                                    La mejor tecnología Apple en Argentina.
+                                <p class="hero-description-v2">
+                                    Desde entretenimiento hasta tareas escolares, nuestras notebooks son perfectas para todo lo que necesitas.
                                 </p>
-                                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="800">
-                                    <a href="<?php echo get_term_link( 'apple', 'product_tag' ); ?>" class="btn-hero apple">
-                                        <span>Ver Apple</span>
-                                        <i class="bi bi-apple ms-2"></i>
+                                <div class="hero-actions-v2">
+                                    <a href="<?php echo get_term_link( 'notebooks', 'product_cat' ); ?>" class="btn-hero-v2">
+                                        Ver Notebooks
                                     </a>
-                                </div>
-                                
-                                <!-- Apple specs -->
-                                <div class="hero-specs" data-aos="fade-up" data-aos-delay="1000">
-                                    <div class="spec-item">
-                                        <i class="bi bi-cpu"></i>
-                                        <span>M3 Max</span>
-                                    </div>
-                                    <div class="spec-item">
-                                        <i class="bi bi-display"></i>
-                                        <span>Retina</span>
-                                    </div>
-                                    <div class="spec-item">
-                                        <i class="bi bi-apple"></i>
-                                        <span>Ecosystem</span>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
-                            <div class="hero-image-wrapper">
-                                <div class="hero-product-glow apple"></div>
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/apple-hero.png" 
-                                     alt="Apple Products" 
-                                     class="img-fluid hero-product-img"
-                                     onerror="this.src='https://via.placeholder.com/600x400/1A1A1A/FFFFFF?text=Apple+Products'">
+                        <div class="col-lg-6">
+                            <div class="hero-image-container">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/notebook-versatil.png"
+                                     alt="Versatilidad"
+                                     class="hero-product-image"
+                                     onerror="this.src='https://via.placeholder.com/600x400/3D3180/F7B32B?text=Versatilidad'">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 4: GAMING -->
+            <div class="carousel-item">
+                <div class="container h-100">
+                    <div class="row align-items-center h-100">
+                        <div class="col-lg-6">
+                            <div class="hero-content-v2">
+                                <h1 class="hero-title-v2">
+                                    Potencia y rendimiento
+                                    <span class="gradient-accent">para jugar sin límites.</span>
+                                </h1>
+                                <p class="hero-description-v2">
+                                    Elevá tu experiencia en gaming con nuestras notebooks diseñadas para tu victoria.
+                                </p>
+                                <div class="hero-actions-v2">
+                                    <a href="<?php echo get_term_link( 'gaming', 'product_tag' ); ?>" class="btn-hero-v2">
+                                        Ver Notebooks
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="hero-image-container">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/notebook-gaming.png"
+                                     alt="Gaming"
+                                     class="hero-product-image"
+                                     onerror="this.src='https://via.placeholder.com/600x400/3D3180/F7B32B?text=Gaming'">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 5: PAGÁ SEGURO CON NAVE -->
+            <div class="carousel-item">
+                <div class="container h-100">
+                    <div class="row align-items-center h-100">
+                        <div class="col-lg-6">
+                            <div class="hero-content-v2">
+                                <h1 class="hero-title-v2">
+                                    Pagá seguro
+                                    <span class="gradient-accent">con Nave</span>
+                                </h1>
+                                <p class="hero-description-v2">
+                                    En nuestra tienda con Nave podés pagar con cualquier billetera virtual.
+                                </p>
+                                <div class="hero-actions-v2">
+                                    <a href="<?php echo wc_get_page_permalink( 'shop' ); ?>" class="btn-hero-v2">
+                                        Comprar
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="hero-image-container">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/pago-nave.png"
+                                     alt="Pago seguro"
+                                     class="hero-product-image"
+                                     onerror="this.src='https://via.placeholder.com/600x400/3D3180/F7B32B?text=Pago+Seguro'">
                             </div>
                         </div>
                     </div>
@@ -231,15 +199,11 @@ get_header();
         </div>
 
         <!-- Controls Personalizados -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-            <div class="carousel-control-icon">
-                <i class="bi bi-chevron-left"></i>
-            </div>
+        <button class="carousel-control-prev carousel-control-prev-v2" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <i class="bi bi-chevron-left"></i>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-            <div class="carousel-control-icon">
-                <i class="bi bi-chevron-right"></i>
-            </div>
+        <button class="carousel-control-next carousel-control-next-v2" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <i class="bi bi-chevron-right"></i>
         </button>
     </div>
 </section>
