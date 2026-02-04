@@ -19,13 +19,43 @@ defined('ABSPATH') || exit;
 get_header();
 ?>
 
+<!-- HERO SECTION - CIRCUIT PATTERNS ÉPICOS -->
+<section class="hero-section">
+    <!-- Tu imagen como base -->
+    <div class="hero-circuit-pattern"></div>
+    <div class="hero-particles"></div>
+    <div class="scan-line"></div>
+    
+    <!-- Nodos de conexión pulsantes -->
+    <div class="circuit-nodes">
+        <div class="circuit-node"></div>
+        <div class="circuit-node"></div>
+        <div class="circuit-node"></div>
+        <div class="circuit-node"></div>
+        <div class="circuit-node"></div>
+    </div>
+    
+    <!-- Data flow (líneas que viajan) -->
+    <div class="data-flow data-flow-1"></div>
+    <div class="data-flow data-flow-2"></div>
+    <div class="data-flow data-flow-3"></div>
+    
+    <!-- Hexágonos geométricos -->
+    <div class="hex-pattern"></div>
+    
+    <!-- Energy pulse -->
+    <div class="energy-pulse"></div>
+    
+    <!-- CAROUSEL DE HERO -->
+ 
+
 <!-- HERO SECTION V2 - SLIDER COMPACTO 650PX -->
 <section class="hero-section-v2">
     <div class="hero-bg-pattern"></div>
-
+ 
     <!-- CAROUSEL DE HERO -->
     <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
-
+ 
         <div class="carousel-indicators carousel-indicators-v2">
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
@@ -33,9 +63,9 @@ get_header();
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4"></button>
         </div>
-
+ 
         <div class="carousel-inner">
-
+ 
             <!-- SLIDE 1: ENVÍOS GRATIS -->
             <div class="carousel-item active">
                 <div class="container h-100">
@@ -67,7 +97,7 @@ get_header();
                     </div>
                 </div>
             </div>
-
+ 
             <!-- SLIDE 2: NOTEBOOKS DE OFICINA -->
             <div class="carousel-item">
                 <div class="container h-100">
@@ -99,7 +129,7 @@ get_header();
                     </div>
                 </div>
             </div>
-
+ 
             <!-- SLIDE 3: VERSATILIDAD -->
             <div class="carousel-item">
                 <div class="container h-100">
@@ -131,7 +161,7 @@ get_header();
                     </div>
                 </div>
             </div>
-
+ 
             <!-- SLIDE 4: GAMING -->
             <div class="carousel-item">
                 <div class="container h-100">
@@ -163,7 +193,7 @@ get_header();
                     </div>
                 </div>
             </div>
-
+ 
             <!-- SLIDE 5: PAGÁ SEGURO CON NAVE -->
             <div class="carousel-item">
                 <div class="container h-100">
@@ -195,9 +225,9 @@ get_header();
                     </div>
                 </div>
             </div>
-
+ 
         </div>
-
+ 
         <!-- Controls Personalizados -->
         <button class="carousel-control-prev carousel-control-prev-v2" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
             <i class="bi bi-chevron-left"></i>
