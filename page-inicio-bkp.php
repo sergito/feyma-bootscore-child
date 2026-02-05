@@ -19,6 +19,191 @@ defined('ABSPATH') || exit;
 get_header();
 ?>
 
+<!-- HERO SECTION V2 - SLIDER COMPACTO 650PX -->
+<section class="hero-section-v2">
+    <div class="hero-bg-pattern"></div>
+
+    <!-- CAROUSEL DE HERO -->
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <div class="carousel-indicators carousel-indicators-v2">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4"></button>
+        </div>
+
+        <div class="carousel-inner">
+
+            <!-- SLIDE 1: NOTEBOOKS DE OFICINA -->
+            <div class="carousel-item active">
+                <div class="container h-100">
+                    <div class="row align-items-center h-100">
+                        <div class="col-lg-6">
+                            <div class="hero-content-v2">
+                                <h1 class="hero-title-v2">
+                                    Notebooks de
+                                    <span class="gradient-accent">Oficina.</span>
+                                </h1>
+                                <p class="hero-description-v2">
+                                    Eficiencia y estilo para tu día laboral.
+                                </p>
+                                <div class="hero-actions-v2">
+                                    <a href="/categoria-producto/oficina/" class="btn-hero-v2">
+                                        Ver Notebooks
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="hero-image-container">
+                                <img src="https://feyma.ar/wp-content/uploads/2025/05/Notebook01.png"
+                                     alt="Notebooks de Oficina"
+                                     class="hero-product-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 2: VERSATILIDAD EN TU HOGAR -->
+            <div class="carousel-item">
+                <div class="container h-100">
+                    <div class="row align-items-center h-100">
+                        <div class="col-lg-6">
+                            <div class="hero-content-v2">
+                                <h1 class="hero-title-v2">
+                                    Versatilidad en
+                                    <span class="gradient-accent">tu hogar.</span>
+                                </h1>
+                                <p class="hero-description-v2">
+                                    Desde entretenimiento hasta tareas escolares, nuestras notebooks son perfectas para todo lo que necesitas.
+                                </p>
+                                <div class="hero-actions-v2">
+                                    <a href="/categoria-producto/notebooks/" class="btn-hero-v2">
+                                        Ver Notebooks
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="hero-image-container">
+                                <img src="https://feyma.ar/wp-content/uploads/2025/05/Notebook02.png"
+                                     alt="Versatilidad en tu hogar"
+                                     class="hero-product-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 3: GAMING -->
+            <div class="carousel-item">
+                <div class="container h-100">
+                    <div class="row align-items-center h-100">
+                        <div class="col-lg-6">
+                            <div class="hero-content-v2">
+                                <h1 class="hero-title-v2">
+                                    Potencia y rendimiento
+                                    <span class="gradient-accent">para jugar sin límites.</span>
+                                </h1>
+                                <p class="hero-description-v2">
+                                    Elevá tu experiencia en gaming con nuestras notebooks diseñadas para tu victoria.
+                                </p>
+                                <div class="hero-actions-v2">
+                                    <a href="/categoria-producto/gaming/" class="btn-hero-v2">
+                                        Ver Notebooks
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="hero-image-container">
+                                <img src="https://feyma.ar/wp-content/uploads/2025/05/Notebook03.png"
+                                     alt="Gaming"
+                                     class="hero-product-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 4: PAGÁ SEGURO CON NAVE -->
+            <div class="carousel-item">
+                <div class="container h-100">
+                    <div class="row align-items-center h-100">
+                        <div class="col-lg-6">
+                            <div class="hero-content-v2">
+                                <h1 class="hero-title-v2">
+                                    Pagá seguro
+                                    <span class="gradient-accent">con Nave</span>
+                                </h1>
+                                <p class="hero-description-v2">
+                                    En nuestra tienda con Nave podés pagar con cualquier billetera virtual.
+                                </p>
+                                <div class="hero-payment-logos">
+                                    <img src="https://feyma.ar/wp-content/uploads/2025/12/tarjetas-1.png" alt="Medios de pago" class="payment-logos-img">
+                                </div>
+                                <div class="hero-actions-v2">
+                                    <a href="<?php echo wc_get_page_permalink( 'shop' ); ?>" class="btn-hero-v2">
+                                        Comprar
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="hero-image-container">
+                                <img src="https://feyma.ar/wp-content/uploads/2025/12/Imagen-Slide-Nave.png"
+                                     alt="Pago seguro con Nave"
+                                     class="hero-product-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 5: ENVÍOS GRATIS -->
+            <div class="carousel-item">
+                <div class="container h-100">
+                    <div class="row align-items-center h-100">
+                        <div class="col-lg-6">
+                            <div class="hero-content-v2">
+                                <h1 class="hero-title-v2">
+                                    Envíos gratis
+                                    <span class="gradient-accent">a todo el país</span>
+                                </h1>
+                                <div class="hero-actions-v2">
+                                    <a href="<?php echo wc_get_page_permalink( 'shop' ); ?>" class="btn-hero-v2">
+                                        Ver productos
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="hero-image-container">
+                                <img src="https://feyma.ar/wp-content/uploads/2025/10/Imagen-camion-1.png"
+                                     alt="Envíos gratis a todo el país"
+                                     class="hero-product-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Controls Personalizados -->
+        <button class="carousel-control-prev carousel-control-prev-v2" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <i class="bi bi-chevron-left"></i>
+        </button>
+        <button class="carousel-control-next carousel-control-next-v2" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <i class="bi bi-chevron-right"></i>
+        </button>
+    </div>
+</section>
+
+
 <!-- HERO SECTION - CIRCUIT PATTERNS ÉPICOS -->
 <section class="hero-section">
     <!-- Tu imagen como base -->
