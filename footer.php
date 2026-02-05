@@ -66,52 +66,85 @@ defined('ABSPATH') || exit;
         </div>
     </div>
 
-    <div class="footer-content">
+        <div class="footer-content">
         <div class="container">
             <div class="row g-4">
-                
-                <!-- Columna 1: Logo y Contacto -->
+
+                <!-- Columna 1: Logo y Redes Sociales -->
                 <div class="col-6 col-md-6 col-lg-3" data-aos="fade-up">
-                     <?php if (is_active_sidebar('footer-1')) : ?>
-                        <?php dynamic_sidebar('footer-1'); ?>
-                     <?php endif; ?>
-                </div>
-                
-                <!-- Columna 2: Productos -->
-                <div class="col-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                    <?php if (is_active_sidebar('footer-2')) : ?>
-                        <?php dynamic_sidebar('footer-2'); ?>
-                    <?php endif; ?>
-                </div>
-                
-                <!-- Columna 3: Links -->
-                <div class="col-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                    <?php if (is_active_sidebar('footer-3')) : ?>
-                        <?php dynamic_sidebar('footer-3'); ?>
-                    <?php endif; ?>
-                </div>
-                
-                <!-- Columna 4: Información Legal -->
-                <div class="col-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                   <?php if (is_active_sidebar('footer-4')) : ?>
-                        <?php dynamic_sidebar('footer-4'); ?>
-                    <?php endif; ?>
-                    
-                    <!-- Métodos de pago
-                    <div style="margin-top: 30px;">
-                        <h4>Medios de Pago</h4>
-                        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px;">
-                            <i class="bi bi-credit-card-2-front" style="font-size: 32px; color: #F7B32B;"></i>
-                            <i class="bi bi-credit-card" style="font-size: 32px; color: #F7B32B;"></i>
-                            <i class="bi bi-cash-coin" style="font-size: 32px; color: #F7B32B;"></i>
+                    <div class="footer-logo-section">
+                        <<a href="<?php  echo esc_url(home_url('/')); ?>" class="footer-logo">
+                            <img width="113" height="143" src="https://mediumaquamarine-oyster-559178.hostingersite.com/wp-content/uploads/2026/01/logo-feyma-footer-1.svg" class="image wp-image-10452  attachment-medium size-medium" alt="" style="max-width: 100%; height: auto;" decoding="async" loading="lazy">
+                        </a> 
+                        
+
+                        <!-- Redes Sociales -->
+                        <div class="footer-social">
+                            <a href="https://www.instagram.com/feyma.ar/" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/feyma.ar" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
+                                <i class="bi bi-facebook"></i>
+                            </a>
                         </div>
                     </div>
-                    -->
                 </div>
-                
+
+                <!-- Columna 2: Contacto -->
+                <div class="col-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="footer-column">
+                        <h4 class="footer-title">Contacto</h4>
+                        <div class="footer-contact-info">
+                            <div class="contact-item">
+                                <span class="contact-label"><i class="bi bi-geo-alt"></i> Dirección:</span>
+                                <span class="contact-value">Av. Del Libertador 6299, C1428ARF<br>Cdad. Autónoma de Buenos Aires</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-label"><i class="bi bi-telephone"></i> Teléfono:</span>
+                                <a href="tel:+5491144116575" class="contact-value">+54 9 11 44116575</a>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-label"><i class="bi bi-envelope"></i> Email:</span>
+                                <a href="mailto:consultas@feyma.ar" class="contact-value">consultas@feyma.ar</a><br>
+                                <a href="mailto:pedidosweb@feyma.ar" class="contact-value">pedidosweb@feyma.ar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna 3: Productos -->
+                <div class="col-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="footer-column">
+                        <h4 class="footer-title">Productos</h4>
+                        <ul class="footer-links">
+                            <li><a href="<?php echo esc_url(home_url('/categoria-producto/notebooks/')); ?>">Notebooks</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/categoria-producto/apple/')); ?>">Apple</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/categoria-producto/diseno/')); ?>">Diseño</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/categoria-producto/gaming/')); ?>">Gaming</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/categoria-producto/oficina/')); ?>">Oficina</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Columna 4: Links -->
+                <div class="col-6 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="footer-column">
+                        <h4 class="footer-title">Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="<?php echo esc_url(home_url('/empresa/')); ?>">Empresa</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/tienda/')); ?>">Tienda</a></li>
+                            <li><a href="<?php echo esc_url(wc_get_cart_url()); ?>">Carrito</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/contacto/')); ?>">Contacto</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/faqs/')); ?>">FAQS</a></li>
+                            <li><a href="<?php echo esc_url(home_url('/politica-de-cambios-y-devoluciones/')); ?>">Política de cambios y devoluciones</a></li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
+
     
     <!-- Footer Bottom -->
     <div class="footer-bottom">

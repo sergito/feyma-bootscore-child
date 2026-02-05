@@ -15,6 +15,168 @@ defined('ABSPATH') || exit;
 get_header();
 ?>
 
+
+<!-- HERO SECTION - CIRCUIT PATTERNS ÉPICOS -->
+<section class="hero-section">
+    <!-- Efectos de fondo épicos -->
+    <div class="hero-circuit-pattern"></div>
+    <div class="hero-particles"></div>
+    <div class="scan-line"></div>
+
+    <!-- Nodos de conexión pulsantes -->
+    <div class="circuit-nodes">
+        <div class="circuit-node"></div>
+        <div class="circuit-node"></div>
+        <div class="circuit-node"></div>
+        <div class="circuit-node"></div>
+        <div class="circuit-node"></div>
+    </div>
+
+    <!-- Data flow (líneas que viajan) -->
+    <div class="data-flow data-flow-1"></div>
+    <div class="data-flow data-flow-2"></div>
+    <div class="data-flow data-flow-3"></div>
+
+    <!-- Hexágonos geométricos -->
+    <div class="hex-pattern"></div>
+
+    <!-- Energy pulse -->
+    <div class="energy-pulse"></div>
+
+    <!-- CAROUSEL DE HERO -->
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
+
+        <?php
+        // Get hero slides from ACF
+        $hero_slides = get_field('hero_carousel', 'option');
+        $slide_count = $hero_slides ? count($hero_slides) : 0;
+        ?>
+
+        <?php if ( $slide_count > 1 ) : ?>
+        <div class="carousel-indicators">
+            <?php for ( $i = 0; $i < $slide_count; $i++ ) : ?>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="<?php echo $i; ?>" <?php echo $i === 0 ? 'class="active"' : ''; ?>></button>
+            <?php endfor; ?>
+        </div>
+        <?php endif; ?>
+
+        <div class="carousel-inner">
+
+            <?php
+            if ( $hero_slides ) :
+                foreach ( $hero_slides as $index => $slide ) :
+                    $theme = isset($slide['theme']) ? $slide['theme'] : 'default';
+                    $theme_class = ($theme !== 'default') ? $theme : '';
+
+                    // Determinar clase de gradiente según tema
+                    $gradient_class = 'gradient-text';
+                    if ($theme === 'gaming') $gradient_class = 'gradient-text-gaming';
+                    elseif ($theme === 'apple') $gradient_class = 'gradient-text-apple';
+                    elseif ($theme === 'blue') $gradient_class = 'gradient-text-blue';
+                    elseif ($theme === 'green') $gradient_class = 'gradient-text-green';
+                    elseif ($theme === 'red') $gradient_class = 'gradient-text-red';
+                    elseif ($theme === 'purple') $gradient_class = 'gradient-text-purple';
+            ?>
+
+            <!-- SLIDE <?php echo $index + 1; ?> -->
+            <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
+                <div class="container">
+                    <div class="row align-items-center min-vh-90">
+                        <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                            <div class="hero-content">
+                                <?php if ( !empty($slide['badge_text']) ) : ?>
+                                <span class="hero-badge <?php echo $theme_class; ?>" data-aos="zoom-in" data-aos-delay="200">
+                                    <?php if ( !empty($slide['badge_icon']) ) : ?>
+                                    <i class="bi bi-<?php echo esc_attr($slide['badge_icon']); ?> me-2"></i>
+                                    <?php endif; ?>
+                                    <?php echo esc_html($slide['badge_text']); ?>
+                                </span>
+                                <?php endif; ?>
+
+                                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="400">
+                                    <?php echo esc_html($slide['title']); ?><br>
+                                    <span class="<?php echo $gradient_class; ?>"><?php echo esc_html($slide['title_gradient']); ?></span>
+                                </h1>
+
+                                <?php if ( !empty($slide['description']) ) : ?>
+                                <p class="hero-description" data-aos="fade-up" data-aos-delay="600">
+                                    <?php echo wp_kses_post($slide['description']); ?>
+                                </p>
+                                <?php endif; ?>
+
+                                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="800">
+                                    <?php if ( !empty($slide['button_link']) ) : ?>
+                                    <a href="<?php echo esc_url($slide['button_link']); ?>" class="btn-hero <?php echo $theme_class; ?>">
+                                        <span><?php echo esc_html($slide['button_text']); ?></span>
+                                        <i class="bi bi-arrow-right ms-2"></i>
+                                    </a>
+                                    <?php endif; ?>
+                                    <a href="<?php echo wc_get_page_permalink( 'shop' ); ?>" class="btn-hero-outline">
+                                        Catálogo Completo
+                                    </a>
+                                </div>
+
+                                <?php
+                                // Specs opcionales desde ACF (si existen)
+                                if ( !empty($slide['specs']) && is_array($slide['specs']) ) :
+                                ?>
+                                <div class="hero-specs" data-aos="fade-up" data-aos-delay="1000">
+                                    <?php foreach ($slide['specs'] as $spec) : ?>
+                                    <div class="spec-item">
+                                        <i class="bi bi-<?php echo esc_attr($spec['icon']); ?>"></i>
+                                        <span><?php echo esc_html($spec['text']); ?></span>
+                                    </div>
+                                    <?php endforeach; ?>
+                                </div>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
+                            <div class="hero-image-wrapper">
+                                <div class="hero-product-glow <?php echo $theme_class; ?>"></div>
+                                <?php
+                                if ( isset($slide['image']) && !empty($slide['image']) ) :
+                                    $image_url = $slide['image']['url'];
+                                    $image_alt = !empty($slide['image']['alt']) ? $slide['image']['alt'] : $slide['title'];
+                                ?>
+                                <img src="<?php echo esc_url($image_url); ?>"
+                                     alt="<?php echo esc_attr($image_alt); ?>"
+                                     class="img-fluid hero-product-img">
+                                <?php else : ?>
+                                <img src="https://via.placeholder.com/600x400/5F4B8B/F7B32B?text=<?php echo urlencode($slide['title']); ?>"
+                                     alt="<?php echo esc_attr($slide['title']); ?>"
+                                     class="img-fluid hero-product-img">
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <?php
+                endforeach;
+            endif;
+            ?>
+
+        </div>
+
+        <?php if ( $slide_count > 1 ) : ?>
+        <!-- Controls Personalizados -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <div class="carousel-control-icon">
+                <i class="bi bi-chevron-left"></i>
+            </div>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <div class="carousel-control-icon">
+                <i class="bi bi-chevron-right"></i>
+            </div>
+        </button>
+        <?php endif; ?>
+    </div>
+</section>
+
 <!-- HERO SECTION - COMPACT & POWERFUL (670PX) -->
 <section class="hero-section-v2">
     <!-- Efectos de fondo minimalistas -->

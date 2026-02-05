@@ -308,6 +308,7 @@
                 const requiredFields = [
                     'billing_first_name',
                     'billing_last_name',
+                    'billing_dni',  // ← AGREGAR ESTA LÍNEA
                     'billing_address_1',
                     'billing_city',
                     'billing_postcode',

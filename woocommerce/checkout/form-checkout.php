@@ -24,7 +24,7 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
   <!-- Checkout Header Simple -->
   <div class="checkout-header-simple">
     <div class="container">
-      <h1>Finalizar Compra</h1>
+      <h1><i class="bi bi-bag-check me-2"></i>Completá tu pedido</h1>
     </div>
   </div>
 

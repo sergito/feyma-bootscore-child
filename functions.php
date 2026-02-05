@@ -8,6 +8,10 @@
 // Exit if accessed directly
 defined('ABSPATH') || exit;
 
+/**
+ * Include ACF Options Pages
+ */
+require_once get_stylesheet_directory() . '/inc/acf-options-home.php';
 
 /**
  * void debug ( mixed Var [, bool Exit] )
@@ -234,6 +238,10 @@ function bootscore_child_enqueue_styles() {
 		  $modified_heroSlider = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/hero-slider-v2.css'));
 		  wp_enqueue_style('hero-slider-v2', get_stylesheet_directory_uri() . '/assets/css/hero-slider-v2.css', array('main'), $modified_heroSlider);
 	  }
+      	  // Footer custom styles
+	  $modified_footerCustom = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/css/footer-custom.css'));
+	  wp_enqueue_style('footer-custom', get_stylesheet_directory_uri() . '/assets/css/footer-custom.css', array('main'), $modified_footerCustom);
+
 
 	  // style.css
 	  wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
@@ -1633,3 +1641,138 @@ function feyma_admin_page() {
 /**
  * Mover stock debajo de la galeria en single product:
  */
+
+// ============================================
+// CHECKOUT - CAMPO DNI OBLIGATORIO
+// ============================================
+add_filter('woocommerce_checkout_fields', 'feyma_agregar_campo_dni');
+function feyma_agregar_campo_dni($fields) {
+    $fields['billing']['billing_dni'] = array(
+        'type'        => 'text',
+        'label'       => 'DNI / CUIT',
+        'placeholder' => 'Ej: 12345678',
+        'required'    => true,
+        'class'       => array('form-row-wide'),
+        'priority'    => 25,
+    );
+    return $fields;
+}
+
+add_action('woocommerce_checkout_process', 'feyma_validar_dni');
+function feyma_validar_dni() {
+    if (empty($_POST['billing_dni'])) {
+        wc_add_notice('Por favor ingresá tu DNI o CUIT.', 'error');
+    } elseif (strlen($_POST['billing_dni']) < 7 || strlen($_POST['billing_dni']) > 11) {
+        wc_add_notice('El DNI/CUIT debe tener entre 7 y 11 dígitos.', 'error');
+    }
+}
+
+add_action('woocommerce_checkout_update_order_meta', 'feyma_guardar_dni');
+function feyma_guardar_dni($order_id) {
+    if (!empty($_POST['billing_dni'])) {
+        update_post_meta($order_id, '_billing_dni', sanitize_text_field($_POST['billing_dni']));
+    }
+}
+
+add_action('woocommerce_admin_order_data_after_billing_address', 'feyma_mostrar_dni_admin');
+function feyma_mostrar_dni_admin($order) {
+    $dni = get_post_meta($order->get_id(), '_billing_dni', true);
+    if ($dni) {
+        echo '<p><strong>DNI/CUIT:</strong> ' . esc_html($dni) . '</p>';
+    }
+}
+
+// ============================================
+// CHECKOUT - OCULTAR CUPÓN
+// ============================================
+add_filter('woocommerce_coupons_enabled', 'feyma_ocultar_cupon_checkout');
+function feyma_ocultar_cupon_checkout($enabled) {
+    if (is_checkout()) {
+        return false;
+    }
+    return $enabled;
+}
+
+// ============================================
+// CHECKOUT - CAMBIAR LABELS DE CAMPOS
+// ============================================
+add_filter('woocommerce_checkout_fields', 'feyma_personalizar_campos_checkout', 20);
+function feyma_personalizar_campos_checkout($fields) {
+    if (isset($fields['billing']['billing_address_1'])) {
+        $fields['billing']['billing_address_1']['label'] = 'Dirección';
+        $fields['billing']['billing_address_1']['placeholder'] = 'Ej: Av. Corrientes 1234';
+    }
+    if (isset($fields['billing']['billing_city'])) {
+        $fields['billing']['billing_city']['label'] = 'Localidad o Ciudad';
+        $fields['billing']['billing_city']['placeholder'] = 'Ej: CABA';
+    }
+    if (isset($fields['billing']['billing_postcode'])) {
+        $fields['billing']['billing_postcode']['label'] = 'Código postal';
+        $fields['billing']['billing_postcode']['placeholder'] = 'Ej: 1414';
+    }
+    if (isset($fields['billing']['billing_country'])) {
+        $fields['billing']['billing_country']['type'] = 'hidden';
+        $fields['billing']['billing_country']['default'] = 'AR';
+        $fields['billing']['billing_country']['class'] = array('hidden');
+    }
+    return $fields;
+}
+
+add_filter('default_checkout_billing_country', 'feyma_default_country');
+function feyma_default_country() {
+    return 'AR';
+}
+
+// ============================================
+// CHECKOUT - QUITAR TÍTULO "FINALIZAR COMPRA" y "PEDIDO RECIBIDO"
+// ============================================
+add_filter('woocommerce_show_page_title', 'feyma_ocultar_titulo_checkout');
+function feyma_ocultar_titulo_checkout($show) {
+    if (is_checkout() || is_wc_endpoint_url('order-received')) {
+        return false;
+    }
+    return $show;
+}
+
+// ============================================
+// THANK YOU PAGE - QUITAR CONTENIDO DUPLICADO DE WOOCOMMERCE
+// ============================================
+// Quitar la tabla de detalles del pedido por defecto (ya está en nuestro template custom)
+add_action('init', 'feyma_quitar_detalles_thankyou');
+function feyma_quitar_detalles_thankyou() {
+    // Quitar tabla de detalles del pedido (incluye dirección de facturación)
+    remove_action('woocommerce_thankyou', 'woocommerce_order_details_table', 10);
+}
+
+// CSS para ocultar cualquier contenido residual de WooCommerce en Thank You
+add_action('wp_head', 'feyma_thankyou_css');
+function feyma_thankyou_css() {
+    if (is_wc_endpoint_url('order-received')) {
+        ?>
+        <style>
+            /* Ocultar título "Pedido recibido" */
+            .woocommerce-order-received .entry-title,
+            .woocommerce-order-received .page-title,
+            .woocommerce-order-received h1.entry-title {
+                display: none !important;
+            }
+
+            /* Ocultar secciones duplicadas de WooCommerce */
+            .woocommerce-order-details,
+            .woocommerce-customer-details,
+            section.woocommerce-order-details,
+            section.woocommerce-customer-details,
+            .woocommerce-columns--addresses {
+                display: none !important;
+            }
+
+            /* Ocultar "Detalles del pedido" duplicado */
+            .feyma-order-received-page + .woocommerce-order-details,
+            .feyma-order-received-page ~ .woocommerce-order-details,
+            .feyma-order-received-page ~ section {
+                display: none !important;
+            }
+        </style>
+        <?php
+    }
+}
